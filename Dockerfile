@@ -1,11 +1,15 @@
-FROM node:alpine
+FROM node:20.13.1-alpine AS build
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY . /usr/src/app
-
-RUN npm install -g @angular/cli
+COPY package*.json ./
 
 RUN npm install
 
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+COPY . .
+
+RUN npm run build --prod
+
+FROM nginx:1.27.0-alpine AS deploy
+
+COPY --from=build /app/dist/tftic-labo-front /usr/share/nginx/html
