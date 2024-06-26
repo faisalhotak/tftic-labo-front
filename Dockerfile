@@ -8,7 +8,7 @@ COPY . .
 
 RUN npm install
 
-RUN npm run build --omit=dev
+RUN npm run build:prod
 
 FROM nginx:alpine AS deploy
 
