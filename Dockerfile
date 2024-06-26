@@ -2,18 +2,20 @@ FROM node:20.13.1-alpine AS build
 
 WORKDIR /app
 
-COPY package*.json ./
+ARG PROFILE=prod
 
-RUN npm install
-
-RUN npm install -g @angular/cli
+RUN npm cache clean --force
 
 COPY . .
 
-RUN ng build --configuration=production --base-href ./
+RUN npm install
 
-FROM nginx:1.27.0-alpine AS deploy
+RUN npm run build --prod
+
+FROM nginx:latest AS deploy
 
 COPY --from=build /app/dist/tftic-labo-front/browser /usr/share/nginx/html
+
+COPY /nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
