@@ -1,8 +1,6 @@
-FROM node:20.13.1-alpine AS build
+FROM node:alpine AS build
 
 WORKDIR /app
-
-ARG PROFILE=prod
 
 RUN npm cache clean --force
 
@@ -10,9 +8,9 @@ COPY . .
 
 RUN npm install
 
-RUN npm run build --prod
+RUN npm run build --omit=dev
 
-FROM nginx:latest AS deploy
+FROM nginx:alpine AS deploy
 
 COPY --from=build /app/dist/tftic-labo-front/browser /usr/share/nginx/html
 
