@@ -6,10 +6,14 @@ COPY package*.json ./
 
 RUN npm install
 
+RUN npm install -g @angular/cli
+
 COPY . .
 
-RUN npm run build --prod
+RUN ng build --configuration=production --base-href ./
 
 FROM nginx:1.27.0-alpine AS deploy
 
-COPY --from=build /app/dist/tftic-labo-front /usr/share/nginx/html
+COPY --from=build /app/dist/tftic-labo-front/browser /usr/share/nginx/html
+
+EXPOSE 80
