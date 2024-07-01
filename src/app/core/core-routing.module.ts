@@ -12,6 +12,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('../features/auth/auth.module').then((m) => m.AuthModule),
       },
+      {
+        path: 'jobs',
+        loadChildren: () =>
+          import('../features/jobs/jobs.module').then((m) => m.JobsModule),
+      }
     ],
   },
 ];
