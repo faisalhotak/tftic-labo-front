@@ -10,6 +10,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InputIconModule } from 'primeng/inputicon';
     ButtonModule,
     InputTextModule,
     InputIconModule,
-    IconFieldModule
+    IconFieldModule,
+    TranslateModule
   ],
 })
 export class CoreModule {}
