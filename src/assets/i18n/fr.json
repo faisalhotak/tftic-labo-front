@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "startSearch": "Commencer une recherche",
+    "jobsList": "Liste des emplois",
+    "logIn": "Connexion",
+    "signUp": "Inscription",
+    "language": "Langue"
+  }
+}

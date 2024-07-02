@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "startSearch": "Start a search",
+    "jobsList": "Jobs list",
+    "logIn": "Log in",
+    "signUp": "Sign up",
+    "language": "Language"
+  }
+}

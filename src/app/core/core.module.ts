@@ -5,7 +5,7 @@ import { CoreRoutingModule } from './core-routing.module';
 import { CoreComponent } from './core.component';
 import { ToastModule } from 'primeng/toast';
 import { FormsModule } from '@angular/forms';
-import { NavComponent } from './layouts/nav/nav.component';
+import { HeaderComponent } from './layouts/header/header.component';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { IconFieldModule } from 'primeng/iconfield';
@@ -15,7 +15,8 @@ import {TranslateModule} from "@ngx-translate/core";
 @NgModule({
   declarations: [
     CoreComponent,
-    NavComponent],
+    HeaderComponent
+  ],
   imports: [
     CommonModule,
     CoreRoutingModule,

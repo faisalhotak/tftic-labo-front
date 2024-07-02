@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <a href="#">{{ siteName }}</a>
+  </div>
+  <div class="navbar-center">
+    <button pButton type="button" label="{{ 'navbar.startSearch' | translate }}" class="text-button" [text]="true" severity="secondary"></button>
+    <button pButton type="button" label="{{ 'navbar.jobsList' | translate }}" class="text-button" [text]="true" severity="secondary"></button>
+  </div>
+  <div class="navbar-right">
+    <button pButton type="button" label="{{ 'navbar.logIn' | translate }}" class="p-button-secondary" severity="secondary"></button>
+    <button pButton type="button" label="{{ 'navbar.signUp' | translate }}" class="p-button-primary" severity="primary"></button>
+  </div>
+</nav>
