@@ -1,0 +1,9 @@
+{
+  "navbar": {
+    "startSearch": "Zoek starten",
+    "jobsList": "Vacaturelijst",
+    "logIn": "Inloggen",
+    "signUp": "Aanmelden",
+    "language": "Taal"
+  }
+}
