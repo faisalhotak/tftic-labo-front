@@ -14,9 +14,20 @@ import { TranslateModule } from '@ngx-translate/core';
 import { HomeComponent } from '../features/home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { JobService } from '../features/jobs/service/job.service';
+import { CarouselComponent } from '../shared/components/carousel/carousel.component';
+import { SearchBarComponent } from '../shared/components/search-bar/search-bar.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { CarouselModule } from 'primeng/carousel';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
-  declarations: [CoreComponent, HeaderComponent, HomeComponent],
+  declarations: [
+    CoreComponent,
+    HeaderComponent,
+    HomeComponent,
+    CarouselComponent,
+    SearchBarComponent,
+  ],
   imports: [
     CommonModule,
     CoreRoutingModule,
@@ -28,6 +39,9 @@ import { JobService } from '../features/jobs/service/job.service';
     IconFieldModule,
     TranslateModule,
     SharedModule,
+    AutoCompleteModule,
+    CarouselModule,
+    CardModule,
   ],
   providers: [JobService],
 })
