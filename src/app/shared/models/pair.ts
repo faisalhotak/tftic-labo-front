@@ -1,4 +1,4 @@
-export interface FilterPair {
+export interface Pair {
     key: string;
     value: string;
 }

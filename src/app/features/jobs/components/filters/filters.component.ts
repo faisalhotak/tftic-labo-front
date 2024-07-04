@@ -2,15 +2,16 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { JobService } from '../../service/job.service';
 import { Observable } from 'rxjs';
 import { Job } from '../../models/job';
-import { FilterPair } from '../../models/filter-pair';
+import { Pair } from '../../../../shared/models/pair';
 
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
   styleUrl: './filters.component.scss'
 })
-export class FiltersComponent implements OnInit {
-  constructor(private jobService: JobService) {}
+export class FiltersComponent implements OnInit{
+  constructor(private readonly jobService: JobService) {
+  }
 
   jobs$!: Observable<Job[]>;
 
@@ -23,8 +24,9 @@ export class FiltersComponent implements OnInit {
     this.jobsToSend$.emit(this.jobs$);
   }
 
-  addFilter(filter: FilterPair) {
+  addFilter(filter: Pair) {
     this.filters.set(filter.key, filter.value);
+    console.log(this.filters);
     this.getJobs();
   }
 

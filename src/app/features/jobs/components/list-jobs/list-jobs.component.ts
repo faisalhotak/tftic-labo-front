@@ -8,18 +8,7 @@ import { Job } from '../../models/job';
   templateUrl: './list-jobs.component.html',
   styleUrl: './list-jobs.component.scss'
 })
-<<<<<<< HEAD
-export class ListJobsComponent implements OnInit{
-  jobs$!: Observable<Job[]>;
-
-  constructor(private jobService: JobService) {}
-
-  ngOnInit() {
-    this.jobs$ = this.jobService.getAllJobs();
-  }
-=======
 export class ListJobsComponent {
   @Input() jobs$!: Observable<Job[]>;
->>>>>>> e255ac6 (Feat(jobs): adding location filter)
 
 }

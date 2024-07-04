@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'publishingPipe'
 })
-export class PublishingPipePipe implements PipeTransform {
+export class PublishingPipe implements PipeTransform {
 
   transform(value: Date): string {
     const now = new Date();
@@ -11,9 +11,11 @@ export class PublishingPipePipe implements PipeTransform {
     const diffInDays = diff / (1000 * 3600 * 24);
     if (diffInDays < 1) {
       return 'Today';
-    } else if (diffInDays < 2) {
+    }
+    if (diffInDays < 2) {
       return 'Yesterday';
-    } else {
+    }
+    else {
       return `${Math.floor(diffInDays)} days ago`;
     }
   }

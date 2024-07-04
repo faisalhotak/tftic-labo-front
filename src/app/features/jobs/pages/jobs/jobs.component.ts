@@ -11,7 +11,6 @@ export class JobsComponent {
   jobsToSend$!: Observable<Job[]>;
 
   updateJobs(updatedJobs$: Observable<Job[]>) {
-    console.log(updatedJobs$);
     this.jobsToSend$ = updatedJobs$;
   }
 }
