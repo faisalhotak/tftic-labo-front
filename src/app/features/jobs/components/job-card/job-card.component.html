@@ -10,7 +10,7 @@
       </div>
       <div>
         <i class="pi pi-map-marker"></i>
-        {{ job.zipCity  | locationPipe | translate }}
+        {{ job.zipCity  | locationPipe}}
       </div>
     </div>
   </ng-template>
@@ -18,6 +18,6 @@
     {{ job.description | translate }}
   </ng-template>
   <ng-template pTemplate="footer">
-    {{ job.publishingDate  | publishingPipe | translate}}
+    {{ job.publishingDate  | publishingPipe}}
   </ng-template >
 </p-card>
