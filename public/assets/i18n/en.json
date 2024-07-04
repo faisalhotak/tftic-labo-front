@@ -5,5 +5,19 @@
     "logIn": "Log in",
     "signUp": "Sign up",
     "language": "Language"
+  },
+  "searchBar": {
+    "function": "Function",
+    "skill": "Skill",
+    "or": "or",
+    "company": "Company",
+    "city": "City",
+    "province": "Province",
+    "zipCode": "Zip code",
+    "findJob": "Find Job"
+  },
+  "carousel": {
+    "published": "Published"
   }
 }
+

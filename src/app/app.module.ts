@@ -4,7 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {TranslateLoader, TranslateModule, TranslateService} from '@ngx-translate/core';
+import {
+  TranslateLoader,
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
 import {
   HttpClient,
   provideHttpClient,
@@ -18,6 +22,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AuthService } from './core/services/auth.service';
 import { MessageService } from 'primeng/api';
 import { jwtInterceptor } from './core/interceptor/jwt.interceptor';
+import { CoreModule } from './core/core.module';
 
 const httpTranslateLoader = (http: HttpClient) => {
   return new TranslateHttpLoader(http, COMMON.i18n.path, COMMON.i18n.extension);
@@ -26,6 +31,7 @@ const httpTranslateLoader = (http: HttpClient) => {
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -48,7 +54,6 @@ const httpTranslateLoader = (http: HttpClient) => {
   bootstrap: [AppComponent],
 })
 export class AppModule {
-
   constructor(private readonly _translateService: TranslateService) {
     this._translateService.setDefaultLang(COMMON.i18n.defaultLanguage);
     this._translateService.use(COMMON.i18n.defaultLanguage);

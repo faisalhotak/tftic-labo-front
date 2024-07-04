@@ -5,5 +5,18 @@
     "logIn": "Einloggen",
     "signUp": "Registrieren",
     "language": "Sprache"
+  },
+  "searchBar": {
+    "function": "Funktion",
+    "skill": "Fähigkeit",
+    "or": "oder",
+    "company": "Unternehmen",
+    "city": "Stadt",
+    "province": "Provinz",
+    "zipCode": "Postleitzahl",
+    "findJob": "Job finden"
+  },
+  "carousel": {
+    "published": "Veröffentlicht"
   }
 }
