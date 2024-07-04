@@ -1,0 +1,116 @@
+<h1>{{ 'welcome' | translate }} !</h1>
+
+<div>
+  <p-selectButton
+    [options]="selectTypes"
+    [(ngModel)]="userType.type"
+    optionLabel="label"
+    optionValue="value"
+    multiple="false"
+    (onChange)="onSelectChange()"
+  />
+</div>
+
+<h2>{{ userType.message | translate }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <p-floatLabel>
+      <input type="text" pInputText id="in-email" formControlName="email">
+      <label for="in-email">{{ 'email' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  <div>
+    <p-floatLabel>
+      <p-password formControlName="password" [toggleMask]="true" id="in-password" [inputStyle]="{'width':'100%'}" [style]="{'width': '100%'}" feedback="false"/>
+      <label for="in-password" >{{ 'password' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  <div>
+    <p-floatLabel>
+      <input type="text" pInputText id="in-firstname" formControlName="firstname">
+      <label for="in-firstname">{{ 'firstname' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  <div>
+    <p-floatLabel>
+      <input type="text" pInputText id="in-lastname" formControlName="lastname">
+      <label for="in-lastname">{{ 'lastname' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  <div>
+    <p-floatLabel>
+      <input type="text" pInputText id="in-phoneNumber" formControlName="phoneNumber">
+      <label for="in-phoneNumber">{{ 'phoneNumber' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  <div>
+    <p-floatLabel>
+      <input type="text" pInputText id="in-contactEmail" formControlName="contactEmail">
+      <label for="in-contactEmail">{{ 'contactEmail' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  <div>
+    <p-floatLabel>
+      <input type="text" pInputText id="in-zip" formControlName="zip">
+      <label for="in-zip">{{ 'zip' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  <div>
+    <p-floatLabel>
+      <input type="text" pInputText id="in-country" formControlName="country">
+      <label for="in-country">{{ 'country' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  <div>
+    <p-floatLabel>
+      <input type="text" pInputText id="in-city" formControlName="city">
+      <label for="in-city">{{ 'city' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  <div>
+    <p-floatLabel>
+      <input type="text" pInputText id="in-street" formControlName="street">
+      <label for="in-street">{{ 'street' | translate }}</label>
+    </p-floatLabel>
+  </div>
+
+  @if (userType.type === 'seekers') {
+    <form class="flex flex-column gap-3" [formGroup]="form">
+      @for (gender of genders; track $index) {
+        <div class="field-checkbox">
+          <p-radioButton
+            [inputId]="gender.key"
+            [value]="gender"
+            formControlName="gender" />
+          <label [for]="gender.key" class="ml-2">
+            {{ gender.name }}
+          </label>
+        </div>
+      }
+    </form>
+
+    <div class="flex flex-column gap-2">
+      <label for="in-birthDate" class="block">{{ 'birthDate' | translate }}</label>
+      <p-calendar
+        formControlName="birthDate"
+        dateFormat="dd/mm/yy"
+        [showIcon]="true"
+        id="in-birthdate"
+      ></p-calendar>
+    </div>
+  }
+
+  <div class="flex justify-content-center">
+    <p-button label="{{ 'auth.register.button.submit' | translate }}" type="submit" [style]="{'width': '100%'}"/>
+  </div>
+</form>
