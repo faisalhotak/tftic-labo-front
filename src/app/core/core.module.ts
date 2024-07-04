@@ -10,13 +10,13 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
-import {TranslateModule} from "@ngx-translate/core";
+import { TranslateModule } from '@ngx-translate/core';
+import { HomeComponent } from '../features/home/home.component';
+import { SharedModule } from '../shared/shared.module';
+import { JobService } from '../features/jobs/service/job.service';
 
 @NgModule({
-  declarations: [
-    CoreComponent,
-    HeaderComponent
-  ],
+  declarations: [CoreComponent, HeaderComponent, HomeComponent],
   imports: [
     CommonModule,
     CoreRoutingModule,
@@ -26,7 +26,9 @@ import {TranslateModule} from "@ngx-translate/core";
     InputTextModule,
     InputIconModule,
     IconFieldModule,
-    TranslateModule
+    TranslateModule,
+    SharedModule,
   ],
+  providers: [JobService],
 })
 export class CoreModule {}
