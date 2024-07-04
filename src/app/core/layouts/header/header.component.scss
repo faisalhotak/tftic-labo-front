@@ -54,4 +54,15 @@ body {
       background-color: #2c63b8;
     }
   }
+
+  .p-button-danger {
+    background-color: #ff4d4f;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    margin: 0 0.5rem;
+    &:hover {
+      background-color: #ac1118;
+    }
+  }
 }

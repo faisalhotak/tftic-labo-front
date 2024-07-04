@@ -1,9 +1,48 @@
 {
+  "welcome": "Welkom",
+  "email": "Email",
+  "password": "Wachtwoord",
+  "auth": {
+    "login": {
+      "message": "Log in om de baan te vinden die bij je past.",
+      "button": {
+        "submit": "Inloggen"
+      },
+      "success": {
+        "summary": "Authenticatie succesvol",
+        "detail": "Je bent succesvol ingelogd!"
+      },
+      "error": {
+        "summary": "Authenticatie mislukt"
+      }
+    },
+    "register": {
+      "message": "Meld je aan om de baan te vinden die bij je past.",
+      "button": {
+        "submit": "Aanmelden"
+      },
+      "success": {
+        "summary": "Registratie succesvol",
+        "detail": "Je bent succesvol geregistreerd!"
+      },
+      "error": {
+        "summary": "Registratie mislukt"
+      }
+    },
+    "logout": {
+      "success": {
+        "summary": "Uitloggen succesvol",
+        "detail": "Je bent succesvol uitgelogd!"
+      }
+    }
+  },
   "navbar": {
-    "startSearch": "Zoek starten",
-    "jobsList": "Vacaturelijst",
+    "home": "Thuis",
+    "jobs": "Banen",
+    "profile": "Profiel",
     "logIn": "Inloggen",
     "signUp": "Aanmelden",
+    "logOut": "Uitloggen",
     "language": "Taal"
   }
 }

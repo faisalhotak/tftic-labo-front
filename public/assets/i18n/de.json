@@ -1,9 +1,48 @@
 {
+  "welcome": "Willkommen",
+  "email": "Email",
+  "password": "Passwort",
+  "auth": {
+    "login": {
+      "message": "Melden Sie sich an, um den Job zu finden, der zu Ihnen passt.",
+      "button": {
+        "submit": "Anmelden"
+      },
+      "success": {
+        "summary": "Authentifizierung erfolgreich",
+        "detail": "Sie haben sich erfolgreich angemeldet!"
+      },
+      "error": {
+        "summary": "Authentifizierung fehlgeschlagen"
+      }
+    },
+    "register": {
+      "message": "Melden Sie sich an, um den Job zu finden, der zu Ihnen passt.",
+      "button": {
+        "submit": "Registrieren"
+      },
+      "success": {
+        "summary": "Registrierung erfolgreich",
+        "detail": "Sie haben sich erfolgreich registriert!"
+      },
+      "error": {
+        "summary": "Registrierung fehlgeschlagen"
+      }
+    },
+    "logout": {
+      "success": {
+        "summary": "Abmeldung erfolgreich",
+        "detail": "Sie haben sich erfolgreich abgemeldet!"
+      }
+    }
+  },
   "navbar": {
-    "startSearch": "Suche starten",
-    "jobsList": "Jobliste",
+    "home": "Startseite",
+    "jobs": "Jobs",
+    "profile": "Profil",
     "logIn": "Einloggen",
     "signUp": "Registrieren",
+    "logOut": "Ausloggen",
     "language": "Sprache"
   }
 }

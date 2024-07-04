@@ -1,9 +1,48 @@
 {
+  "welcome": "Bienvenue",
+  "email": "Email",
+  "password": "Mot de passe",
+  "auth": {
+    "login": {
+      "message": "Connectez-vous pour trouver l'emploi qui vous convient.",
+      "button": {
+        "submit": "Connexion"
+      },
+      "success": {
+        "summary": "Authentification réussie",
+        "detail": "Vous êtes connecté avec succès !"
+      },
+      "error": {
+        "summary": "Échec de l'authentification"
+      }
+    },
+    "register": {
+      "message": "Inscrivez-vous pour trouver l'emploi qui vous convient.",
+      "button": {
+        "submit": "S'inscrire"
+      },
+      "success": {
+        "summary": "Inscription réussie",
+        "detail": "Vous êtes inscrit avec succès !"
+      },
+      "error": {
+        "summary": "Échec de l'inscription"
+      }
+    },
+    "logout": {
+      "success": {
+        "summary": "Déconnexion réussie",
+        "detail": "Vous êtes déconnecté avec succès !"
+      }
+    }
+  },
   "navbar": {
-    "startSearch": "Commencer une recherche",
-    "jobsList": "Liste des emplois",
+    "home": "Accueil",
+    "jobs": "Emplois",
+    "profile": "Profil",
     "logIn": "Connexion",
     "signUp": "Inscription",
+    "logOut": "Déconnexion",
     "language": "Langue"
   }
 }
