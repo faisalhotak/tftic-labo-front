@@ -4,8 +4,14 @@ import { HttpClient } from '@angular/common/http';
 import { CookieService } from 'ngx-cookie-service';
 import { IAuth } from '../../features/auth/models/auth.model';
 import { ILoginForm } from '../../features/auth/forms/login.form';
-import { ENDPOINTS } from '../constants/endpoints';
+import { API_ENDPOINTS } from '../constants/api-endpoints';
 import { environment } from '../../../environments/environment';
+import {
+  IRegisterForm,
+  IRegisterSeekerForm,
+} from '../../features/auth/forms/register.form';
+
+type UserType = 'advertiser' | 'seeker';
 
 @Injectable()
 export class AuthService {
@@ -46,7 +52,16 @@ export class AuthService {
 
   login(form: ILoginForm) {
     return this._httpClient
-      .post<IAuth>(`${environment.baseUrl}${ENDPOINTS.LOGIN}`, form)
+      .post<IAuth>(`${environment.baseUrl}${API_ENDPOINTS.login}`, form)
+      .pipe(tap((auth) => (this.currentUser = auth)));
+  }
+
+  registerUser(form: IRegisterForm | IRegisterSeekerForm, userType: UserType) {
+    return this._httpClient
+      .post<IAuth>(
+        `${environment.baseUrl}${API_ENDPOINTS.register[userType]}`,
+        form,
+      )
       .pipe(tap((auth) => (this.currentUser = auth)));
   }
 
