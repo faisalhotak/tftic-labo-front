@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { HttpClient, HttpParams } from "@angular/common/http";
-=======
-import { HttpClient } from "@angular/common/http";
->>>>>>> 5ae28e5 (Feat(jobs): add list jobs)
 import { Injectable } from "@angular/core";
 import { Observable, map } from "rxjs";
 import { environment } from "../../../../environments/environment";
