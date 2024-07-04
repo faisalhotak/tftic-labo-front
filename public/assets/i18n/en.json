@@ -5,5 +5,18 @@
     "logIn": "Log in",
     "signUp": "Sign up",
     "language": "Language"
+  },
+
+  "footer": {
+    "company": "Company",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact",
+    "resources": "Resources",
+    "helpCenter": "Help Center",
+    "faq": "FAQ",
+    "privacyPolicy": "Privacy Policy",
+    "socialMedia": "Social Media",
+    "allRightsReserved": "All rights reserved"
   }
 }
