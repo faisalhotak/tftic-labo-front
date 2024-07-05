@@ -1,6 +1,9 @@
-:host{
-    p-card-body {
-        margin-top: 20px;
-    }
+:host {
+    margin-top: 20px;
     
+    p-card {
+        &:hover {
+          cursor: pointer; 
+        }
+      }
 }

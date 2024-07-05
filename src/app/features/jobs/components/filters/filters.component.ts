@@ -13,16 +13,16 @@ export class FiltersComponent implements OnInit{
   constructor(private readonly jobService: JobService) {
   }
 
+  getJobs() {
+    this.jobs$ = this.jobService.getAllJobs(this.filters);
+    this.jobsToSend$.emit(this.jobs$);
+  }
+  
   jobs$!: Observable<Job[]>;
 
   filters: Map<string, string> = new Map<string, string>();
 
   @Output() jobsToSend$ = new EventEmitter<Observable<Job[]>>();
-
-  getJobs() {
-    this.jobs$ = this.jobService.getAllJobs(this.filters);
-    this.jobsToSend$.emit(this.jobs$);
-  }
 
   addFilter(filter: Pair) {
     this.filters.set(filter.key, filter.value);

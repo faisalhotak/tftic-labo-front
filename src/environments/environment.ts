@@ -1,3 +1,3 @@
 export const environment = {
-  baseUrl: 'https://api.jobs.flyingdesk.be/v1',
+  baseUrl: 'http://localhost:8080',
 };

@@ -5,6 +5,7 @@ import { environment } from "../../../../environments/environment";
 import { Job } from "../models/job";
 
 @Injectable()
+
 export class JobService {
     constructor(private http: HttpClient) {}
 
@@ -19,7 +20,6 @@ export class JobService {
 
         return this.http.get<Job[]>(`${environment.baseUrl}/job-offers`, {
             params: httpParams
-
         }).pipe(
             map(
                 jobs => jobs.map(
@@ -27,6 +27,14 @@ export class JobService {
                 )
             )
         );
+    }
+
+    getJobById(id: string): Observable<Job> {
+        return this.http.get<Job>(`${environment.baseUrl}/job-offers/${id}`).pipe(
+            map(
+                job => ({...job, publishingDate: new Date(job.publishingDate), expirationDate: new Date(job.expiringDate)} as Job)
+                )
+            );
     }
 
 

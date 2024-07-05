@@ -27,6 +27,7 @@ export class FilterLocationComponent {
     if (newLocation === null) {
       newLocation = "";
     }
+    
     this.newLocationFilter.emit({key: "zipCity", value: newLocation});
   }
 

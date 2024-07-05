@@ -18,6 +18,7 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { FormsModule } from '@angular/forms';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
+import { JobDetailsComponent } from './pages/job-details/job-details.component';
 
 
 
@@ -29,7 +30,8 @@ import { ButtonModule } from 'primeng/button';
     PublishingPipe,
     LocationPipe,
     FilterLocationComponent,
-    FiltersComponent
+    FiltersComponent,
+    JobDetailsComponent,
   ],
   imports: [
     CommonModule,
