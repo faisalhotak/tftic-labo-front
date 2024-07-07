@@ -1,20 +1,22 @@
-import { Component, effect } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../../../../core/services/auth.service';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
-import { REGISTER_SEEKER_FORM } from '../../forms/register.form';
+import { FORMS } from '../../forms/register.form';
 
-interface UserType {
-  type: 'seekers' | 'advertisers';
+export type UserType = 'seekers' | 'advertisers';
+
+export interface UserTypeDetails {
+  type: UserType;
   message: string;
   form: any;
 }
 
 const MESSAGES = {
-  seeker: 'auth.register.seeker.message',
-  advertiser: 'auth.register.advertiser.message',
+  seekers: 'auth.register.seeker.message',
+  advertisers: 'auth.register.advertiser.message',
 };
 
 @Component({
@@ -36,25 +38,24 @@ export class RegisterComponent {
     },
   ];
 
-  protected userType: UserType = {
-    type: 'seekers',
-    message: MESSAGES['seeker'],
-    form: REGISTER_SEEKER_FORM,
+  protected userType = signal<UserType>('seekers');
+
+  protected userTypeDetails: UserTypeDetails = {
+    type: this.userType(),
+    message: MESSAGES[this.userType()],
+    form: FORMS[this.userType()],
   };
 
   protected genders = [
     {
-      key: '1',
       name: this._translateService.instant('gender.M'),
       value: 'M',
     },
     {
-      key: '2',
       name: this._translateService.instant('gender.F'),
       value: 'F',
     },
     {
-      key: '3',
       name: this._translateService.instant('gender.X'),
       value: 'X',
     },
@@ -67,45 +68,52 @@ export class RegisterComponent {
     private readonly _messageService: MessageService,
     private readonly _translateService: TranslateService,
   ) {
-    this.form = this._builder.group(this.userType.form);
+    this.form = this._builder.group(this.userTypeDetails.form);
 
     effect(() => {
-      const userType = this.userType;
-      const form = userType.form;
-      console.log('userType', userType);
-      console.log('form', form);
+      const type = this.userType();
+
+      this.userTypeDetails = {
+        type,
+        message: MESSAGES[type],
+        form: FORMS[type],
+      };
+
+      this.form = this._builder.group(this.userTypeDetails.form);
     });
   }
 
-  onSelectChange() {
-    console.log('onSelectChange');
-    console.log('this.userType', this.userType);
-    this.form = this._builder.group(this.userType.form);
-  }
-
   onSubmit() {
-    // this._authService.registerAdvertiser(this.form.value).subscribe({
-    //   next: (_) => {
-    //     this._routerService.navigate(['/']).then();
-    //     this._messageService.add({
-    //       severity: 'success',
-    //       summary: this._translateService.instant(
-    //         'auth.register.success.summary',
-    //       ),
-    //       detail: this._translateService.instant(
-    //         'auth.register.success.detail',
-    //       ),
-    //     });
-    //   },
-    //   error: (err) => {
-    //     this._messageService.add({
-    //       severity: 'error',
-    //       summary: this._translateService.instant(
-    //         'auth.register.error.summary',
-    //       ),
-    //       detail: err.error,
-    //     });
-    //   },
-    // });
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+
+      return;
+    }
+
+    this._authService
+      .registerUser(this.form.value, this.userTypeDetails.type)
+      .subscribe({
+        next: (_) => {
+          this._routerService.navigate(['/']).then();
+          this._messageService.add({
+            severity: 'success',
+            summary: this._translateService.instant(
+              'auth.register.success.summary',
+            ),
+            detail: this._translateService.instant(
+              'auth.register.success.detail',
+            ),
+          });
+        },
+        error: (err) => {
+          this._messageService.add({
+            severity: 'error',
+            summary: this._translateService.instant(
+              'auth.register.error.summary',
+            ),
+            detail: JSON.stringify(err.error),
+          });
+        },
+      });
   }
 }

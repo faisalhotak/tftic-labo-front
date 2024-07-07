@@ -10,8 +10,7 @@ import {
   IRegisterForm,
   IRegisterSeekerForm,
 } from '../../features/auth/forms/register.form';
-
-type UserType = 'advertiser' | 'seeker';
+import { UserType } from '../../features/auth/pages/register/register.component';
 
 @Injectable()
 export class AuthService {

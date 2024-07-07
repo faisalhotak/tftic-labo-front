@@ -18,7 +18,7 @@ export interface IRegisterSeekerForm extends IRegisterForm {
   birthDate: string;
 }
 
-export const REGISTER_FORM = {
+const REGISTER_FORM = {
   email: ['', [Validators.required, Validators.email]],
   password: ['', [Validators.required]],
   firstname: ['', [Validators.required]],
@@ -31,12 +31,13 @@ export const REGISTER_FORM = {
   street: ['', [Validators.required]],
 };
 
-export const REGISTER_ADVERTISER_FORM = {
-  ...REGISTER_FORM,
-};
-
-export const REGISTER_SEEKER_FORM = {
+const REGISTER_SEEKER_FORM = {
   ...REGISTER_FORM,
   gender: ['', [Validators.required]],
   birthDate: ['', [Validators.required]],
+};
+
+export const FORMS = {
+  seekers: REGISTER_SEEKER_FORM,
+  advertisers: REGISTER_FORM,
 };

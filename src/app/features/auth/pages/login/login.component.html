@@ -1,23 +1,17 @@
-<h1>{{ 'welcome' | translate }} !</h1>
+<h1>{{ 'welcome' | translate }}!</h1>
 
 <h2>{{ 'auth.login.message' | translate }}</h2>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-email" formControlName="email">
-      <label for="in-email">{{ 'email' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['email']" fieldId="in-email" label="email">
+    <input type="text" pInputText id="in-email" formControlName="email">
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <p-password formControlName="password" [toggleMask]="true" id="in-password" [inputStyle]="{'width':'100%'}" [style]="{'width': '100%'}" feedback="false"/>
-      <label for="in-password" >{{ 'password' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['password']" fieldId="in-password" label="password">
+    <p-password formControlName="password" [toggleMask]="true" id="in-password" [inputStyle]="{'width':'100%'}" [style]="{'width': '100%'}" feedback="false"></p-password>
+  </app-form-field>
 
   <div class="flex justify-content-center">
-    <p-button label="{{ 'auth.login.button.submit' | translate }}" type="submit" [style]="{'width': '100%'}"/>
+    <p-button label="{{ 'auth.login.button.submit' | translate }}" type="submit" [style]="{'width': '100%'}" [disabled]="form.invalid"></p-button>
   </div>
 </form>

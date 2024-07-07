@@ -19,6 +19,21 @@
     "X": "Other"
   },
   "birthDate": "Birth Date",
+  "form": {
+    "errors": {
+      "required": "This field is required",
+      "email": "Please enter a valid email address",
+      "minlength": "This field must be at least 6 characters long",
+      "maxlength": "This field must be at most 30 characters long",
+      "pattern": "This field must contain only letters",
+      "password": "This field must contain at least one uppercase letter, one lowercase letter, one number and one special character",
+      "phoneNumber": "Please enter a valid phone number",
+      "zip": "Please enter a valid zip code",
+      "date": "Please enter a valid date",
+      "emailExists": "This email address is already in use",
+      "passwordMatch": "Passwords do not match"
+    }
+  },
   "auth": {
     "login": {
       "message": "Log in to find the job that's right for you.",

@@ -1,10 +1,47 @@
 {
   "welcome": "Bienvenue",
+  "advertiser": "Recruteur",
+  "seeker": "Chercheur d'emploi",
   "email": "Email",
   "password": "Mot de passe",
+  "firstname": "Prénom",
+  "lastname": "Nom de famille",
+  "phoneNumber": "Numéro de téléphone",
+  "contactEmail": "Email de contact",
+  "zip": "Code postal",
+  "country": "Pays",
+  "city": "Ville",
+  "street": "Rue",
+  "gender": {
+    "label": "Genre",
+    "M": "Homme",
+    "F": "Femme",
+    "X": "Autre"
+  },
+  "birthDate": "Date de naissance",
+  "form": {
+    "errors": {
+      "required": "Ce champ est obligatoire",
+      "email": "Veuillez saisir une adresse email valide",
+      "minlength": "Ce champ doit comporter au moins 6 caractères",
+      "maxlength": "Ce champ doit comporter au plus 30 caractères",
+      "pattern": "Ce champ doit contenir uniquement des lettres",
+      "password": "Ce champ doit contenir au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial",
+      "phoneNumber": "Veuillez saisir un numéro de téléphone valide",
+      "zip": "Veuillez saisir un code postal valide",
+      "date": "Veuillez saisir une date valide",
+      "emailExists": "Cette adresse email est déjà utilisée",
+      "passwordMatch": "Les mots de passe ne correspondent pas"
+    }
+  },
   "auth": {
     "login": {
-      "message": "Connectez-vous pour trouver l'emploi qui vous convient.",
+      "seeker": {
+        "message": "Connectez-vous pour trouver l'emploi qui vous convient."
+      },
+      "advertiser": {
+        "message": "Connectez-vous pour publier des offres d'emploi et trouver les bons candidats."
+      },
       "button": {
         "submit": "Connexion"
       },

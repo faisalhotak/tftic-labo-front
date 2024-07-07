@@ -1,103 +1,82 @@
-<h1>{{ 'welcome' | translate }} !</h1>
+<h1>{{ 'welcome' | translate }}!</h1>
 
 <div>
   <p-selectButton
     [options]="selectTypes"
-    [(ngModel)]="userType.type"
+    [(ngModel)]="userType"
     optionLabel="label"
     optionValue="value"
     multiple="false"
-    (onChange)="onSelectChange()"
-  />
+    unselectable="true"
+    allowEmpty="false"
+  ></p-selectButton>
 </div>
 
-<h2>{{ userType.message | translate }}</h2>
+<h2>{{ userTypeDetails.message | translate }}</h2>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-email" formControlName="email">
-      <label for="in-email">{{ 'email' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['email']" fieldId="in-email" label="email">
+    <input type="text" pInputText id="in-email" formControlName="email">
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <p-password formControlName="password" [toggleMask]="true" id="in-password" [inputStyle]="{'width':'100%'}" [style]="{'width': '100%'}" feedback="false"/>
-      <label for="in-password" >{{ 'password' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['password']" fieldId="in-password" label="password">
+    <p-password formControlName="password" [toggleMask]="true" id="in-password" [inputStyle]="{'width':'100%'}"
+                [style]="{'width': '100%'}" feedback="false"></p-password>
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-firstname" formControlName="firstname">
-      <label for="in-firstname">{{ 'firstname' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['firstname']" fieldId="in-firstname" label="firstname">
+    <input type="text" pInputText id="in-firstname" formControlName="firstname">
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-lastname" formControlName="lastname">
-      <label for="in-lastname">{{ 'lastname' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['lastname']" fieldId="in-lastname" label="lastname">
+    <input type="text" pInputText id="in-lastname" formControlName="lastname">
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-phoneNumber" formControlName="phoneNumber">
-      <label for="in-phoneNumber">{{ 'phoneNumber' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['phoneNumber']" fieldId="in-phoneNumber" label="phoneNumber">
+    <input type="text" pInputText id="in-phoneNumber" formControlName="phoneNumber">
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-contactEmail" formControlName="contactEmail">
-      <label for="in-contactEmail">{{ 'contactEmail' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['contactEmail']" fieldId="in-contactEmail" label="contactEmail">
+    <input type="text" pInputText id="in-contactEmail" formControlName="contactEmail">
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-zip" formControlName="zip">
-      <label for="in-zip">{{ 'zip' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['zip']" fieldId="in-zip" label="zip">
+    <input type="text" pInputText id="in-zip" formControlName="zip">
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-country" formControlName="country">
-      <label for="in-country">{{ 'country' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['country']" fieldId="in-country" label="country">
+    <input type="text" pInputText id="in-country" formControlName="country">
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-city" formControlName="city">
-      <label for="in-city">{{ 'city' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['city']" fieldId="in-city" label="city">
+    <input type="text" pInputText id="in-city" formControlName="city">
+  </app-form-field>
 
-  <div>
-    <p-floatLabel>
-      <input type="text" pInputText id="in-street" formControlName="street">
-      <label for="in-street">{{ 'street' | translate }}</label>
-    </p-floatLabel>
-  </div>
+  <app-form-field [control]="form.controls['street']" fieldId="in-street" label="street">
+    <input type="text" pInputText id="in-street" formControlName="street">
+  </app-form-field>
 
-  @if (userType.type === 'seekers') {
-    <form class="flex flex-column gap-3" [formGroup]="form">
+  @if (userTypeDetails.type === 'seekers') {
+    <div class="flex flex-column gap-3">
       @for (gender of genders; track $index) {
         <div class="field-checkbox">
           <p-radioButton
-            [inputId]="gender.key"
-            [value]="gender"
-            formControlName="gender" />
-          <label [for]="gender.key" class="ml-2">
-            {{ gender.name }}
-          </label>
+            [inputId]="gender.value"
+            [value]="gender.value"
+            formControlName="gender"
+          ></p-radioButton>
+          <label [for]="gender.value" class="ml-2">{{ gender.name }}</label>
         </div>
       }
-    </form>
+
+      @if (form.controls['gender'].invalid && (form.controls['gender'].dirty || form.controls['gender'].touched)) {
+        <div class="validation-errors">
+          @if (form.controls['gender'].errors?.['required']) {
+            {{ 'form.errors.required' | translate }}
+          }
+        </div>
+      }
+    </div>
 
     <div class="flex flex-column gap-2">
       <label for="in-birthDate" class="block">{{ 'birthDate' | translate }}</label>
@@ -107,10 +86,18 @@
         [showIcon]="true"
         id="in-birthdate"
       ></p-calendar>
+
+      @if (form.controls['birthDate'].invalid && (form.controls['birthDate'].dirty || form.controls['birthDate'].touched)) {
+        <div class="validation-errors">
+          @if (form.controls['birthDate'].errors?.['required']) {
+            {{ 'form.errors.required' | translate }}
+          }
+        </div>
+      }
     </div>
   }
 
   <div class="flex justify-content-center">
-    <p-button label="{{ 'auth.register.button.submit' | translate }}" type="submit" [style]="{'width': '100%'}"/>
+    <p-button label="{{ 'auth.register.button.submit' | translate }}" type="submit" [style]="{'width': '100%'}" [disabled]="form.invalid"></p-button>
   </div>
 </form>
