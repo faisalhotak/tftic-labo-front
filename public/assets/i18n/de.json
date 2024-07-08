@@ -94,5 +94,13 @@
   },
   "carousel": {
     "published": "Veröffentlicht"
+  },
+  "cookie": {
+    "header": "Auf dieser Website werden Cookies verwendet!",
+    "message": "Diese Website verwendet Cookies, um sicherzustellen, dass Sie die beste Erfahrung auf unserer Website machen.",
+    "dismiss": "Verstanden!",
+    "allow": "Cookies erlauben",
+    "deny": "Ablehnen",
+    "policy": "Mehr erfahren"
   }
 }

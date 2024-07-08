@@ -89,7 +89,7 @@ export class AppComponent implements OnInit, OnDestroy {
         'cookie.dismiss',
         'cookie.allow',
         'cookie.deny',
-        'cookie.cookiePolicyLink',
+        'cookie.policy',
       ])
       .subscribe((data) => {
         const content: NgcContentOptions =
