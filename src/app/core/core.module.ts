@@ -19,6 +19,7 @@ import { SearchBarComponent } from '../shared/components/search-bar/search-bar.c
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { CardModule } from 'primeng/card';
     AutoCompleteModule,
     CarouselModule,
     CardModule,
+    MenubarModule,
   ],
   providers: [JobService],
 })
