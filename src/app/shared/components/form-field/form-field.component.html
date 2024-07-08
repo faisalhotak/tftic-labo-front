@@ -1,0 +1,17 @@
+<div>
+  <p-floatLabel>
+    <ng-content></ng-content>
+    <label [for]="fieldId">{{ label | translate }}</label>
+  </p-floatLabel>
+
+  @if (control.invalid && (control.dirty || control.touched)) {
+    <div class="validation-errors">
+      @if (control.errors?.['required']) {
+        {{ 'form.errors.required' | translate }}
+      }
+      @if (control.errors?.['email']) {
+        {{ 'form.errors.email' | translate }}
+      }
+    </div>
+  }
+</div>

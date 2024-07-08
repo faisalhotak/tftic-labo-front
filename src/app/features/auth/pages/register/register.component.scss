@@ -10,6 +10,11 @@
     margin-top: 20px;
     gap: 15px;
 
+    div {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
     @layer primeng {
       .p-inputtext,
       p-floatlabel,

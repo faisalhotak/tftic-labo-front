@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,7 +21,8 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AuthService } from './core/services/auth.service';
 import { MessageService } from 'primeng/api';
-import { jwtInterceptor } from './core/interceptor/jwt.interceptor';
+import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { GlobalErrorHandler } from './core/handlers/global-error.handler';
 import { CoreModule } from './core/core.module';
 
 const httpTranslateLoader = (http: HttpClient) => {
@@ -31,9 +32,9 @@ const httpTranslateLoader = (http: HttpClient) => {
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    CoreModule,
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
@@ -50,6 +51,10 @@ const httpTranslateLoader = (http: HttpClient) => {
     AuthService,
     MessageService,
     provideHttpClient(withInterceptors([jwtInterceptor])),
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler,
+    },
   ],
   bootstrap: [AppComponent],
 })

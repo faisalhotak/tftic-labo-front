@@ -1,13 +1,22 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <a href="#">{{ siteName }}</a>
+    <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
   </div>
   <div class="navbar-center">
-    <button pButton type="button" label="{{ 'navbar.startSearch' | translate }}" class="text-button" [text]="true" severity="secondary"></button>
-    <button pButton type="button" label="{{ 'navbar.jobsList' | translate }}" class="text-button" [text]="true" severity="secondary"></button>
+    @for (link of FEATURE_ROUTES; track $index) {
+      <button pButton type="button" label="{{ link.label | translate }}" class="text-button" [text]="true" severity="secondary" [routerLink]="link.url"></button>
+    }
   </div>
   <div class="navbar-right">
-    <button pButton type="button" label="{{ 'navbar.logIn' | translate }}" class="p-button-secondary" severity="secondary"></button>
-    <button pButton type="button" label="{{ 'navbar.signUp' | translate }}" class="p-button-primary" severity="primary"></button>
+    @if (!(isConnected())) {
+      <button pButton type="button" label="{{ 'navbar.logIn' | translate }}" class="p-button-secondary" severity="secondary" [routerLink]="ESSENTIAL_ROUTES.auth.login.url"></button>
+      <button pButton type="button" label="{{ 'navbar.signUp' | translate }}" class="p-button-primary" severity="primary" [routerLink]="ESSENTIAL_ROUTES.auth.register.url"></button>
+    }
+    @else {
+      <button pButton type="button" label="{{ 'navbar.profile' | translate }}" class="p-button-secondary" severity="secondary" [routerLink]="ESSENTIAL_ROUTES.profile.url"></button>
+      <button pButton type="button" label="{{ 'navbar.logOut' | translate }}" class="p-button-danger" severity="danger" (click)="handleLogout()"></button>
+    }
+
+    <app-country-dropdown />
   </div>
 </nav>

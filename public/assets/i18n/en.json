@@ -1,9 +1,85 @@
 {
+  "welcome": "Welcome",
+  "advertiser": "Job Advertiser",
+  "seeker": "Job Seeker",
+  "email": "Email",
+  "password": "Password",
+  "firstname": "Firstname",
+  "lastname": "Lastname",
+  "phoneNumber": "Phone Number",
+  "contactEmail": "Contact Email",
+  "zip": "Zip Code",
+  "country": "Country",
+  "city": "City",
+  "street": "Street",
+  "gender": {
+    "label": "Gender",
+    "M": "Man",
+    "F": "Woman",
+    "X": "Other"
+  },
+  "birthDate": "Birth Date",
+  "form": {
+    "errors": {
+      "required": "This field is required",
+      "email": "Please enter a valid email address",
+      "minlength": "This field must be at least 6 characters long",
+      "maxlength": "This field must be at most 30 characters long",
+      "pattern": "This field must contain only letters",
+      "password": "This field must contain at least one uppercase letter, one lowercase letter, one number and one special character",
+      "phoneNumber": "Please enter a valid phone number",
+      "zip": "Please enter a valid zip code",
+      "date": "Please enter a valid date",
+      "emailExists": "This email address is already in use",
+      "passwordMatch": "Passwords do not match"
+    }
+  },
+  "auth": {
+    "login": {
+      "message": "Log in to find the job that's right for you.",
+      "button": {
+        "submit": "Login"
+      },
+      "success": {
+        "summary": "Authentication successful",
+        "detail": "You have successfully logged in!"
+      },
+      "error": {
+        "summary": "Authentication failed"
+      }
+    },
+    "register": {
+      "seeker": {
+        "message": "Sign up to find the job that's right for you."
+      },
+      "advertiser": {
+        "message": "Sign up to post jobs and find the right candidates."
+      },
+      "button": {
+        "submit": "Sign up"
+      },
+      "success": {
+        "summary": "Registration successful",
+        "detail": "You have successfully registered!"
+      },
+      "error": {
+        "summary": "Registration failed"
+      }
+    },
+    "logout": {
+      "success": {
+        "summary": "Logout successful",
+        "detail": "You have successfully logged out!"
+      }
+    }
+  },
   "navbar": {
-    "startSearch": "Start a search",
-    "jobsList": "Jobs list",
+    "home": "Home",
+    "jobs": "Jobs",
+    "profile": "Profile",
     "logIn": "Log in",
     "signUp": "Sign up",
+    "logOut": "Log out",
     "language": "Language"
   },
   "searchBar": {
