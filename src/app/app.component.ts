@@ -1,6 +1,7 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import {
+  NgcContentOptions,
   NgcCookieConsentService,
   NgcInitializationErrorEvent,
   NgcInitializingEvent,
@@ -79,7 +80,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.translateService.addLangs(['en', 'fr']);
     this.translateService.setDefaultLang('en');
 
-    const browserLang = this.translateService.getBrowserLang();
+    const browserLang = this.translateService.getBrowserLang() as string;
     this.translateService.use(browserLang.match(/en|fr/) ? browserLang : 'en');
 
     this.translateService //
@@ -93,16 +94,18 @@ export class AppComponent implements OnInit, OnDestroy {
         'cookie.policy',
       ])
       .subscribe((data) => {
-        this.ccService.getConfig().content =
-          this.ccService.getConfig().content || {};
+        const content = this.ccService.getConfig().content || {};
+
+        content.header = data['cookie.header'];
+
         // Override default messages with the translated ones
-        this.ccService.getConfig().content.header = data['cookie.header'];
-        this.ccService.getConfig().content.message = data['cookie.message'];
-        this.ccService.getConfig().content.dismiss = data['cookie.dismiss'];
-        this.ccService.getConfig().content.allow = data['cookie.allow'];
-        this.ccService.getConfig().content.deny = data['cookie.deny'];
-        this.ccService.getConfig().content.link = data['cookie.link'];
-        this.ccService.getConfig().content.policy = data['cookie.policy'];
+        content.header = data['cookie.header'];
+        content.message = data['cookie.message'];
+        content.dismiss = data['cookie.dismiss'];
+        content.allow = data['cookie.allow'];
+        content.deny = data['cookie.deny'];
+        content.link = data['cookie.link'];
+        content.policy = data['cookie.policy'];
 
         this.ccService.destroy(); // remove previous cookie bar (with default messages)
         this.ccService.init(this.ccService.getConfig()); // update config with translated messages

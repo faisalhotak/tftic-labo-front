@@ -1,7 +1,4 @@
-import {
-  NgcCookieConsentConfig,
-  NgcCookieConsentModule,
-} from 'ngx-cookieconsent';
+import { NgcCookieConsentConfig } from 'ngx-cookieconsent';
 import { environment } from '../../../../environments/environment.development';
 
 export const cookieConfig: NgcCookieConsentConfig = {
