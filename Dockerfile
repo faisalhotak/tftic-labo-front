@@ -6,6 +6,8 @@ RUN npm cache clean --force
 
 COPY . .
 
+RUN echo "export const environment = { baseUrl: '${BASE_URL}' };" > ./src/environments/environment.ts
+
 RUN npm install
 
 RUN npm run build:prod
