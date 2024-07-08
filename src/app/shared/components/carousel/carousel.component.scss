@@ -1,0 +1,9 @@
+p.short-ellipsis {
+  width: 150px;
+  height: 100px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+}

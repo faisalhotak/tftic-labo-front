@@ -81,5 +81,18 @@
     "signUp": "Inscription",
     "logOut": "Déconnexion",
     "language": "Langue"
+  },
+  "searchBar": {
+    "function": "Fonction",
+    "skill": "Compétence",
+    "or": "ou",
+    "company": "Entreprise",
+    "city": "Ville",
+    "province": "Province",
+    "zipCode": "Code postal",
+    "findJob": "Trouver un emploi"
+  },
+  "carousel": {
+    "published": "Publié"
   }
 }

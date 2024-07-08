@@ -1,0 +1,3 @@
+@for (job of jobs$ | async; track job.id) {
+  <app-job-card [job]="job"></app-job-card>
+}

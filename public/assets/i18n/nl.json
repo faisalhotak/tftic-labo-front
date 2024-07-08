@@ -81,5 +81,18 @@
     "signUp": "Aanmelden",
     "logOut": "Uitloggen",
     "language": "Taal"
+  },
+  "searchBar": {
+    "function": "Functie",
+    "skill": "Vaardigheid",
+    "or": "of",
+    "company": "Bedrijf",
+    "city": "Stad",
+    "province": "Provincie",
+    "zipCode": "Postcode",
+    "findJob": "Vind een baan"
+  },
+  "carousel": {
+    "published": "Gepubliceerd"
   }
 }
