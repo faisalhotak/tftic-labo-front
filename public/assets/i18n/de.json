@@ -1,0 +1,98 @@
+{
+  "welcome": "Willkommen",
+  "advertiser": "Stellenanbieter",
+  "seeker": "Stellensuchender",
+  "email": "E-Mail",
+  "password": "Passwort",
+  "firstname": "Vorname",
+  "lastname": "Nachname",
+  "phoneNumber": "Telefonnummer",
+  "contactEmail": "Kontakt-E-Mail",
+  "zip": "Postleitzahl",
+  "country": "Land",
+  "city": "Stadt",
+  "street": "Straße",
+  "gender": {
+    "label": "Geschlecht",
+    "M": "Mann",
+    "F": "Frau",
+    "X": "Andere"
+  },
+  "birthDate": "Geburtsdatum",
+  "form": {
+    "errors": {
+      "required": "Dieses Feld ist erforderlich",
+      "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "minlength": "Dieses Feld muss mindestens 6 Zeichen lang sein",
+      "maxlength": "Dieses Feld darf höchstens 30 Zeichen lang sein",
+      "pattern": "Dieses Feld darf nur Buchstaben enthalten",
+      "password": "Dieses Feld muss mindestens einen Großbuchstaben, einen Kleinbuchstaben, eine Zahl und ein Sonderzeichen enthalten",
+      "phoneNumber": "Bitte geben Sie eine gültige Telefonnummer ein",
+      "zip": "Bitte geben Sie eine gültige Postleitzahl ein",
+      "date": "Bitte geben Sie ein gültiges Datum ein",
+      "emailExists": "Diese E-Mail-Adresse wird bereits verwendet",
+      "passwordMatch": "Die Passwörter stimmen nicht überein"
+    }
+  },
+  "auth": {
+    "login": {
+      "message": "Melden Sie sich an, um den Job zu finden, der zu Ihnen passt.",
+      "button": {
+        "submit": "Anmelden"
+      },
+      "success": {
+        "summary": "Authentifizierung erfolgreich",
+        "detail": "Sie haben sich erfolgreich angemeldet!"
+      },
+      "error": {
+        "summary": "Authentifizierung fehlgeschlagen"
+      }
+    },
+    "register": {
+      "seeker": {
+        "message": "Registrieren Sie sich, um den Job zu finden, der zu Ihnen passt."
+      },
+      "advertiser": {
+        "message": "Registrieren Sie sich, um Stellenanzeigen zu veröffentlichen und die richtigen Kandidaten zu finden."
+      },
+      "button": {
+        "submit": "Registrieren"
+      },
+      "success": {
+        "summary": "Registrierung erfolgreich",
+        "detail": "Sie haben sich erfolgreich registriert!"
+      },
+      "error": {
+        "summary": "Registrierung fehlgeschlagen"
+      }
+    },
+    "logout": {
+      "success": {
+        "summary": "Abmeldung erfolgreich",
+        "detail": "Sie haben sich erfolgreich abgemeldet!"
+      }
+    }
+  },
+  "navbar": {
+    "home": "Startseite",
+    "jobs": "Jobs",
+    "profile": "Profil",
+    "logIn": "Einloggen",
+    "signUp": "Registrieren",
+    "logOut": "Ausloggen",
+    "language": "Sprache"
+  },
+  "searchBar": {
+    "function": "Funktion",
+    "skill": "Fähigkeit",
+    "or": "oder",
+    "company": "Unternehmen",
+    "city": "Stadt",
+    "province": "Provinz",
+    "zipCode": "Postleitzahl",
+    "findJob": "Job finden"
+  },
+  "carousel": {
+    "published": "Veröffentlicht"
+  }
+}

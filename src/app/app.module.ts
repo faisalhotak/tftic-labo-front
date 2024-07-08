@@ -1,10 +1,14 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import {
+  TranslateLoader,
+  TranslateModule,
+  TranslateService,
+} from '@ngx-translate/core';
 import {
   HttpClient,
   provideHttpClient,
@@ -17,7 +21,9 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AuthService } from './core/services/auth.service';
 import { MessageService } from 'primeng/api';
-import { jwtInterceptor } from './core/interceptor/jwt.interceptor';
+import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { GlobalErrorHandler } from './core/handlers/global-error.handler';
+import { CoreModule } from './core/core.module';
 
 const httpTranslateLoader = (http: HttpClient) => {
   return new TranslateHttpLoader(http, COMMON.i18n.path, COMMON.i18n.extension);
@@ -28,6 +34,7 @@ const httpTranslateLoader = (http: HttpClient) => {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
@@ -44,7 +51,16 @@ const httpTranslateLoader = (http: HttpClient) => {
     AuthService,
     MessageService,
     provideHttpClient(withInterceptors([jwtInterceptor])),
+    {
+      provide: ErrorHandler,
+      useClass: GlobalErrorHandler,
+    },
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private readonly _translateService: TranslateService) {
+    this._translateService.setDefaultLang(COMMON.i18n.defaultLanguage);
+    this._translateService.use(COMMON.i18n.defaultLanguage);
+  }
+}

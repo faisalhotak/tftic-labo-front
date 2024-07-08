@@ -1,0 +1,30 @@
+<div class="flex justify-content-center">
+  <div class="card col-8">
+    <p-carousel
+      [value]="jobs"
+      [numVisible]="3"
+      [numScroll]="3"
+      [circular]="true"
+      [responsiveOptions]="responsiveOptions">
+      <ng-template let-job pTemplate="item">
+        <p-card header=" {{ job.jobFunction.name | translate }}">
+          <ng-template pTemplate="header">
+            <img alt="Card-job" src="/assets/images/banner-job.png"/>
+            <p>{{ 'carousel.published' | translate }}: {{ job.publishingDate | date }} </p>
+          </ng-template>
+          <ng-template pTemplate="content">
+            <p class="short-ellipsis">
+              {{ job.description | translate }}
+            </p>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <div class="flex gap-3 mt-1">
+              <p-button label="View" severity="secondary" class="w-full" styleClass="w-full"/>
+              <p-button label="Apply" class="w-full" styleClass="w-full"/>
+            </div>
+          </ng-template>
+        </p-card>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

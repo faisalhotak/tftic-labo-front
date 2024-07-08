@@ -1,18 +1,22 @@
 import { inject, Injectable } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { ROLES } from '../constants/roles';
-import { map, Observable } from 'rxjs';
-import { CanActivate } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AdminGuard implements CanActivate {
   private readonly _authService: AuthService = inject(AuthService);
+  private readonly _router: Router = inject(Router);
 
-  constructor() {}
+  canActivate(): boolean {
+    if (this._authService.currentUser?.roles.includes(ROLES.ADMIN)) {
+      return true;
+    }
 
-  canActivate(): Observable<boolean> {
-    return this._authService.currentUser$.pipe(
-      map((auth) => auth?.roles.includes(ROLES.ADMIN) || false),
-    );
+    this._router.navigate(['/']).then();
+
+    return false;
   }
 }
