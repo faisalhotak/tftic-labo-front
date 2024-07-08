@@ -5,12 +5,13 @@ import { CookieService } from 'ngx-cookie-service';
 import { IAuth } from '../../features/auth/models/auth.model';
 import { ILoginForm } from '../../features/auth/forms/login.form';
 import { API_ENDPOINTS } from '../constants/api-endpoints';
-import { environment } from '../../../environments/environment';
+
 import {
   IRegisterForm,
   IRegisterSeekerForm,
 } from '../../features/auth/forms/register.form';
 import { UserType } from '../../features/auth/pages/register/register.component';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable()
 export class AuthService {

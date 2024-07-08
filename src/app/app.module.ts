@@ -24,6 +24,8 @@ import { MessageService } from 'primeng/api';
 import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { GlobalErrorHandler } from './core/handlers/global-error.handler';
 import { CoreModule } from './core/core.module';
+import { NgcCookieConsentModule } from 'ngx-cookieconsent';
+import { cookieConfig } from './core/utils/config-cookie/config-cookie';
 
 const httpTranslateLoader = (http: HttpClient) => {
   return new TranslateHttpLoader(http, COMMON.i18n.path, COMMON.i18n.extension);
@@ -46,7 +48,9 @@ const httpTranslateLoader = (http: HttpClient) => {
     ToastModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument(),
+    NgcCookieConsentModule.forRoot(cookieConfig),
   ],
+
   providers: [
     AuthService,
     MessageService,

@@ -44,5 +44,6 @@ import { CardModule } from 'primeng/card';
     CardModule,
   ],
   providers: [JobService],
+  exports: [],
 })
 export class CoreModule {}
