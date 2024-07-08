@@ -18,8 +18,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit, OnDestroy {
   title = 'Labo front-end';
 
-  // private readonly ccService = inject(NgcCookieConsentService);
-  // private readonly translateService = inject(TranslateService);
+  private readonly ccService = inject(NgcCookieConsentService);
+  private readonly translateService = inject(TranslateService);
 
   //keep refs to subscriptions to be able to unsubscribe later
   private popupOpenSubscription!: Subscription;
@@ -30,10 +30,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private statusChangeSubscription!: Subscription;
   private revokeChoiceSubscription!: Subscription;
   private noCookieLawSubscription!: Subscription;
-  constructor(
-    private ccService: NgcCookieConsentService,
-    private translateService: TranslateService,
-  ) {}
+
   ngOnInit() {
     // subscribe to cookieconsent observables to react to main events
     this.popupOpenSubscription = this.ccService.popupOpen$.subscribe(() => {
@@ -77,34 +74,32 @@ export class AppComponent implements OnInit, OnDestroy {
       },
     );
     // Support for translated cookies messages
-    this.translateService.addLangs(['en', 'fr']);
+    this.translateService.addLangs(['en', 'fr', 'nl', 'de']);
     this.translateService.setDefaultLang('en');
 
     const browserLang = this.translateService.getBrowserLang() as string;
-    this.translateService.use(browserLang.match(/en|fr/) ? browserLang : 'en');
+    this.translateService.use(
+      browserLang.match(/en|fr|nl|de/) ? browserLang : 'en',
+    );
 
-    this.translateService //
+    this.translateService
       .get([
         'cookie.header',
         'cookie.message',
         'cookie.dismiss',
         'cookie.allow',
         'cookie.deny',
-        'cookie.link',
-        'cookie.policy',
+        'cookie.cookiePolicyLink',
       ])
       .subscribe((data) => {
-        const content = this.ccService.getConfig().content || {};
-
-        content.header = data['cookie.header'];
-
+        const content: NgcContentOptions =
+          this.ccService.getConfig().content || {};
         // Override default messages with the translated ones
         content.header = data['cookie.header'];
         content.message = data['cookie.message'];
         content.dismiss = data['cookie.dismiss'];
         content.allow = data['cookie.allow'];
         content.deny = data['cookie.deny'];
-        content.link = data['cookie.link'];
         content.policy = data['cookie.policy'];
 
         this.ccService.destroy(); // remove previous cookie bar (with default messages)
