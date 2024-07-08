@@ -1,3 +1,15 @@
+<<<<<<< HEAD
 @for (job of jobs$ | async; track job.id) {
   <app-job-card [job]="job"></app-job-card>
 }
+=======
+@if(jobs$ | async; as jobs){
+  <h1> Found {{ jobs.length }} Jobs</h1>
+  @for (job of jobs; track job.id) {
+    <app-job-card [job]="job"></app-job-card>
+  }
+}
+@else {
+  <p-progressSpinner ariaLabel="loading" />
+}
+>>>>>>> e255ac6 (Feat(jobs): adding location filter)

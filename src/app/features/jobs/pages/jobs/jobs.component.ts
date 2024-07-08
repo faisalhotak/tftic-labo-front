@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Job } from '../../models/job';
 
 @Component({
   selector: 'app-jobs',
@@ -6,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './jobs.component.scss'
 })
 export class JobsComponent {
+  jobsToSend$!: Observable<Job[]>;
 
+  updateJobs(updatedJobs$: Observable<Job[]>) {
+    console.log(updatedJobs$);
+    this.jobsToSend$ = updatedJobs$;
+  }
 }

@@ -7,9 +7,17 @@ import { JobCardComponent } from './components/job-card/job-card.component';
 import { JobService } from './service/job.service';
 
 import { CardModule } from 'primeng/card';
+import { AccordionModule } from 'primeng/accordion';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+
 import { PublishingPipePipe } from './pipes/publishing-pipe.pipe';
 import { LocationPipePipe } from './pipes/location-pipe.pipe';
 import { TranslateModule } from '@ngx-translate/core';
+import { FilterLocationComponent } from './components/filter-location/filter-location.component';
+import { FiltersComponent } from './components/filters/filters.component';
+import { FormsModule } from '@angular/forms';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ButtonModule } from 'primeng/button';
 
 
 
@@ -19,13 +27,20 @@ import { TranslateModule } from '@ngx-translate/core';
     JobsComponent,
     JobCardComponent,
     PublishingPipePipe,
-    LocationPipePipe
+    LocationPipePipe,
+    FilterLocationComponent,
+    FiltersComponent
   ],
   imports: [
     CommonModule,
     JobsRoutingModule,
     CardModule,
-    TranslateModule
+    TranslateModule,
+    AccordionModule,
+    AutoCompleteModule,
+    FormsModule,
+    ProgressSpinnerModule,
+    ButtonModule
   ],
   providers: [
     JobService
