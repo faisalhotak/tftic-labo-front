@@ -94,5 +94,11 @@
   },
   "carousel": {
     "published": "Gepubliceerd"
+  },
+  "job": {
+    "jobFound": "{{jobsLength}} banen gevonden",
+    "today": "Vandaag",
+    "yesterday": "Gisteren",
+    "daysAgo": "{{days}} dagen geleden"
   }
 }

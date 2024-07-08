@@ -1,6 +1,5 @@
 @if ( jobs$ | async; as jobs ) {
-  <h1> Found {{ jobs.length }} Jobs</h1>
-    <app-job-card *ngFor="let job of jobs" [job]="job"></app-job-card>
+  <h1> {{ 'job.jobFound' | translate: {jobsLength: jobs.length} }}</h1>
     @for (job of jobs; track job.id) {
       <app-job-card [job]="job"></app-job-card>
     }
