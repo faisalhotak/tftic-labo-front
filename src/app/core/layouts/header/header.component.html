@@ -1,4 +1,29 @@
-<nav class="navbar">
+<header>
+  <div class="navbar">
+    <div class="navbar-left">
+      <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
+    </div>
+
+    <p-menubar [model]="menuItems()">
+      <ng-template pTemplate="item" let-item>
+        <ng-container *ngIf="!item.command">
+          <a class="p-menuitem-link" [routerLink]="item.routerLink">{{ item.label | translate }}</a>
+        </ng-container>
+        <ng-container *ngIf="item.command">
+          <a class="p-menuitem-link" (click)="item.command()">{{ item.label | translate }}</a>
+        </ng-container>
+      </ng-template>
+      <ng-template pTemplate="end">
+        <app-country-dropdown></app-country-dropdown>
+      </ng-template>
+    </p-menubar>
+  </div>
+</header>
+
+
+
+
+<!--<nav class="navbar">
   <div class="navbar-left">
     <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
   </div>
@@ -20,3 +45,26 @@
     <app-country-dropdown />
   </div>
 </nav>
+-->
+
+<!--
+<header>
+  <div class="flex">
+    <div class="left">
+      <a class="logo" routerLink="/home">Job Portal</a>
+    </div>
+    <div class="center">
+      <ng-container *ngFor="let item of menuItems()">
+        <a class="menu-item" [routerLink]="item.routerLink">{{ item.label }}</a>
+      </ng-container>
+    </div>
+    <div class="right">
+      <p-menubar [model]="authItems()" class="auth-items"></p-menubar>
+      <p-dropdown [options]="dropdownOptions"
+                  [(ngModel)]="selectedOption"
+                  class="dropdown"
+      ></p-dropdown>
+    </div>
+  </div>
+</header>
+-->

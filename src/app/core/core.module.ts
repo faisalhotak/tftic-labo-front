@@ -18,16 +18,18 @@ import { SearchBarComponent } from '../shared/components/search-bar/search-bar.c
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
-import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from './layouts/footer/footer.component';
+import { MenubarModule } from 'primeng/menubar';
 
 @NgModule({
-  declarations: [CoreComponent,
+  declarations: [
+    CoreComponent,
     HeaderComponent,
     FooterComponent,
     HomeComponent,
     CarouselComponent,
-    SearchBarComponent,],
+    SearchBarComponent,
+  ],
   imports: [
     CommonModule,
     CoreRoutingModule,
@@ -42,6 +44,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
     AutoCompleteModule,
     CarouselModule,
     CardModule,
+    MenubarModule,
   ],
   providers: [JobService],
 })

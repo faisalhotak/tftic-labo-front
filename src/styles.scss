@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+
+  div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  @layer primeng {
+    .p-inputtext,
+    p-floatlabel,
+    p-button, {
+      width: 100%;
+    }
+  }
+}
