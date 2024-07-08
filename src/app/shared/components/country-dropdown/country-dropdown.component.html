@@ -1,0 +1,22 @@
+<p-dropdown
+  [options]="countries"
+  [(ngModel)]="selectedCountry"
+  optionLabel="name"
+  placeholder="Select a Country">
+  <ng-template pTemplate="selectedItem">
+    <div class="flex align-items-center gap-2 flag-container" *ngIf="selectedCountry">
+      <img
+        [ngSrc]="selectedCountry().icon"
+        style="width: 18px; position: relative;" [alt]="selectedCountry().name" fill/>
+      <div>{{ selectedCountry().code }}</div>
+    </div>
+  </ng-template>
+  <ng-template let-country pTemplate="item">
+    <div class="flex align-items-center gap-2 flag-container">
+      <img
+        [ngSrc]="country.icon"
+        style="width: 18px; position: relative;" [alt]="selectedCountry().name" fill/>
+      <div>{{ country.code }}</div>
+    </div>
+  </ng-template>
+</p-dropdown>

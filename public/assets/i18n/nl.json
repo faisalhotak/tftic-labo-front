@@ -1,10 +1,99 @@
 {
+  "welcome": "Welkom",
+  "advertiser": "Vacature Adverteerder",
+  "seeker": "Werk Zoeker",
+  "email": "E-mail",
+  "password": "Wachtwoord",
+  "firstname": "Voornaam",
+  "lastname": "Achternaam",
+  "phoneNumber": "Telefoonnummer",
+  "contactEmail": "Contact E-mail",
+  "zip": "Postcode",
+  "country": "Land",
+  "city": "Stad",
+  "street": "Straat",
+  "gender": {
+    "label": "Geslacht",
+    "M": "Man",
+    "F": "Vrouw",
+    "X": "Overig"
+  },
+  "birthDate": "Geboortedatum",
+  "form": {
+    "errors": {
+      "required": "Dit veld is verplicht",
+      "email": "Voer een geldig e-mailadres in",
+      "minlength": "Dit veld moet minimaal 6 tekens lang zijn",
+      "maxlength": "Dit veld mag maximaal 30 tekens lang zijn",
+      "pattern": "Dit veld mag alleen letters bevatten",
+      "password": "Dit veld moet minstens één hoofdletter, één kleine letter, één nummer en één speciaal teken bevatten",
+      "phoneNumber": "Voer een geldig telefoonnummer in",
+      "zip": "Voer een geldige postcode in",
+      "date": "Voer een geldige datum in",
+      "emailExists": "Dit e-mailadres is al in gebruik",
+      "passwordMatch": "Wachtwoorden komen niet overeen"
+    }
+  },
+  "auth": {
+    "login": {
+      "message": "Log in om de baan te vinden die bij je past.",
+      "button": {
+        "submit": "Inloggen"
+      },
+      "success": {
+        "summary": "Authenticatie succesvol",
+        "detail": "Je bent succesvol ingelogd!"
+      },
+      "error": {
+        "summary": "Authenticatie mislukt"
+      }
+    },
+    "register": {
+      "seeker": {
+        "message": "Meld je aan om de baan te vinden die bij je past."
+      },
+      "advertiser": {
+        "message": "Meld je aan om vacatures te plaatsen en de juiste kandidaten te vinden."
+      },
+      "button": {
+        "submit": "Aanmelden"
+      },
+      "success": {
+        "summary": "Registratie succesvol",
+        "detail": "Je bent succesvol geregistreerd!"
+      },
+      "error": {
+        "summary": "Registratie mislukt"
+      }
+    },
+    "logout": {
+      "success": {
+        "summary": "Uitloggen succesvol",
+        "detail": "Je bent succesvol uitgelogd!"
+      }
+    }
+  },
   "navbar": {
-    "startSearch": "Zoek starten",
-    "jobsList": "Vacaturelijst",
+    "home": "Thuis",
+    "jobs": "Banen",
+    "profile": "Profiel",
     "logIn": "Inloggen",
     "signUp": "Aanmelden",
+    "logOut": "Uitloggen",
     "language": "Taal"
+  },
+  "searchBar": {
+    "function": "Functie",
+    "skill": "Vaardigheid",
+    "or": "of",
+    "company": "Bedrijf",
+    "city": "Stad",
+    "province": "Provincie",
+    "zipCode": "Postcode",
+    "findJob": "Vind een baan"
+  },
+  "carousel": {
+    "published": "Gepubliceerd"
   },
 
   "footer": {

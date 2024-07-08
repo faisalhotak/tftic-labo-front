@@ -10,11 +10,24 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import { SharedModule } from '../shared/shared.module';
+import { HomeComponent } from '../features/home/home.component';
+import { JobService } from '../features/jobs/service/job.service';
+import { CarouselComponent } from '../shared/components/carousel/carousel.component';
+import { SearchBarComponent } from '../shared/components/search-bar/search-bar.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { CarouselModule } from 'primeng/carousel';
+import { CardModule } from 'primeng/card';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from './layouts/footer/footer.component';
 
 @NgModule({
-  declarations: [CoreComponent, HeaderComponent, FooterComponent],
+  declarations: [CoreComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent,
+    CarouselComponent,
+    SearchBarComponent,],
   imports: [
     CommonModule,
     CoreRoutingModule,
@@ -25,6 +38,11 @@ import { FooterComponent } from './layouts/footer/footer.component';
     InputIconModule,
     IconFieldModule,
     TranslateModule,
+    SharedModule,
+    AutoCompleteModule,
+    CarouselModule,
+    CardModule,
   ],
+  providers: [JobService],
 })
 export class CoreModule {}
