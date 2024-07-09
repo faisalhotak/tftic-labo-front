@@ -100,5 +100,17 @@
     "today": "Heute",
     "yesterday": "Gestern",
     "daysAgo": "Vor {{days}} Tagen"
+  },
+  "footer": {
+    "company": "Unternehmen",
+    "about": "Über uns",
+    "careers": "Karrieren",
+    "contact": "Kontakt",
+    "resources": "Ressourcen",
+    "helpCenter": "Hilfezentrum",
+    "faq": "FAQ",
+    "privacyPolicy": "Datenschutz-Bestimmungen",
+    "socialMedia": "Soziale Medien",
+    "allRightsReserved": "Alle Rechte vorbehalten"
   }
 }

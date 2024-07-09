@@ -1,0 +1,35 @@
+<footer>
+  <div class="footer-container">
+    <div class="footer-grid">
+      @for (section of footerInternalSections; track $index) {
+        <div class="footer-section">
+          <h3>{{ section.title | translate }}</h3>
+          <div class="footer-links">
+            @for (link of section.links; track $index) {
+              <a [routerLink]="link.url">{{ link.label | translate }}</a>
+            }
+          </div>
+        </div>
+      }
+      @for (section of footerExternalSections; track $index) {
+        <div class="footer-section">
+          <h3>{{ section.title | translate }}</h3>
+          <div class="footer-social-links">
+            @for (link of section.links; track link) {
+              <a [href]="link.url" target="_blank">
+                <img [src]="link.svgPath" [alt]="link.alt" width="32" height="32" />
+              </a>
+            }
+          </div>
+        </div>
+      }
+    </div>
+    <section>
+      <div class="footer-grid">
+        <div>
+          <h5><span>Job Portal © 2024 | {{ 'footer.allRightsReserved' | translate }}</span></h5>
+        </div>
+      </div>
+    </section>
+  </div>
+</footer>
