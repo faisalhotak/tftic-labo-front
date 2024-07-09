@@ -95,6 +95,12 @@
   "carousel": {
     "published": "Publié"
   },
+  "job": {
+    "jobFound": "{{jobsLength}} emplois trouvés",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "daysAgo": "Il y a {{days}} jours"
+  },
 
   "footer": {
     "company": "Entreprise",
