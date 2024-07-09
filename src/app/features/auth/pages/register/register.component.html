@@ -14,7 +14,7 @@
 
 <h2>{{ userTypeDetails.message | translate }}</h2>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
   <app-form-field [control]="form.controls['email']" fieldId="in-email" label="email">
     <input type="text" pInputText id="in-email" formControlName="email">
   </app-form-field>
