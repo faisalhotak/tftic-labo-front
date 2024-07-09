@@ -24,7 +24,7 @@ export class CountryDropdownComponent {
     { name: 'Germany', code: 'DE', icon: './assets/icons/flags/de.svg' },
   ];
 
-  protected readonly selectedCountry = signal<Country>(this.defaultCountry);
+  protected selectedCountry = signal<Country>(this.defaultCountry);
 
   constructor() {
     effect(() => {
