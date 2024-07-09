@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
+import { AdvertiserGuard } from '../../core/guards/advertiser.guard';
+import { NewJobComponent } from './pages/new-job/new-job.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,11 @@ const routes: Routes = [
     path: ':id',
     component: JobDetailsComponent,
   },
+  {
+    path: 'new',
+    component: NewJobComponent,
+    canActivate: [AdvertiserGuard],
+  }
 ];
 
 @NgModule({

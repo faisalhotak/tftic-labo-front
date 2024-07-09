@@ -20,6 +20,14 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
 import {PaginatorModule} from "primeng/paginator";
+import { JobFormComponent } from './components/job-form/job-form.component';
+import { NewJobComponent } from './pages/new-job/new-job.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +38,8 @@ import {PaginatorModule} from "primeng/paginator";
     LocationPipe,
     FilterLocationComponent,
     FiltersComponent,
-    JobDetailsComponent,
+    JobFormComponent,
+    NewJobComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +51,11 @@ import {PaginatorModule} from "primeng/paginator";
     FormsModule,
     ProgressSpinnerModule,
     ButtonModule,
-    PaginatorModule
+    PaginatorModule,
+    InputTextModule,
+    InputNumberModule,
+    InputTextareaModule,
+    DropdownModule
   ],
   providers: [
     JobService
