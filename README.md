@@ -63,4 +63,5 @@ Angular FrontEnd Project
 * **Kevin JOEGHMANS** [@kevinjoeghmans](https://github.com/keivy-git)
 * **Faisal HOTAK** [@faisalhotak](https://github.com/faisalhotak)
 * **Nathan SANCKE** [@nathansancke](https://github.com/Lopidurs)
+* **Thomas RULENS** [@thomasrulens](https://github.com/ThomRul)
 * **Tomas MENDES** [@tomasmendes](https://github.com/tomashm9)
