@@ -1,7 +1,9 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { CookieService } from 'ngx-cookie-service';
+import { COMMON } from '../../../core/constants/common';
 
-type Country = { name: string; code: 'EN' | 'FR' | 'NL' | 'DE'; icon: string };
+type Country = { name: string; code: 'en' | 'fr' | 'nl' | 'de'; icon: string };
 
 @Component({
   selector: 'app-country-dropdown',
@@ -9,26 +11,44 @@ type Country = { name: string; code: 'EN' | 'FR' | 'NL' | 'DE'; icon: string };
   styleUrl: './country-dropdown.component.scss',
 })
 export class CountryDropdownComponent {
-  private readonly $translateService = inject(TranslateService);
-
-  private readonly defaultCountry: Country = {
-    name: 'United Kingdom',
-    code: 'EN',
-    icon: './assets/icons/flags/uk.svg',
-  };
+  private readonly cookieService = inject(CookieService);
+  private readonly translateService = inject(TranslateService);
 
   protected readonly countries: Country[] = [
-    { ...this.defaultCountry },
-    { name: 'France', code: 'FR', icon: './assets/icons/flags/fr.svg' },
-    { name: 'Netherlands', code: 'NL', icon: './assets/icons/flags/nl.svg' },
-    { name: 'Germany', code: 'DE', icon: './assets/icons/flags/de.svg' },
+    {
+      name: 'United Kingdom',
+      code: 'en',
+      icon: './assets/icons/flags/uk.svg',
+    },
+    { name: 'France', code: 'fr', icon: './assets/icons/flags/fr.svg' },
+    { name: 'Netherlands', code: 'nl', icon: './assets/icons/flags/nl.svg' },
+    { name: 'Germany', code: 'de', icon: './assets/icons/flags/de.svg' },
   ];
 
-  protected selectedCountry = signal<Country>(this.defaultCountry);
+  protected selectedCountry = signal<Country>(this.getPreferredLanguage());
 
   constructor() {
     effect(() => {
-      this.$translateService.use(this.selectedCountry().code.toLowerCase());
+      this.cookieService.set(
+        COMMON.i18n.cookieName,
+        this.selectedCountry().code,
+      );
+      this.translateService.use(this.selectedCountry().code.toLowerCase());
     });
+  }
+
+  getPreferredLanguage() {
+    const currentLang = this.translateService.currentLang;
+    const country = this.countries.find(
+      (country) => country.code === currentLang,
+    );
+
+    if (!country) {
+      this.cookieService.set(COMMON.i18n.cookieName, this.countries[0].code);
+
+      return this.countries[0];
+    }
+
+    return country;
   }
 }
