@@ -1,5 +1,5 @@
-import { Component, computed, effect, inject, signal } from '@angular/core';
-import { ESSENTIAL_ROUTES, FEATURE_ROUTES } from '../../constants/routes';
+import { Component, computed, inject } from '@angular/core';
+import { ESSENTIAL_ROUTES } from '../../constants/routes';
 import { AuthService } from '../../services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TranslateService } from '@ngx-translate/core';
@@ -16,8 +16,6 @@ export class HeaderComponent {
   private readonly $messageService = inject(MessageService);
 
   protected readonly ESSENTIAL_ROUTES = ESSENTIAL_ROUTES;
-  protected readonly FEATURE_ROUTES = FEATURE_ROUTES;
-  protected readonly isConnected = toSignal(this.$auth.isLoggedIn$);
 
   isLoggedIn = toSignal(this.$auth.isLoggedIn$);
 
@@ -54,16 +52,6 @@ export class HeaderComponent {
     ].filter((item) => item.visible !== false);
   });
 
-  selectedOption = signal<'en' | 'fr' | 'nl' | 'de'>('en');
-
-  dropdownOptions = ['en', 'fr', 'nl', 'de'];
-
-  selectEffect = effect(() => {
-    const selected = this.selectedOption();
-    console.log(selected);
-    this.$translateService.use(selected);
-  });
-
   handleLogout() {
     this.$auth.logout();
 
@@ -73,6 +61,4 @@ export class HeaderComponent {
       detail: this.$translateService.instant('auth.logout.success.detail'),
     });
   }
-
-  protected readonly encodeURI = encodeURI;
 }
