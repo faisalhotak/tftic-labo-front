@@ -46,7 +46,6 @@ import { TranslateModule } from '@ngx-translate/core';
     CarouselModule,
     CardModule,
     MenubarModule,
-    TranslateModule,
   ],
   providers: [JobService],
 })
