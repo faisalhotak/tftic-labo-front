@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import {
   NgcContentOptions,
   NgcCookieConsentService,
@@ -22,66 +22,62 @@ export class AppComponent implements OnInit, OnDestroy {
   private readonly translateService = inject(TranslateService);
 
   //keep refs to subscriptions to be able to unsubscribe later
-  private popupOpenSubscription!: Subscription;
-  private popupCloseSubscription!: Subscription;
-  private initializingSubscription!: Subscription;
-  private initializedSubscription!: Subscription;
-  private initializationErrorSubscription!: Subscription;
-  private statusChangeSubscription!: Subscription;
-  private revokeChoiceSubscription!: Subscription;
-  private noCookieLawSubscription!: Subscription;
+  private onDestroy$ = new Subject<void>();
 
   ngOnInit() {
     // subscribe to cookieconsent observables to react to main events
-    this.popupOpenSubscription = this.ccService.popupOpen$.subscribe(() => {
+    this.ccService.popupOpen$.pipe(takeUntil(this.onDestroy$)).subscribe(() => {
       this.ccService.getConfig();
     });
-    this.popupCloseSubscription = this.ccService.popupClose$.subscribe(() => {
-      this.ccService.getConfig();
-    });
-    this.initializingSubscription = this.ccService.initializing$.subscribe(
-      (event: NgcInitializingEvent) => {
+    this.ccService.popupClose$
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(() => {
+        this.ccService.getConfig();
+      });
+    this.ccService.initializing$
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((event: NgcInitializingEvent) => {
         console.log(`initializing: ${JSON.stringify(event)}`);
-      },
-    );
-    this.initializedSubscription = this.ccService.initialized$.subscribe(() => {
-      console.log(`initialized: ${JSON.stringify(event)}`);
-    });
-    this.initializationErrorSubscription =
-      this.ccService.initializationError$.subscribe(
-        (event: NgcInitializationErrorEvent) => {
-          // the cookieconsent has failed to initialize...
-          console.log(
-            `initializationError: ${JSON.stringify(event.error?.message)}`,
-          );
-        },
-      );
-    this.statusChangeSubscription = this.ccService.statusChange$.subscribe(
-      (event: NgcStatusChangeEvent) => {
+      });
+    this.ccService.initialized$
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(() => {
+        console.log(`initialized: ${JSON.stringify(event)}`);
+      });
+    this.ccService.initializationError$
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((event: NgcInitializationErrorEvent) => {
+        // the cookieconsent has failed to initialize...
+        console.log(
+          `initializationError: ${JSON.stringify(event.error?.message)}`,
+        );
+      });
+    this.ccService.statusChange$
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((event: NgcStatusChangeEvent) => {
         this.ccService.getConfig();
-      },
-    );
+      });
 
-    this.revokeChoiceSubscription = this.ccService.revokeChoice$.subscribe(
-      () => {
+    this.ccService.revokeChoice$
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe(() => {
         this.ccService.getConfig();
-      },
-    );
+      });
 
-    this.noCookieLawSubscription = this.ccService.noCookieLaw$.subscribe(
-      (event: NgcNoCookieLawEvent) => {
+    this.ccService.noCookieLaw$
+      .pipe(takeUntil(this.onDestroy$))
+      .subscribe((event: NgcNoCookieLawEvent) => {
         this.ccService.getConfig();
-      },
-    );
+      });
     // Support for translated cookies messages
     this.translateService.addLangs(['en', 'fr', 'nl', 'de']);
     this.translateService.setDefaultLang('en');
 
-    const browserLang = this.translateService.getBrowserLang() as string;
+    const browserLang = this.translateService.getDefaultLang() as string;
     this.translateService.use(
       browserLang.match(/en|fr|nl|de/) ? browserLang : 'en',
     );
-
+    const lang = this.translateService.getDefaultLang();
     this.translateService
       .get([
         'cookie.header',
@@ -108,14 +104,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // unsubscribe to cookieconsent observables to prevent memory leaks
-    this.popupOpenSubscription.unsubscribe();
-    this.popupCloseSubscription.unsubscribe();
-    this.initializingSubscription.unsubscribe();
-    this.initializedSubscription.unsubscribe();
-    this.initializationErrorSubscription.unsubscribe();
-    this.statusChangeSubscription.unsubscribe();
-    this.revokeChoiceSubscription.unsubscribe();
-    this.noCookieLawSubscription.unsubscribe();
+    this.onDestroy$.next();
+    this.onDestroy$.complete();
   }
 }
