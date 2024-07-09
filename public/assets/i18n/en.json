@@ -94,6 +94,12 @@
   },
   "carousel": {
     "published": "Published"
+  },
+  "job": {
+    "jobFound": "Found {{jobsLength}} jobs",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{days}} days ago"
   }
 }
 

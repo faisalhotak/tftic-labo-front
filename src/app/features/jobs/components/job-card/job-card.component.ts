@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Inject, Input } from '@angular/core';
 import { Job } from '../../models/job';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-job-card',
@@ -8,4 +9,9 @@ import { Job } from '../../models/job';
 })
 export class JobCardComponent {
   @Input() job!: Job;
+  constructor(private readonly router: Router) {}
+
+    displayJobDetails() {
+    this.router.navigate(['jobs', this.job.id]);
+  }
 }
