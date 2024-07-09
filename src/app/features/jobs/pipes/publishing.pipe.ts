@@ -3,10 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Pipe({
   name: 'publishingPipe',
-  pure: false
+  pure: false,
 })
 export class PublishingPipe implements PipeTransform {
-
   private readonly translate = inject(TranslateService);
 
   transform(value: Date): string {
@@ -14,17 +13,14 @@ export class PublishingPipe implements PipeTransform {
     const diff = now.getTime() - value.getTime();
     const diffInDays = diff / (1000 * 3600 * 24);
 
-
     if (diffInDays < 1) {
       return this.translate.instant('job.today');
     }
-      
 
     if (diffInDays < 2) {
       return this.translate.instant('job.yesterday');
     }
 
-      return `${Math.floor(diffInDays)} days ago`;
+    return `${Math.floor(diffInDays)} days ago`;
   }
-
 }
