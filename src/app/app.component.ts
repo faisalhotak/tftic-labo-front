@@ -70,14 +70,13 @@ export class AppComponent implements OnInit, OnDestroy {
         this.ccService.getConfig();
       });
     // Support for translated cookies messages
-    this.translateService.addLangs(['en', 'fr', 'nl', 'de']);
-    this.translateService.setDefaultLang('en');
-
-    const browserLang = this.translateService.getDefaultLang() as string;
-    this.translateService.use(
-      browserLang.match(/en|fr|nl|de/) ? browserLang : 'en',
-    );
-    const lang = this.translateService.getDefaultLang();
+    // this.translateService.addLangs(['en', 'fr', 'nl', 'de']);
+    // this.translateService.setDefaultLang('en');
+    //
+    // const browserLang = this.translateService.getDefaultLang() as string;
+    // this.translateService.use(
+    //   browserLang.match(/en|fr|nl|de/) ? browserLang : 'en',
+    // );
     this.translateService
       .get([
         'cookie.header',

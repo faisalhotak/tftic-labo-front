@@ -32,7 +32,6 @@ export const cookieConfig: NgcCookieConsentConfig = {
     dismiss: '',
     deny: '',
     link: '',
-    // cookiePolicyLink: '',
     policy: 'https://cookie.com',
   },
 };
