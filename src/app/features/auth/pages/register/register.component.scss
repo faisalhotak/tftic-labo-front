@@ -1,7 +1,10 @@
 :host {
   display: flex;
   flex-direction: column;
-  padding: 15px;
-  max-width: 800px;
   margin: auto;
+  padding: 20px;
+
+  @media (min-width: 1024px) {
+    min-width: 800px;
+  }
 }

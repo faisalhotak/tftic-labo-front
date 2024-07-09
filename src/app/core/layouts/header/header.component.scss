@@ -1,15 +1,14 @@
 :host ::ng-deep {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #ffffff;
     padding: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
 
     .navbar-left {
       display: flex;
