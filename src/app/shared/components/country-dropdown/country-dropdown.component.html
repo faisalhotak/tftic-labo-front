@@ -8,7 +8,7 @@
       <img
         [ngSrc]="selectedCountry().icon"
         style="width: 18px; position: relative;" [alt]="selectedCountry().name" fill/>
-      <div>{{ selectedCountry().code }}</div>
+      <div>{{ selectedCountry().code | uppercase }}</div>
     </div>
   </ng-template>
   <ng-template let-country pTemplate="item">
@@ -16,7 +16,7 @@
       <img
         [ngSrc]="country.icon"
         style="width: 18px; position: relative;" [alt]="selectedCountry().name" fill/>
-      <div>{{ country.code }}</div>
+      <div>{{ country.code | uppercase }}</div>
     </div>
   </ng-template>
 </p-dropdown>

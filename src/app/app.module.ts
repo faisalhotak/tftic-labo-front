@@ -4,11 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  TranslateLoader,
-  TranslateModule,
-  TranslateService,
-} from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {
   HttpClient,
   provideHttpClient,
@@ -58,9 +54,4 @@ const httpTranslateLoader = (http: HttpClient) => {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-  constructor(private readonly _translateService: TranslateService) {
-    this._translateService.setDefaultLang(COMMON.i18n.defaultLanguage);
-    this._translateService.use(COMMON.i18n.defaultLanguage);
-  }
-}
+export class AppModule {}
