@@ -1,4 +1,4 @@
-<div class="form container">
+<form [formGroup]="jobForm" class="form container">
     <h1>New Job</h1>
     <label class="fullWitdh">Job Function
         <p-dropdown 
@@ -33,5 +33,6 @@
     <label>Maximum annual salary
         <p-inputNumber id="maxAnnualSalary" formControlName="maxAnnualSalary" [min]="0" [style]="{'width':'100%'}" />
     </label>
-</div>
+    <button pButton type="submit" [disabled]="!jobForm.valid" (click)="saveJob()">Save</button>
+</form>
 

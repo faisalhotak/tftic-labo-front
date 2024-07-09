@@ -26,6 +26,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -55,7 +56,8 @@ import { DropdownModule } from 'primeng/dropdown';
     InputTextModule,
     InputNumberModule,
     InputTextareaModule,
-    DropdownModule
+    DropdownModule,
+    ReactiveFormsModule,
   ],
   providers: [
     JobService
