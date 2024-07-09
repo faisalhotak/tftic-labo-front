@@ -1,8 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { Job, PagedJobOffers } from '../models/job';
 import { COMMON } from '../../../core/constants/common';
+import { environment } from '../../../../environments/environment';
+import { ContractType, Job, JobFunction, PagedJobOffers } from '../models/job';
+import { JobForm } from '../forms/job.form';
 
 @Injectable()
 export class JobService {
@@ -54,5 +56,21 @@ export class JobService {
 
   getAllLocations(): Observable<string[]> {
     return this.http.get<string[]>(`/job-offers/locations`);
+  }
+
+  getContractTypes(): Observable<ContractType[]> {
+    return this.http.get<ContractType[]>(
+      `${environment.baseUrl}/contract-types`,
+    );
+  }
+
+  getJobFunctions(): Observable<JobFunction[]> {
+    return this.http.get<JobFunction[]>(
+      `${environment.baseUrl}/job-functions`,
+    );
+  }
+
+  postJob(newJob: JobForm): Observable<JobForm> {
+    return this.http.post<JobForm>(`${environment.baseUrl}/job-offers`, newJob);
   }
 }

@@ -1,38 +1,45 @@
-<form [formGroup]="jobForm" class="form container">
-    <h1>New Job</h1>
-    <label class="fullWitdh">Job Function
-        <p-dropdown 
-            id="jobFunction" 
-            formControlName="jobFunction" 
-            [options]="jobFunctions"
-            [style]="{'width':'100%'}" 
+@if (contractTypes$ | async; as contractTypes) {
+@if (jobFunctions$ | async; as jobFunctions) {
+    <form [formGroup]="jobForm" class="form container">
+        <h1>New Job</h1>
+        <label class="fullWitdh">Job Function
+            <p-dropdown 
+                id="jobFunction" 
+                formControlName="jobFunction" 
+                [options]="jobFunctions"
+                optionLabel="name"
+                optionValue="id"
+                [style]="{'width':'100%'}" 
+                placeholder="Select a contract type" />
+        </label>
+        <label>Zip and City
+            <input id="zipCity" type="text" pInputText formControlName="zipCity" />
+            <small id="zipCity">ex: 1000 Bruxelles</small>
+        </label>
+        <label>Active Days
+            <p-inputNumber id="activeDays" formControlName="activeDays" [min]="1" [max]="30" [style]="{'width':'100%'}" />
+            <small id="activeDays">Number of days the job will be visible</small>
+        </label>
+        <label class="fullWitdh">Job Description
+            <textarea id="jobDescription" pInputTextarea formControlName="jobDescription" r></textarea>
+        </label>
+        <label class="fullWitdh">Contract Type
+            <p-dropdown 
+            id="contractType" 
+            formControlName="contractType" 
+            [options]="contractTypes"
+            optionLabel="name"
+            optionValue="id"
+            [style]="{'width':'100%'}"  
             placeholder="Select a contract type" />
-    </label>
-    <label>Zip and City
-        <input id="zipCity" type="text" pInputText formControlName="zipCity" />
-        <small id="zipCity">ex: 1000 Bruxelles</small>
-    </label>
-    <label>Active Days
-        <p-inputNumber id="activeDays" formControlName="activeDays" [min]="1" [max]="30" [style]="{'width':'100%'}" />
-        <small id="activeDays">Number of days the job will be visible</small>
-    </label>
-    <label class="fullWitdh">Job Description
-        <textarea id="jobDescription" pInputTextarea formControlName="jobDescription" r></textarea>
-    </label>
-    <label class="fullWitdh">Contract Type
-        <p-dropdown 
-        id="contractType" 
-        formControlName="contractType" 
-        [options]="contractTypes"
-        [style]="{'width':'100%'}"  
-        placeholder="Select a contract type" />
-    </label>
-    <label>Mininmum annual salary
-        <p-inputNumber id="minAnnualSalary" formControlName="minAnnualSalary" [min]="0" [style]="{'width':'100%'}" />
-    </label>
-    <label>Maximum annual salary
-        <p-inputNumber id="maxAnnualSalary" formControlName="maxAnnualSalary" [min]="0" [style]="{'width':'100%'}" />
-    </label>
-    <button pButton type="submit" [disabled]="!jobForm.valid" (click)="saveJob()">Save</button>
-</form>
-
+        </label>
+        <label>Mininmum annual salary
+            <p-inputNumber id="minAnnualSalary" formControlName="minAnnualSalary" [min]="0" [style]="{'width':'100%'}" />
+        </label>
+        <label>Maximum annual salary
+            <p-inputNumber id="maxAnnualSalary" formControlName="maxAnnualSalary" [min]="0" [style]="{'width':'100%'}" />
+        </label>
+        <button pButton type="submit" [disabled]="!jobForm.valid" (click)="saveJob()">Save</button>
+    </form>
+}
+}

@@ -1,5 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { map, Observable } from 'rxjs';
+import { ContractType, JobFunction } from '../../models/job';
+import { JobService } from '../../service/job.service';
+import { JOB_FORM } from '../../forms/job.form';
 
 @Component({
   selector: 'app-job-form',
@@ -9,9 +13,10 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 export class JobFormComponent implements OnInit{
 
   private readonly formBuilder = inject(FormBuilder);
+  private readonly jobService = inject(JobService);
 
-  contractTypes: string[] = ['CDI', 'CDD'];
-  jobFunctions: string[] = ['Développeur', 'Designer', 'Product Owner'];
+  contractTypes$!: Observable<ContractType[]>;
+  jobFunctions$!: Observable<JobFunction[]>;
 
 
   jobForm!: FormGroup;
@@ -21,14 +26,11 @@ export class JobFormComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.jobForm = this.formBuilder.group({
-      jobFunction: ['', Validators.required],
-      zipCity: ['', Validators.required],
-      activeDays: ['', Validators.required],
-      jobDescription: ['', Validators.required],
-      contractType: ['', Validators.required],
-      minAnnualSalary: ['', Validators.required],
-      maxAnnualSalary: ['', Validators.required],
-    });
+
+    this.contractTypes$ = this.jobService.getContractTypes();
+
+    this.jobFunctions$ = this.jobService.getJobFunctions();
+
+    this.jobForm = this.formBuilder.group(JOB_FORM);
   }
 }
