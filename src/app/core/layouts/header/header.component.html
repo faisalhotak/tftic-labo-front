@@ -3,7 +3,6 @@
     <div class="navbar-left">
       <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
     </div>
-
     <p-menubar [model]="menuItems()">
       <ng-template pTemplate="item" let-item>
         <ng-container *ngIf="!item.command">
@@ -19,52 +18,3 @@
     </p-menubar>
   </div>
 </header>
-
-
-
-
-<!--<nav class="navbar">
-  <div class="navbar-left">
-    <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
-  </div>
-  <div class="navbar-center">
-    @for (link of FEATURE_ROUTES; track $index) {
-      <button pButton type="button" label="{{ link.label | translate }}" class="text-button" [text]="true" severity="secondary" [routerLink]="link.url"></button>
-    }
-  </div>
-  <div class="navbar-right">
-    @if (!(isConnected())) {
-      <button pButton type="button" label="{{ 'navbar.logIn' | translate }}" class="p-button-secondary" severity="secondary" [routerLink]="ESSENTIAL_ROUTES.auth.login.url"></button>
-      <button pButton type="button" label="{{ 'navbar.signUp' | translate }}" class="p-button-primary" severity="primary" [routerLink]="ESSENTIAL_ROUTES.auth.register.url"></button>
-    }
-    @else {
-      <button pButton type="button" label="{{ 'navbar.profile' | translate }}" class="p-button-secondary" severity="secondary" [routerLink]="ESSENTIAL_ROUTES.profile.url"></button>
-      <button pButton type="button" label="{{ 'navbar.logOut' | translate }}" class="p-button-danger" severity="danger" (click)="handleLogout()"></button>
-    }
-
-    <app-country-dropdown />
-  </div>
-</nav>
--->
-
-<!--
-<header>
-  <div class="flex">
-    <div class="left">
-      <a class="logo" routerLink="/home">Job Portal</a>
-    </div>
-    <div class="center">
-      <ng-container *ngFor="let item of menuItems()">
-        <a class="menu-item" [routerLink]="item.routerLink">{{ item.label }}</a>
-      </ng-container>
-    </div>
-    <div class="right">
-      <p-menubar [model]="authItems()" class="auth-items"></p-menubar>
-      <p-dropdown [options]="dropdownOptions"
-                  [(ngModel)]="selectedOption"
-                  class="dropdown"
-      ></p-dropdown>
-    </div>
-  </div>
-</header>
--->
