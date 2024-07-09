@@ -29,9 +29,24 @@ export class FooterComponent {
     {
       title: 'footer.socialMedia',
       links: [
-        { label: 'Facebook', url: 'https://www.facebook.com' },
-        { label: 'Instagram', url: 'https://www.instagram.com' },
-        { label: 'Youtube', url: 'https://www.youtube.com' },
+        {
+          label: 'Facebook',
+          url: 'https://www.facebook.com',
+          svgPath: 'assets/icons/socials/facebook.svg',
+          alt: 'Facebook Logo',
+        },
+        {
+          label: 'Instagram',
+          url: 'https://www.instagram.com',
+          svgPath: 'assets/icons/socials/instagram.svg',
+          alt: 'Instagram Logo',
+        },
+        {
+          label: 'Youtube',
+          url: 'https://www.youtube.com',
+          svgPath: 'assets/icons/socials/youtube.svg',
+          alt: 'YouTube Logo',
+        },
       ],
     },
   ];
