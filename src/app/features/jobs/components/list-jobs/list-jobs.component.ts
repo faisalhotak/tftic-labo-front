@@ -6,9 +6,8 @@ import { Job } from '../../models/job';
 @Component({
   selector: 'app-list-jobs',
   templateUrl: './list-jobs.component.html',
-  styleUrl: './list-jobs.component.scss'
+  styleUrl: './list-jobs.component.scss',
 })
 export class ListJobsComponent {
   @Input() jobs$!: Observable<Job[]>;
-
 }

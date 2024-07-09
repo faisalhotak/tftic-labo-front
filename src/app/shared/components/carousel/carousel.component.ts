@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { Job } from '../../../features/jobs/models/job';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -12,6 +13,7 @@ export class CarouselComponent implements OnInit {
 
   jobs!: Job[];
   responsiveOptions: any[] | undefined;
+  private readonly router: Router = inject(Router);
 
   ngOnInit() {
     this.jobs$.subscribe((jobsList) => {
@@ -35,4 +37,9 @@ export class CarouselComponent implements OnInit {
       },
     ];
   }
+  displayDetails(jobId: number) {
+    this.router.navigate(['jobs', jobId]);
+  }
+
+  applyJob(jobId: number) {}
 }
