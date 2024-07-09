@@ -20,6 +20,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { MenubarModule } from 'primeng/menubar';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MenubarModule } from 'primeng/menubar';
     CarouselModule,
     CardModule,
     MenubarModule,
+    TranslateModule,
   ],
   providers: [JobService],
 })
