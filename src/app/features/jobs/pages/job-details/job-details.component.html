@@ -1,0 +1,50 @@
+@if (job$ | async; as job) {
+  <p-card>
+    <ng-template pTemplate="title">
+      {{ job.jobFunction.name | translate }}
+    </ng-template>
+    <ng-template pTemplate="subtitle">
+      <div class="subtitle">
+        <div>
+          <i class="pi pi-user"></i>
+          {{ job.jobFunction.name| translate }}
+        </div>
+        <div>
+          <i class="pi pi-briefcase"></i>
+          {{ job.agent.company.name | translate }}
+        </div>
+        <div>
+          <i class="pi pi-map-marker"></i>
+          {{ job.zipCity | locationPipe | translate }}
+        </div>
+        <div>
+          <i class="pi pi-calendar"></i>
+          Published: {{ job.publishingDate | publishingPipe | translate }}
+        </div>
+        <div>
+          <i class="pi pi-clipboard"></i>
+          {{ job.contractType.name | translate }}
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+        <div class="buttons">
+            <p-button label="Apply" />
+            <p-button label="Save" [outlined]="true" severity="secondary" />
+        </div>
+        <p>
+            {{ job.description | translate }}
+        </p>
+        <div class="salary">
+            <p> Minimum salary : {{ job.annualGrossSalaryMin }} </p>
+            <p> Maximum salary : {{ job.annualGrossSalaryMax }} </p>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="footer">
+        <p-button label="Apply" />
+        <p-button label="Save" [outlined]="true" severity="secondary" />
+      </div>
+    </ng-template>
+  </p-card>
+}
