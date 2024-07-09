@@ -95,6 +95,12 @@
   "carousel": {
     "published": "Published"
   },
+  "job": {
+    "jobFound": "Found {{jobsLength}} jobs",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{days}} days ago"
+  },
   "cookie": {
     "header": "Cookies used on the website!",
     "message": "This website uses cookies to ensure you get the best experience on our website.",
@@ -104,5 +110,4 @@
     "policy": "Learn more"
   }
 }
-
 

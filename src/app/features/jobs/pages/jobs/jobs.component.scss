@@ -1,0 +1,11 @@
+.job-page {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.job-list {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 360px;
+}

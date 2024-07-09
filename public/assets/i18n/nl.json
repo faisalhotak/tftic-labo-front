@@ -95,6 +95,12 @@
   "carousel": {
     "published": "Gepubliceerd"
   },
+  "job": {
+    "jobFound": "{{jobsLength}} banen gevonden",
+    "today": "Vandaag",
+    "yesterday": "Gisteren",
+    "daysAgo": "{{days}} dagen geleden"
+  },
   "cookie": {
     "header": "Cookies gebruikt op de website!",
     "message": "Deze website gebruikt cookies om ervoor te zorgen dat u de beste ervaring op onze website krijgt.",
