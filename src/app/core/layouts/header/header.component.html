@@ -3,18 +3,23 @@
     <div class="navbar-left">
       <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
     </div>
-    <p-menubar [model]="menuItems()">
-      <ng-template pTemplate="item" let-item>
-        <ng-container *ngIf="!item.command">
-          <a class="p-menuitem-link" [routerLink]="item.routerLink">{{ item.label | translate }}</a>
-        </ng-container>
-        <ng-container *ngIf="item.command">
-          <a class="p-menuitem-link" (click)="item.command()">{{ item.label | translate }}</a>
-        </ng-container>
-      </ng-template>
-      <ng-template pTemplate="end">
-        <app-country-dropdown></app-country-dropdown>
-      </ng-template>
-    </p-menubar>
+    <div class="navbar-right">
+      <p-menubar [model]="menuItems()">
+        <ng-template pTemplate="item" let-item>
+          @if (!item.command) {
+            <ng-container>
+              <a class="p-menuitem-link" [routerLink]="item.routerLink">{{ item.label | translate }}</a>
+            </ng-container>
+          } @else {
+            <ng-container>
+              <a class="p-menuitem-link" (click)="item.command()">{{ item.label | translate }}</a>
+            </ng-container>
+          }
+        </ng-template>
+        <ng-template pTemplate="end">
+          <app-country-dropdown></app-country-dropdown>
+        </ng-template>
+      </p-menubar>
+    </div>
   </div>
 </header>
