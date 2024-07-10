@@ -1,11 +1,22 @@
 @if (contractTypes$ | async; as contractTypes) {
 @if (jobFunctions$ | async; as jobFunctions) {
+@if (companyAdvertiser$ | async; as companyAdvertiser) {
     <form [formGroup]="jobForm" class="form container">
         <h1>New Job</h1>
+        <label class="fullWitdh">Company
+            <p-dropdown 
+                id="company" 
+                formControlName="agentId" 
+                [options]="companyAdvertiser"
+                optionLabel="company.name"
+                optionValue="id"
+                [style]="{'width':'100%'}" 
+                placeholder="Select the company who's hiring" />
+        </label>
         <label class="fullWitdh">Job Function
             <p-dropdown 
                 id="jobFunction" 
-                formControlName="jobFunction" 
+                formControlName="jobFunctionId" 
                 [options]="jobFunctions"
                 optionLabel="name"
                 optionValue="id"
@@ -21,12 +32,12 @@
             <small id="activeDays">Number of days the job will be visible</small>
         </label>
         <label class="fullWitdh">Job Description
-            <textarea id="jobDescription" pInputTextarea formControlName="jobDescription" r></textarea>
+            <textarea id="description" pInputTextarea formControlName="description" r></textarea>
         </label>
         <label class="fullWitdh">Contract Type
             <p-dropdown 
             id="contractType" 
-            formControlName="contractType" 
+            formControlName="contractTypeId" 
             [options]="contractTypes"
             optionLabel="name"
             optionValue="id"
@@ -34,12 +45,13 @@
             placeholder="Select a contract type" />
         </label>
         <label>Mininmum annual salary
-            <p-inputNumber id="minAnnualSalary" formControlName="minAnnualSalary" [min]="0" [style]="{'width':'100%'}" />
+            <p-inputNumber id="annualGrossSalaryMin" formControlName="annualGrossSalaryMin" [min]="0" [style]="{'width':'100%'}" />
         </label>
         <label>Maximum annual salary
-            <p-inputNumber id="maxAnnualSalary" formControlName="maxAnnualSalary" [min]="0" [style]="{'width':'100%'}" />
+            <p-inputNumber id="annualGrossSalaryMax" formControlName="annualGrossSalaryMax" [min]="0" [style]="{'width':'100%'}" />
         </label>
         <button pButton type="submit" [disabled]="!jobForm.valid" (click)="saveJob()">Save</button>
     </form>
+}
 }
 }

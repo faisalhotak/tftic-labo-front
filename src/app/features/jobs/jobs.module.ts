@@ -27,6 +27,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CompanyAdvertiserService } from './service/company-advertiser.service';
 
 
 
@@ -60,7 +61,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
   ],
   providers: [
-    JobService
+    JobService,
+    CompanyAdvertiserService,
   ]
 })
 export class JobsModule { }

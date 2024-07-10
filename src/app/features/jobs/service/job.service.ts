@@ -32,7 +32,7 @@ export class JobService {
               (job) =>
                 ({
                   ...job,
-                  publishingDate: new Date(job.publishingDate),
+                  publishingDate: new Date(job.createdAt),
                   expirationDate: new Date(job.expiringDate),
                 }) as Job,
             ),
@@ -47,7 +47,7 @@ export class JobService {
         (job) =>
           ({
             ...job,
-            publishingDate: new Date(job.publishingDate),
+            createdAt: new Date(job.createdAt),
             expirationDate: new Date(job.expiringDate),
           }) as Job,
       ),
@@ -71,6 +71,7 @@ export class JobService {
   }
 
   postJob(newJob: JobForm): Observable<JobForm> {
+    console.log('ici');
     return this.http.post<JobForm>(`${environment.baseUrl}/job-offers`, newJob);
   }
 }

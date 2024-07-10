@@ -4,7 +4,6 @@ export interface JobForm {
     description: string;
     annualGrossSalaryMin: number;
     annualGrossSalaryMax: number;
-    publishingDate: Date;
     activeDays: number;
     expiringDate: Date;
     zipCity: string;
@@ -14,11 +13,12 @@ export interface JobForm {
 }
 
 export const JOB_FORM = {
-    jobFunction: ['', Validators.required],
-    zipCity: ['', Validators.required],
+    description: ['', Validators.required],
+    annualGrossSalaryMin: ['', Validators.required],
+    annualGrossSalaryMax: ['', Validators.required],
     activeDays: ['', Validators.required],
-    jobDescription: ['', Validators.required],
-    contractType: ['', Validators.required],
-    minAnnualSalary: ['', Validators.required],
-    maxAnnualSalary: ['', Validators.required],
+    zipCity: ['', Validators.required],
+    agentId: ['', Validators.required],
+    jobFunctionId: ['', Validators.required],
+    contractTypeId: ['', Validators.required],
 }
