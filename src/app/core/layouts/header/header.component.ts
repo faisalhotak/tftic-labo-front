@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { ESSENTIAL_ROUTES, FEATURE_ROUTES } from '../../constants/routes';
+import { Component, computed, inject } from '@angular/core';
+import { ESSENTIAL_ROUTES } from '../../constants/routes';
 import { AuthService } from '../../services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TranslateService } from '@ngx-translate/core';
@@ -16,8 +16,41 @@ export class HeaderComponent {
   private readonly $messageService = inject(MessageService);
 
   protected readonly ESSENTIAL_ROUTES = ESSENTIAL_ROUTES;
-  protected readonly FEATURE_ROUTES = FEATURE_ROUTES;
-  protected readonly isConnected = toSignal(this.$auth.isLoggedIn$);
+
+  isLoggedIn = toSignal(this.$auth.isLoggedIn$);
+
+  menuItems = computed(() => {
+    const isLoggedIn = this.isLoggedIn();
+    return [
+      {
+        label: 'navbar.jobs',
+        routerLink: '/jobs',
+      },
+      {
+        label: 'navbar.logIn',
+        routerLink: '/auth/login',
+        styleClass: 'p-button-secondary',
+        visible: !isLoggedIn,
+      },
+      {
+        label: 'navbar.signUp',
+        routerLink: '/auth/register',
+        styleClass: 'p-button-primary',
+        visible: !isLoggedIn,
+      },
+      {
+        label: 'navbar.profile',
+        routerLink: '/profile',
+        visible: isLoggedIn,
+      },
+      {
+        label: 'navbar.logOut',
+        command: () => this.handleLogout(),
+        styleClass: 'p-button-primary',
+        visible: isLoggedIn,
+      },
+    ].filter((item) => item.visible !== false);
+  });
 
   handleLogout() {
     this.$auth.logout();

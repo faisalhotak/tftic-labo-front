@@ -94,6 +94,23 @@
   },
   "carousel": {
     "published": "Published"
+  },
+  "job": {
+    "jobFound": "Found {{jobsLength}} jobs",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "daysAgo": "{{days}} days ago"
+  },
+  "footer": {
+    "company": "Company",
+    "about": "About",
+    "careers": "Careers",
+    "contact": "Contact",
+    "resources": "Resources",
+    "helpCenter": "Help Center",
+    "faq": "FAQ",
+    "privacyPolicy": "Privacy Policy",
+    "socialMedia": "Social Media",
+    "allRightsReserved": "All rights reserved"
   }
 }
-

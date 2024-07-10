@@ -94,5 +94,23 @@
   },
   "carousel": {
     "published": "Gepubliceerd"
+  },
+  "job": {
+    "jobFound": "{{jobsLength}} banen gevonden",
+    "today": "Vandaag",
+    "yesterday": "Gisteren",
+    "daysAgo": "{{days}} dagen geleden"
+  },
+  "footer": {
+    "company": "Bedrijf",
+    "about": "Over",
+    "careers": "Carrières",
+    "contact": "Contact",
+    "resources": "Hulpbronnen",
+    "helpCenter": "Helpcentrum",
+    "faq": "FAQ",
+    "privacyPolicy": "Privacybeleid",
+    "socialMedia": "Sociale media",
+    "allRightsReserved": "Alle rechten voorbehouden"
   }
 }
