@@ -1,13 +1,21 @@
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-top: 20px;
-
-  div {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
 
   @layer primeng {
     .p-inputtext,

@@ -1,22 +1,20 @@
-<nav class="navbar">
-  <div class="navbar-left">
-    <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
+<header>
+  <div class="navbar">
+    <div class="navbar-left">
+      <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
+    </div>
+    <p-menubar [model]="menuItems()">
+      <ng-template pTemplate="item" let-item>
+        <ng-container *ngIf="!item.command">
+          <a class="p-menuitem-link" [routerLink]="item.routerLink">{{ item.label | translate }}</a>
+        </ng-container>
+        <ng-container *ngIf="item.command">
+          <a class="p-menuitem-link" (click)="item.command()">{{ item.label | translate }}</a>
+        </ng-container>
+      </ng-template>
+      <ng-template pTemplate="end">
+        <app-country-dropdown></app-country-dropdown>
+      </ng-template>
+    </p-menubar>
   </div>
-  <div class="navbar-center">
-    @for (link of FEATURE_ROUTES; track $index) {
-      <button pButton type="button" label="{{ link.label | translate }}" class="text-button" [text]="true" severity="secondary" [routerLink]="link.url"></button>
-    }
-  </div>
-  <div class="navbar-right">
-    @if (!(isConnected())) {
-      <button pButton type="button" label="{{ 'navbar.logIn' | translate }}" class="p-button-secondary" severity="secondary" [routerLink]="ESSENTIAL_ROUTES.auth.login.url"></button>
-      <button pButton type="button" label="{{ 'navbar.signUp' | translate }}" class="p-button-primary" severity="primary" [routerLink]="ESSENTIAL_ROUTES.auth.register.url"></button>
-    }
-    @else {
-      <button pButton type="button" label="{{ 'navbar.profile' | translate }}" class="p-button-secondary" severity="secondary" [routerLink]="ESSENTIAL_ROUTES.profile.url"></button>
-      <button pButton type="button" label="{{ 'navbar.logOut' | translate }}" class="p-button-danger" severity="danger" (click)="handleLogout()"></button>
-    }
-
-    <app-country-dropdown />
-  </div>
-</nav>
+</header>
