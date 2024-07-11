@@ -12,7 +12,6 @@ export class ListJobsComponent {
   @Input() jobOffers$!: Observable<Job[]>;
   @Input() jobsCount!: number;
   @Input() elementsPerPage!: number;
-
   @Input() page!: WritableSignal<number>;
 
   onPageChange(paginatorState: PaginatorState) {

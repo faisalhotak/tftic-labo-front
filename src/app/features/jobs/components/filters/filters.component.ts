@@ -1,7 +1,5 @@
 import { Component, Input, WritableSignal } from '@angular/core';
 import { Pair } from '../../../../shared/models/pair';
-import { Job } from '../../models/job';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-filters',
@@ -11,8 +9,6 @@ import { Observable } from 'rxjs';
 export class FiltersComponent {
   @Input() filters!: WritableSignal<Map<string, string>>;
   @Input() page!: WritableSignal<number>;
-
-  @Input() jobOffers$!: Observable<Job[]>;
 
   addFilter(filter: Pair) {
     this.filters.update((filters) => {
