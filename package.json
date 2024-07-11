@@ -26,6 +26,7 @@
     "@ngx-translate/http-loader": "^8.0.0",
     "environments": "^1.2.7",
     "ngx-cookie-service": "^18.0.0",
+    "ngx-translate-multi-http-loader": "^18.0.0",
     "prettier": "^3.3.2",
     "primefaces": "^14.0.0",
     "primeflex": "^3.3.1",

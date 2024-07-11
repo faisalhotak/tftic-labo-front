@@ -36,12 +36,7 @@
   },
   "auth": {
     "login": {
-      "seeker": {
-        "message": "Connectez-vous pour trouver l'emploi qui vous convient."
-      },
-      "advertiser": {
-        "message": "Connectez-vous pour publier des offres d'emploi et trouver les bons candidats."
-      },
+      "message": "Connectez-vous pour accéder à votre compte.",
       "button": {
         "submit": "Connexion"
       },

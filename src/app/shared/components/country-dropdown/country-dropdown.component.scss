@@ -1,5 +1,5 @@
-:host {
-  .flag-container {
-    width: 40px;
+:host ::ng-deep {
+  .p-dropdown-trigger {
+    width: 2rem;
   }
 }

@@ -2,9 +2,9 @@ import { Component, effect, signal } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../../../../core/services/auth.service';
 import { Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
 import { TranslateService } from '@ngx-translate/core';
 import { FORMS } from '../../forms/register.form';
+import { NotificationService } from '../../../../core/services/notification.service';
 
 export type UserType = 'seekers' | 'advertisers';
 
@@ -65,7 +65,7 @@ export class RegisterComponent {
     private readonly _builder: FormBuilder,
     private readonly _authService: AuthService,
     private readonly _routerService: Router,
-    private readonly _messageService: MessageService,
+    private readonly _notificationService: NotificationService,
     private readonly _translateService: TranslateService,
   ) {
     this.form = this._builder.group(this.userTypeDetails.form);
@@ -95,24 +95,17 @@ export class RegisterComponent {
       .subscribe({
         next: (_) => {
           this._routerService.navigate(['/']).then();
-          this._messageService.add({
-            severity: 'success',
-            summary: this._translateService.instant(
-              'auth.register.success.summary',
-            ),
-            detail: this._translateService.instant(
-              'auth.register.success.detail',
-            ),
-          });
+
+          this._notificationService.showSuccess(
+            'auth.register.success.summary',
+            'auth.register.success.detail',
+          );
         },
         error: (err) => {
-          this._messageService.add({
-            severity: 'error',
-            summary: this._translateService.instant(
-              'auth.register.error.summary',
-            ),
-            detail: JSON.stringify(err.error),
-          });
+          this._notificationService.showError(
+            'auth.register.error.summary',
+            JSON.stringify(err.error),
+          );
         },
       });
   }
