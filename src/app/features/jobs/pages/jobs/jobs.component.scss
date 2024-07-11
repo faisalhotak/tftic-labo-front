@@ -1,11 +1,15 @@
 .job-page {
-    display: flex;
-    flex-wrap: wrap;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.jobs-container {
+  display: flex;
 }
 
 .job-list {
-    flex: auto;
-    display: flex;
-    flex-direction: column;
-    min-width: 360px;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+  min-width: 360px;
 }

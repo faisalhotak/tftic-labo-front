@@ -19,8 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
-
-
+import {PaginatorModule} from "primeng/paginator";
 
 @NgModule({
   declarations: [
@@ -42,7 +41,8 @@ import { JobDetailsComponent } from './pages/job-details/job-details.component';
     AutoCompleteModule,
     FormsModule,
     ProgressSpinnerModule,
-    ButtonModule
+    ButtonModule,
+    PaginatorModule
   ],
   providers: [
     JobService
