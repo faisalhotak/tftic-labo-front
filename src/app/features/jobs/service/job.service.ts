@@ -1,7 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { environment } from '../../../../environments/environment';
 import { Job, PagedJobOffers } from '../models/job';
 import { COMMON } from '../../../core/constants/common';
 
@@ -20,7 +19,7 @@ export class JobService {
     }
 
     return this.http
-      .get<PagedJobOffers>(`${environment.baseUrl}/job-offers`, {
+      .get<PagedJobOffers>(`/job-offers`, {
         params: httpParams,
       })
       .pipe(
@@ -41,7 +40,7 @@ export class JobService {
   }
 
   getJobById(id: string): Observable<Job> {
-    return this.http.get<Job>(`${environment.baseUrl}/job-offers/${id}`).pipe(
+    return this.http.get<Job>(`/job-offers/${id}`).pipe(
       map(
         (job) =>
           ({
@@ -54,8 +53,6 @@ export class JobService {
   }
 
   getAllLocations(): Observable<string[]> {
-    return this.http.get<string[]>(
-      `${environment.baseUrl}/job-offers/locations`,
-    );
+    return this.http.get<string[]>(`/job-offers/locations`);
   }
 }

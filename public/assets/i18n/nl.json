@@ -36,7 +36,7 @@
   },
   "auth": {
     "login": {
-      "message": "Log in om de baan te vinden die bij je past.",
+      "message": "Log in om toegang te krijgen tot je account.",
       "button": {
         "submit": "Inloggen"
       },

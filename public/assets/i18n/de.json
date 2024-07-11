@@ -36,7 +36,7 @@
   },
   "auth": {
     "login": {
-      "message": "Melden Sie sich an, um den Job zu finden, der zu Ihnen passt.",
+      "message": "Melden Sie sich an, um auf Ihr Konto zuzugreifen.",
       "button": {
         "submit": "Anmelden"
       },
