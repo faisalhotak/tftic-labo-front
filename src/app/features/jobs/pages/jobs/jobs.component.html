@@ -1,4 +1,6 @@
 <div class="job-page">
-    <app-filters class="filters" (jobsToSend$)="updateJobs($event)"/>
-    <app-list-jobs class="job-list" [jobs$]="jobsToSend$"/>
+  <div class="jobs-container">
+    <app-filters class="filters" [filters]="filters" [page]="page" />
+    <app-list-jobs class="job-list" [jobOffers$]="jobOffers$" [jobsCount]="jobsCount" [elementsPerPage]="elementsPerPage" [page]="page"/>
+  </div>
 </div>

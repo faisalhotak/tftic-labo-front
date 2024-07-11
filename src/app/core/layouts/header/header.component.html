@@ -5,12 +5,11 @@
     </div>
     <p-menubar [model]="menuItems()">
       <ng-template pTemplate="item" let-item>
-        <ng-container *ngIf="!item.command">
+        @if (!item.command) {
           <a class="p-menuitem-link" [routerLink]="item.routerLink">{{ item.label | translate }}</a>
-        </ng-container>
-        <ng-container *ngIf="item.command">
-          <a class="p-menuitem-link" (click)="item.command()">{{ item.label | translate }}</a>
-        </ng-container>
+        } @else {
+          <a class="p-menuitem-link" (click)="item.command">{{ item.label | translate }}</a>
+        }
       </ng-template>
       <ng-template pTemplate="end">
         <app-country-dropdown></app-country-dropdown>

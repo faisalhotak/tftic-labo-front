@@ -6,11 +6,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {
-  HttpClient,
+  HttpBackend,
   provideHttpClient,
   withInterceptors,
 } from '@angular/common/http';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { COMMON } from './core/constants/common';
 import { ToastModule } from 'primeng/toast';
 import { StoreModule } from '@ngrx/store';
@@ -20,9 +19,13 @@ import { MessageService } from 'primeng/api';
 import { jwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { GlobalErrorHandler } from './core/handlers/global-error.handler';
 import { CoreModule } from './core/core.module';
+import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
+import { baseInterceptor } from './core/interceptors/base.interceptor';
 
-const httpTranslateLoader = (http: HttpClient) => {
-  return new TranslateHttpLoader(http, COMMON.i18n.path, COMMON.i18n.extension);
+const httpTranslateLoader = (http: HttpBackend) => {
+  return new MultiTranslateHttpLoader(http, [
+    { prefix: COMMON.i18n.path, suffix: COMMON.i18n.extension },
+  ]);
 };
 
 @NgModule({
@@ -35,8 +38,8 @@ const httpTranslateLoader = (http: HttpClient) => {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (http: HttpClient) => httpTranslateLoader(http),
-        deps: [HttpClient],
+        useFactory: httpTranslateLoader,
+        deps: [HttpBackend],
       },
     }),
     ToastModule,
@@ -46,7 +49,7 @@ const httpTranslateLoader = (http: HttpClient) => {
   providers: [
     AuthService,
     MessageService,
-    provideHttpClient(withInterceptors([jwtInterceptor])),
+    provideHttpClient(withInterceptors([baseInterceptor, jwtInterceptor])),
     {
       provide: ErrorHandler,
       useClass: GlobalErrorHandler,
