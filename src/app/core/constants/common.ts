@@ -5,4 +5,5 @@ export const COMMON = {
     path: './assets/i18n/',
     extension: '.json',
   },
+  page: 'page',
 };
