@@ -1,6 +1,6 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from '../../../core/services/cookie.service';
 import { COMMON } from '../../../core/constants/common';
 
 type Country = { name: string; code: 'en' | 'fr' | 'nl' | 'de'; icon: string };

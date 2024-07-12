@@ -10,7 +10,7 @@
         <p-card header=" {{ job.jobFunction.name | translate }}">
           <ng-template pTemplate="header">
             <img alt="Card-job" src="/assets/images/banner-job.png"/>
-            <p>{{ 'carousel.published' | translate }}: {{ job.publishingDate | date }} </p>
+            <p>{{ 'carousel.published' | translate }}: {{ job.createdAt | date }} </p>
           </ng-template>
           <ng-template pTemplate="content">
             <p class="short-ellipsis">
