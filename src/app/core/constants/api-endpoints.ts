@@ -4,4 +4,11 @@ export const API_ENDPOINTS = {
     advertisers: '/auth/register/advertisers',
     seekers: '/auth/register/seekers',
   },
+  jobs: {
+    jobOffers: '/job-offers',
+    location: '/job-offers/locations',
+    contractTypes: '/contract-types',
+    jobFunction: '/job-functions',
+  },
+  companyAdvertiser: '/company-advertiser',
 };

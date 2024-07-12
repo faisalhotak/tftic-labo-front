@@ -19,7 +19,7 @@
         </div>
         <div>
           <i class="pi pi-calendar"></i>
-          Published: {{ job.createdAt | publishingPipe | translate }}
+          {{ 'job.published' | translate}}: {{ job.createdAt | publishingPipe | translate }}
         </div>
         <div>
           <i class="pi pi-clipboard"></i>
@@ -29,8 +29,8 @@
     </ng-template>
     <ng-template pTemplate="content">
         <div class="buttons">
-            <p-button label="Apply" />
-            <p-button label="Save" [outlined]="true" severity="secondary" />
+          <p-button>{{ 'job.apply' | translate}}</p-button>
+          <p-button [outlined]="true" severity="secondary">{{'job.save' | translate}}</p-button>
         </div>
         <p>
             {{ job.description | translate }}
@@ -42,8 +42,8 @@
     </ng-template>
     <ng-template pTemplate="footer">
       <div class="footer">
-        <p-button label="Apply" />
-        <p-button label="Save" [outlined]="true" severity="secondary" />
+        <p-button>{{ 'job.apply' | translate}}</p-button>
+        <p-button [outlined]="true" severity="secondary">{{'job.save' | translate}}</p-button>
       </div>
     </ng-template>
   </p-card>

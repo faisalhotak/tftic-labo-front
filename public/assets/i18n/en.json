@@ -99,7 +99,21 @@
     "jobFound": "Found {{jobsLength}} jobs",
     "today": "Today",
     "yesterday": "Yesterday",
-    "daysAgo": "{{days}} days ago"
+    "daysAgo": "{{days}} days ago",
+    "published": "Published",
+    "apply": "Apply",
+    "save": "Save",
+    "newJob": "New Job",
+    "company": "Company",
+    "jobFunction": "Job Function",
+    "zipCity": "Zip and City",
+    "activeDays": "Active days",
+    "jobDescription": "Job Description",
+    "zipCityEx": "ex: 1234 Amsterdam",
+    "activeDaysSmall": "Number of days the job will be visible on the platform",
+    "contractType": "Contract Type",
+    "minSal": "Minimum Salary",
+    "maxSal": "Maximum Salary"
   },
   "footer": {
     "company": "Company",

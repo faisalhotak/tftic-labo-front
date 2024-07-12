@@ -28,6 +28,8 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CompanyAdvertiserService } from './service/company-advertiser.service';
+import { SharedModule } from '../../shared/shared.module';
+
 
 
 
@@ -42,7 +44,7 @@ import { CompanyAdvertiserService } from './service/company-advertiser.service';
     FiltersComponent,
     JobFormComponent,
     NewJobComponent,
-    JobDetailsComponent
+    JobDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -60,6 +62,7 @@ import { CompanyAdvertiserService } from './service/company-advertiser.service';
     InputTextareaModule,
     DropdownModule,
     ReactiveFormsModule,
+    SharedModule
   ],
   providers: [
     JobService,

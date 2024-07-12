@@ -4,6 +4,7 @@ import { Observable, map } from 'rxjs';
 import { COMMON } from '../../../core/constants/common';
 import { ContractType, Job, JobFunction, PagedJobOffers } from '../models/job';
 import { JobForm } from '../forms/job.form';
+import { API_ENDPOINTS } from '../../../core/constants/api-endpoints';
 
 @Injectable()
 export class JobService {
@@ -52,22 +53,18 @@ export class JobService {
   }
 
   getAllLocations(): Observable<string[]> {
-    return this.http.get<string[]>(`/job-offers/locations`);
+    return this.http.get<string[]>(API_ENDPOINTS.jobs.location);
   }
 
   getContractTypes(): Observable<ContractType[]> {
-    return this.http.get<ContractType[]>(
-      `/contract-types`,
-    );
+    return this.http.get<ContractType[]>(API_ENDPOINTS.jobs.contractTypes);
   }
 
   getJobFunctions(): Observable<JobFunction[]> {
-    return this.http.get<JobFunction[]>(
-      `/job-functions`,
-    );
+    return this.http.get<JobFunction[]>(API_ENDPOINTS.jobs.jobFunction);
   }
 
   postJob(newJob: JobForm): Observable<JobForm> {
-    return this.http.post<JobForm>(`/job-offers`, newJob);
+    return this.http.post<JobForm>(API_ENDPOINTS.jobs.jobOffers, newJob);
   }
 }

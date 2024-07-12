@@ -94,7 +94,21 @@
     "jobFound": "{{jobsLength}} emplois trouvés",
     "today": "Aujourd'hui",
     "yesterday": "Hier",
-    "daysAgo": "Il y a {{days}} jours"
+    "daysAgo": "Il y a {{days}} jours",
+    "published": "Publié",
+    "apply": "Postuler",
+    "save": "Enregistrer",
+    "newJob": "Nouvel emploi",
+    "company": "Entreprise",
+    "jobFunction": "Fonctions",
+    "zipCity": "Code postal et ville",
+    "activeDays": "Jours actifs",
+    "jobDescription": "Description de l'emploi",
+    "zipCityEx": "ex. 1234 Paris",
+    "activeDaysSmall": "Nombre de jours actifs sur la platform",
+    "contractType": "Type de contrat",
+    "minSal": "Salaire minimum",
+    "maxSal": "Salaire maximum"
   },
   "footer": {
     "company": "Entreprise",

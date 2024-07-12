@@ -1,57 +1,57 @@
-@if (contractTypes$ | async; as contractTypes) {
-@if (jobFunctions$ | async; as jobFunctions) {
-@if (companyAdvertiser$ | async; as companyAdvertiser) {
-    <form [formGroup]="jobForm" class="form container">
-        <h1>New Job</h1>
-        <label class="fullWitdh">Company
-            <p-dropdown 
+<ng-container *ngIf="{  
+    contractTypes: contractTypes$ | async,  
+    jobFunctions: jobFunctions$ | async,  
+    companyAdvertiser: companyAdvertiser$ | async  
+  } as data">
+  <ng-container *ngIf="data.contractTypes && data.jobFunctions && data.companyAdvertiser">  
+    <form [formGroup]="jobForm" (ngSubmit)="saveJob()" class="form container">
+        <h1>{{'job.newJob' | translate}}</h1>
+            <app-form-field class="fullWitdh field" [control]="jobForm.controls['agentId']" label="job.company" fieldId="company">
+                <p-dropdown 
                 id="company" 
                 formControlName="agentId" 
-                [options]="companyAdvertiser"
+                [options]="data.companyAdvertiser"
                 optionLabel="company.name"
                 optionValue="id"
-                [style]="{'width':'100%'}" 
-                placeholder="Select the company who's hiring" />
-        </label>
-        <label class="fullWitdh">Job Function
-            <p-dropdown 
+                [style]="{'width':'100%'}" />
+            </app-form-field>
+            <app-form-field class="fullWitdh field" [control]="jobForm.controls['jobFunctionId']" label="job.jobFunction" fieldId="jobFunction">
+                <p-dropdown 
                 id="jobFunction" 
                 formControlName="jobFunctionId" 
-                [options]="jobFunctions"
+                [options]="data.jobFunctions"
                 optionLabel="name"
                 optionValue="id"
-                [style]="{'width':'100%'}" 
-                placeholder="Select a contract type" />
-        </label>
-        <label>Zip and City
+                [style]="{'width':'100%'}" />
+            </app-form-field>
+        <app-form-field class="field" [control]="jobForm.controls['zipCity']" label="job.zipCity" fieldId="zipCity">
             <input id="zipCity" type="text" pInputText formControlName="zipCity" />
-            <small id="zipCity">ex: 1000 Bruxelles</small>
-        </label>
-        <label>Active Days
+            <small>{{'job.zipCityEx' | translate}}</small>
+        </app-form-field>
+        <app-form-field class="field" [control]="jobForm.controls['activeDays']" label="job.activeDays" fieldId="activeDays">
             <p-inputNumber id="activeDays" formControlName="activeDays" [min]="1" [max]="30" [style]="{'width':'100%'}" />
-            <small id="activeDays">Number of days the job will be visible</small>
-        </label>
-        <label class="fullWitdh">Job Description
-            <textarea id="description" pInputTextarea formControlName="description" r></textarea>
-        </label>
-        <label class="fullWitdh">Contract Type
+            <small id="activeDays">{{'job.activeDaysSmall' | translate}}</small>
+        </app-form-field>
+        <app-form-field class="fullWitdh field" [control]="jobForm.controls['description']" label="job.description" fieldId="description">
+            <textarea id="description" pInputTextarea formControlName="description"></textarea>
+        </app-form-field>
+        <app-form-field class="fullWitdh field" [control]="jobForm.controls['contractTypeId']" label="job.contractType" fieldId="contractType">
             <p-dropdown 
             id="contractType" 
             formControlName="contractTypeId" 
-            [options]="contractTypes"
+            [options]="data.contractTypes"
             optionLabel="name"
             optionValue="id"
             [style]="{'width':'100%'}"  
             placeholder="Select a contract type" />
-        </label>
-        <label>Mininmum annual salary
+        </app-form-field>
+        <app-form-field class="field" [control]="jobForm.controls['annualGrossSalaryMin']" label="job.minSal" fieldId="annualGrossSalaryMin">
             <p-inputNumber id="annualGrossSalaryMin" formControlName="annualGrossSalaryMin" [min]="0" [style]="{'width':'100%'}" />
-        </label>
-        <label>Maximum annual salary
+        </app-form-field>
+        <app-form-field class="field" [control]="jobForm.controls['annualGrossSalaryMax']" label="job.maxSal" fieldId="annualGrossSalaryMax">
             <p-inputNumber id="annualGrossSalaryMax" formControlName="annualGrossSalaryMax" [min]="0" [style]="{'width':'100%'}" />
-        </label>
-        <button pButton type="submit" [disabled]="!jobForm.valid" (click)="saveJob()">Save</button>
+        </app-form-field>
+        <button pButton type="submit" [disabled]="!jobForm.valid">{{'job.save' | translate}}</button>
     </form>
-}
-}
-}
+</ng-container>
+</ng-container>

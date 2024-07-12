@@ -37,7 +37,7 @@ export class JobFormComponent implements OnInit{
 
     this.jobFunctions$ = this.jobService.getJobFunctions();
 
-    this.companyAdvertiser$ = this.companyAdvertiserService.getCompanyAdvertiserByJobAdvertiserId(this.authService.currentUser!.user.id.toString());
+    this.companyAdvertiser$ = this.companyAdvertiserService.getByJobAdvertiserId(this.authService.currentUser!.user.id);
 
     this.jobForm = this.formBuilder.group(JOB_FORM);
   }

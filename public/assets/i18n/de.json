@@ -99,7 +99,21 @@
     "jobFound": "Gefunden {{jobsLength}} Jobs",
     "today": "Heute",
     "yesterday": "Gestern",
-    "daysAgo": "Vor {{days}} Tagen"
+    "daysAgo": "Vor {{days}} Tagen",
+    "published": "Veröffentlicht",
+    "apply": "Bewerben",
+    "save": "Speichern",
+    "newJob": "Neuer Job",
+    "company": "Unternehmen",
+    "jobFunction": "Job Funktion",
+    "zipCity": "Postleitzahl und Stadt",
+    "activeDays": "Aktive Tage",
+    "jobDescription": "Job Beschreibung",
+    "zipCityEx": "z.B. 1234 Berlin",
+    "activeDaysSmall": "Tage aktiv",
+    "contractType": "Vertragsart",
+    "minSal": "Mindestgehalt",
+    "maxSal": "Höchstgehalt"
   },
   "footer": {
     "company": "Unternehmen",
