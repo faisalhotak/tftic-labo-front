@@ -19,7 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
-import {PaginatorModule} from "primeng/paginator";
+import { PaginatorModule } from "primeng/paginator";
 import { JobFormComponent } from './components/job-form/job-form.component';
 import { NewJobComponent } from './pages/new-job/new-job.component';
 import { InputTextModule } from 'primeng/inputtext';
@@ -41,7 +41,8 @@ import { CompanyAdvertiserService } from './service/company-advertiser.service';
     FilterLocationComponent,
     FiltersComponent,
     JobFormComponent,
-    NewJobComponent
+    NewJobComponent,
+    JobDetailsComponent
   ],
   imports: [
     CommonModule,

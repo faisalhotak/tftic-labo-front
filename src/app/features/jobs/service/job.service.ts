@@ -32,8 +32,7 @@ export class JobService {
               (job) =>
                 ({
                   ...job,
-                  publishingDate: new Date(job.createdAt),
-                  expirationDate: new Date(job.expiringDate),
+                  createdAt: new Date(job.createdAt),
                 }) as Job,
             ),
           };
@@ -48,7 +47,6 @@ export class JobService {
           ({
             ...job,
             createdAt: new Date(job.createdAt),
-            expirationDate: new Date(job.expiringDate),
           }) as Job,
       ),
     );
