@@ -2,7 +2,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { COMMON } from '../../../core/constants/common';
-import { environment } from '../../../../environments/environment';
 import { ContractType, Job, JobFunction, PagedJobOffers } from '../models/job';
 import { JobForm } from '../forms/job.form';
 
@@ -58,18 +57,17 @@ export class JobService {
 
   getContractTypes(): Observable<ContractType[]> {
     return this.http.get<ContractType[]>(
-      `${environment.baseUrl}/contract-types`,
+      `/contract-types`,
     );
   }
 
   getJobFunctions(): Observable<JobFunction[]> {
     return this.http.get<JobFunction[]>(
-      `${environment.baseUrl}/job-functions`,
+      `/job-functions`,
     );
   }
 
   postJob(newJob: JobForm): Observable<JobForm> {
-    console.log('ici');
-    return this.http.post<JobForm>(`${environment.baseUrl}/job-offers`, newJob);
+    return this.http.post<JobForm>(`/job-offers`, newJob);
   }
 }

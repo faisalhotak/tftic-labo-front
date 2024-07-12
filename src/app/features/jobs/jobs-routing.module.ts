@@ -11,14 +11,14 @@ const routes: Routes = [
     component: JobsComponent,
   },
   {
-    path: ':id',
-    component: JobDetailsComponent,
-  },
-  {
     path: 'new',
     component: NewJobComponent,
     canActivate: [AdvertiserGuard],
-  }
+  },
+  {
+    path: ':id',
+    component: JobDetailsComponent,
+  },
 ];
 
 @NgModule({

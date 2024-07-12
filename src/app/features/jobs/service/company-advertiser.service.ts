@@ -9,6 +9,6 @@ export class CompanyAdvertiserService {
   private readonly http = inject(HttpClient);
 
   getCompanyAdvertiserByJobAdvertiserId(id: string): Observable<CompanyAdvertiser[]> {
-    return this.http.get<CompanyAdvertiser[]>(`${environment.baseUrl}/company-advertiser/${id}`);
+    return this.http.get<CompanyAdvertiser[]>(`/company-advertiser/${id}`);
   }
 }
