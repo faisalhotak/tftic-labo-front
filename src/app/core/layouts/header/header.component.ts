@@ -2,8 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { ESSENTIAL_ROUTES } from '../../constants/routes';
 import { AuthService } from '../../services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { TranslateService } from '@ngx-translate/core';
-import { MessageService } from 'primeng/api';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-header',
@@ -12,8 +11,7 @@ import { MessageService } from 'primeng/api';
 })
 export class HeaderComponent {
   private readonly $auth = inject(AuthService);
-  private readonly $translateService = inject(TranslateService);
-  private readonly $messageService = inject(MessageService);
+  private readonly $notificationService = inject(NotificationService);
 
   protected readonly ESSENTIAL_ROUTES = ESSENTIAL_ROUTES;
 
@@ -55,10 +53,9 @@ export class HeaderComponent {
   handleLogout() {
     this.$auth.logout();
 
-    this.$messageService.add({
-      severity: 'success',
-      summary: this.$translateService.instant('auth.logout.success.summary'),
-      detail: this.$translateService.instant('auth.logout.success.detail'),
-    });
+    this.$notificationService.showSuccess(
+      'auth.logout.success.summary',
+      'auth.logout.success.detail',
+    );
   }
 }

@@ -8,10 +8,10 @@
   </app-form-field>
 
   <app-form-field [control]="form.controls['password']" fieldId="in-password" label="password">
-    <p-password formControlName="password" [toggleMask]="true" id="in-password" [inputStyle]="{'width':'100%'}" [style]="{'width': '100%'}" feedback="false"></p-password>
+    <p-password formControlName="password" [toggleMask]="true" id="in-password" styleClass="w-full" feedback="false"></p-password>
   </app-form-field>
 
   <div class="flex justify-content-center">
-    <p-button label="{{ 'auth.login.button.submit' | translate }}" type="submit" [style]="{'width': '100%'}" [disabled]="form.invalid"></p-button>
+    <p-button label="{{ 'auth.login.button.submit' | translate }}" type="submit" styleClass="w-full" [disabled]="form.invalid"></p-button>
   </div>
 </form>

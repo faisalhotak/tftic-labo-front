@@ -51,16 +51,13 @@ export class AuthService {
 
   login(form: ILoginForm) {
     return this._httpClient
-      .post<IAuth>(`${environment.baseUrl}${API_ENDPOINTS.login}`, form)
+      .post<IAuth>(`${API_ENDPOINTS.login}`, form)
       .pipe(tap((auth) => (this.currentUser = auth)));
   }
 
   registerUser(form: IRegisterForm | IRegisterSeekerForm, userType: UserType) {
     return this._httpClient
-      .post<IAuth>(
-        `${environment.baseUrl}${API_ENDPOINTS.register[userType]}`,
-        form,
-      )
+      .post<IAuth>(`${API_ENDPOINTS.register[userType]}`, form)
       .pipe(tap((auth) => (this.currentUser = auth)));
   }
 

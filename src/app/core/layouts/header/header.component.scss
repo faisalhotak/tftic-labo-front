@@ -26,6 +26,10 @@
       background: transparent;
       border: none;
 
+      button.p-menuitem-link {
+        border: none;
+      }
+
       .p-menuitem-link {
         color: #000;
         font-size: 16px;
