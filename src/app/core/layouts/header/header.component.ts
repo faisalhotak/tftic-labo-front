@@ -10,15 +10,16 @@ import { NotificationService } from '../../services/notification.service';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent {
-  private readonly $auth = inject(AuthService);
-  private readonly $notificationService = inject(NotificationService);
+  private readonly authService = inject(AuthService);
+  private readonly notificationService = inject(NotificationService);
 
   protected readonly ESSENTIAL_ROUTES = ESSENTIAL_ROUTES;
 
-  isLoggedIn = toSignal(this.$auth.isLoggedIn$);
+  isLoggedIn = toSignal(this.authService.isLoggedIn$);
 
   menuItems = computed(() => {
     const isLoggedIn = this.isLoggedIn();
+
     return [
       {
         label: 'navbar.jobs',
@@ -27,7 +28,6 @@ export class HeaderComponent {
       {
         label: 'navbar.logIn',
         routerLink: '/auth/login',
-        styleClass: 'p-button-secondary',
         visible: !isLoggedIn,
       },
       {
@@ -51,9 +51,9 @@ export class HeaderComponent {
   });
 
   handleLogout() {
-    this.$auth.logout();
+    this.authService.logout();
 
-    this.$notificationService.showSuccess(
+    this.notificationService.showSuccess(
       'auth.logout.success.summary',
       'auth.logout.success.detail',
     );
