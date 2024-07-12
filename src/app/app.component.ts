@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from './core/services/cookie.service';
 import { TranslateService } from '@ngx-translate/core';
 import { COMMON } from './core/constants/common';
 
