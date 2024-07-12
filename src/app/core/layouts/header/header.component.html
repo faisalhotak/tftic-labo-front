@@ -3,17 +3,16 @@
     <div class="navbar-left">
       <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
     </div>
-    <p-menubar [model]="menuItems()">
-      <ng-template pTemplate="item" let-item>
-        @if (!item.command) {
-          <a class="p-menuitem-link" [routerLink]="item.routerLink">{{ item.label | translate }}</a>
-        } @else {
-          <a class="p-menuitem-link" (click)="item.command">{{ item.label | translate }}</a>
-        }
-      </ng-template>
-      <ng-template pTemplate="end">
-        <app-country-dropdown></app-country-dropdown>
-      </ng-template>
-    </p-menubar>
+      <p-menubar [model]="menuItems()">
+        <ng-template pTemplate="item" let-item>
+          <a class="p-menuitem-link"
+             [routerLink]="item.routerLink ? item.routerLink : null"
+             (click)="item.command ? item.command : null"
+          >
+            {{ item.label | translate }}
+          </a>
+        </ng-template>
+      </p-menubar>
+      <app-country-dropdown></app-country-dropdown>
   </div>
 </header>
