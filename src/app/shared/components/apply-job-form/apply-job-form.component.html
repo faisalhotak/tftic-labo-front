@@ -1,0 +1,50 @@
+@if (job$ | async; as job) {
+  <p-card>
+    <ng-template pTemplate="title">
+      {{ job.jobFunction.name | translate }}
+    </ng-template>
+    <ng-template pTemplate="subtitle">
+      <div class="subtitle">
+        <div>
+          <i class="pi pi-user"></i>
+          {{ job.jobFunction.name| translate }}
+        </div>
+        <div>
+          <i class="pi pi-briefcase"></i>
+          {{ job.agent.company.name | translate }}
+        </div>
+        <div>
+          <i class="pi pi-map-marker"></i>
+          {{ job.zipCity | locationPipe }}
+        </div>
+        <div>
+          <i class="pi pi-calendar"></i>
+          Published: {{ job.createdAt | publishingPipe }}
+        </div>
+        <div>
+          <i class="pi pi-clipboard"></i>
+          {{ job.contractType.name | translate }}
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <p>
+        {{ job.description | translate }}
+      </p>
+      <div class="salary">
+        <p> {{ 'apply.salaryMin' | translate }} : {{ job.annualGrossSalaryMin }} </p>
+        <p> {{ 'apply.salaryMax' | translate }} : {{ job.annualGrossSalaryMax }} </p>
+      </div>
+    </ng-template>
+  </p-card>
+}
+<p>
+  <p-checkbox [(ngModel)]="checked"
+              [binary]="true"
+              inputId="binary"/>
+  {{ 'apply.confirm'| translate }}
+</p>
+@if (checked) {
+  <p-button label="{{'carousel.apply'| translate}}" [outlined]="true" size="small" styleClass="w-full"
+            (onClick)="applyJob()"/>
+}

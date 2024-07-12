@@ -83,17 +83,32 @@
     "language": "Language"
   },
   "searchBar": {
-    "function": "Function",
-    "skill": "Skill",
-    "or": "or",
-    "company": "Company",
-    "city": "City",
-    "province": "Province",
-    "zipCode": "Zip code",
-    "findJob": "Find Job"
+      "function": "Function",
+      "skill": "Skill",
+      "or": "or",
+      "company": "Company",
+      "city": "City",
+      "province": "Province",
+      "zipCode": "Zip code",
+      "findJob": "Find Job"
   },
   "carousel": {
-    "published": "Published"
+      "published": "Published",
+      "apply": "Apply",
+      "view" : "View"
+  },
+  "apply": {
+    "confirm": "Confirm that you want to apply",
+    "salaryMax": "Maximum salary",
+    "salaryMin" : "Minimum salary",
+    "success": {
+      "summary": "Success",
+      "detail": "Application sent successfully"
+    },
+    "error": {
+      "summary": "Error",
+      "detail": "Application not sent successfully"
+    }
   },
   "job": {
     "jobFound": "Found {{jobsLength}} jobs",

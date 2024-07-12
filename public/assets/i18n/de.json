@@ -93,7 +93,22 @@
     "findJob": "Job finden"
   },
   "carousel": {
-    "published": "Veröffentlicht"
+    "published": "Veröffentlicht",
+    "apply": "Bewerben",
+    "view" : "Anwenden"
+  },
+  "apply": {
+    "confirm": "Bestätigen Sie, dass Sie sich bewerben möchten",
+    "salaryMax": "Maximales Gehalt",
+    "salaryMin": "Minimales Gehalt",
+    "success": {
+      "summary": "Erfolg",
+      "detail": "Bewerbung erfolgreich gesendet"
+    },
+    "error": {
+      "summary": "Fehler",
+      "detail": "Bewerbung nicht erfolgreich gesendet"
+    }
   },
   "job": {
     "jobFound": "Gefunden {{jobsLength}} Jobs",

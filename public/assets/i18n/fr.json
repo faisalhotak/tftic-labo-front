@@ -88,7 +88,22 @@
     "findJob": "Trouver un emploi"
   },
   "carousel": {
-    "published": "Publié"
+    "published": "Publié",
+    "apply": "Postuler",
+    "view" : "Détail"
+  },
+  "apply": {
+    "confirm": "Confirmez-vous vouloir postuler",
+    "salaryMax": "Salaire maximum",
+    "salaryMin": "Salaire minimum",
+    "success": {
+      "summary": "Succès",
+      "detail": "Candidature envoyée avec succès"
+    },
+    "error": {
+      "summary": "Erreur",
+      "detail": "Candidature non envoyée avec succès"
+    }
   },
   "job": {
     "jobFound": "{{jobsLength}} emplois trouvés",
