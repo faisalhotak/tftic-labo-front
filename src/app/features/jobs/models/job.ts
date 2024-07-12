@@ -3,7 +3,7 @@ export interface Job {
   description: string;
   annualGrossSalaryMin: number;
   annualGrossSalaryMax: number;
-  publishingDate: Date;
+  createdAt: Date;
   activeDays: number;
   expiringDate: Date;
   zipCity: string;

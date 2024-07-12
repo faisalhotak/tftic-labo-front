@@ -5,5 +5,9 @@ export const COMMON = {
     path: './assets/i18n/',
     extension: '.json',
   },
+  user: {
+    cookieName: 'user',
+  },
   page: 'page',
+  rootPath: '/',
 };

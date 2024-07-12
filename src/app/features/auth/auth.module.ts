@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from '../../core/services/cookie.service';
 import { LoginComponent } from './pages/login/login.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
