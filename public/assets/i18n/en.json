@@ -36,7 +36,7 @@
   },
   "auth": {
     "login": {
-      "message": "Log in to find the job that's right for you.",
+      "message": "Log in to access your account.",
       "button": {
         "submit": "Login"
       },

@@ -1,19 +1,13 @@
-import { ErrorHandler, Injectable } from '@angular/core';
+import { ErrorHandler, Injectable, inject } from '@angular/core';
 import { GenericError } from './errors/generic.error';
-import { MessageService } from 'primeng/api';
-import { TranslateService } from '@ngx-translate/core';
 import { ResourceNotFoundError } from './errors/resource-not-found.error';
 import { Router } from '@angular/router';
+import { NotificationService } from '../services/notification.service';
 
 @Injectable()
 export class GlobalErrorHandler implements ErrorHandler {
-  private static readonly DEFAULT_MSG_LIFE = 5_000;
-
-  constructor(
-    private readonly $message: MessageService,
-    private readonly $translate: TranslateService,
-    private readonly $router: Router,
-  ) {}
+  private readonly notificationService = inject(NotificationService);
+  private readonly router = inject(Router);
 
   handleError(error: any): void {
     if (error instanceof ResourceNotFoundError) {
@@ -27,16 +21,14 @@ export class GlobalErrorHandler implements ErrorHandler {
 
   handleResourceNotFound(error: ResourceNotFoundError): void {
     this.handleGenericError(error);
-    this.$router.navigate(['jobs']).then();
+    this.router.navigate(['jobs']).then();
   }
 
   handleGenericError(error: GenericError): void {
-    this.$message.add({
-      severity: 'error',
-      summary: this.$translate.instant(error.message + '.message'),
-      detail: this.$translate.instant(error.message + '.detail'),
-      life: GlobalErrorHandler.DEFAULT_MSG_LIFE,
-    });
+    this.notificationService.showError(
+      `${error.message}.message`,
+      `${error.message}.detail`,
+    );
   }
 
   handleUnexpected(err: any) {

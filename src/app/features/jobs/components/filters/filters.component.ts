@@ -1,7 +1,4 @@
-import { Component, EventEmitter, inject, OnInit, Output } from '@angular/core';
-import { JobService } from '../../service/job.service';
-import { Observable } from 'rxjs';
-import { Job } from '../../models/job';
+import { Component, Input, WritableSignal } from '@angular/core';
 import { Pair } from '../../../../shared/models/pair';
 
 @Component({
@@ -9,26 +6,15 @@ import { Pair } from '../../../../shared/models/pair';
   templateUrl: './filters.component.html',
   styleUrl: './filters.component.scss',
 })
-export class FiltersComponent implements OnInit {
-  private readonly jobService = inject(JobService);
-
-  jobs$!: Observable<Job[]>;
-
-  filters: Map<string, string> = new Map<string, string>();
-
-  @Output() jobsToSend$ = new EventEmitter<Observable<Job[]>>();
-
-  getJobs() {
-    this.jobs$ = this.jobService.getAllJobs(this.filters);
-    this.jobsToSend$.emit(this.jobs$);
-  }
+export class FiltersComponent {
+  @Input() filters!: WritableSignal<Map<string, string>>;
+  @Input() page!: WritableSignal<number>;
 
   addFilter(filter: Pair) {
-    this.filters.set(filter.key, filter.value);
-    this.getJobs();
-  }
+    this.filters.update((filters) => {
+      return new Map([...filters, [filter.key, filter.value]]);
+    });
 
-  ngOnInit() {
-    this.getJobs();
+    this.page.set(0);
   }
 }
