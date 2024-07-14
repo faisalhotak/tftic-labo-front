@@ -18,6 +18,7 @@
         </ng-template>
         <ng-template pTemplate="end">
           <app-country-dropdown></app-country-dropdown>
+          <p-inputSwitch [(ngModel)]="checked" (click)="onThemeChange(checked ? 'dark' : 'light')"></p-inputSwitch>
         </ng-template>
       </p-menubar>
     </div>
