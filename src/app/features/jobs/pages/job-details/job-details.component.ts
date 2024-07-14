@@ -16,7 +16,7 @@ export class JobDetailsComponent implements OnInit {
   job$!: Observable<Job>;
 
   ngOnInit() {
-    const jobId = this.route.snapshot.paramMap.get('id');
+    const jobId = +this.route.snapshot.paramMap.get('id')!;
 
     if (jobId) {
       this.job$ = this.jobService.getJobById(jobId);

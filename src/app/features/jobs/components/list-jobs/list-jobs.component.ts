@@ -6,7 +6,7 @@ import { PaginatorState } from 'primeng/paginator';
 @Component({
   selector: 'app-list-jobs',
   templateUrl: './list-jobs.component.html',
-  styleUrl: './list-jobs.component.scss',
+  styleUrl: './list-jobs.component.scss'
 })
 export class ListJobsComponent {
   @Input() jobOffers$!: Observable<Job[]>;

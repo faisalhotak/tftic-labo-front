@@ -1,10 +1,12 @@
 <div class="flex justify-content-center flex-wrap">
   <div class="card">
     <p-inputIcon class="margin" styleClass="pi pi-search"/>
-    <input type="text" pInputText placeholder="({{ 'searchBar.function' | translate }}, {{ 'searchBar.skill' | translate }} {{ 'searchBar.or' | translate }} {{ 'searchBar.company' | translate }})"/>
-  <p-inputIcon class="margin" styleClass="pi pi-send"/>
+    <input type="text" pInputText
+           placeholder="({{ 'searchBar.function' | translate }}, {{ 'searchBar.skill' | translate }} {{ 'searchBar.or' | translate }} {{ 'searchBar.company' | translate }})"/>
+    <p-inputIcon class="margin" styleClass="pi pi-send"/>
     <p-autoComplete
       [(ngModel)]="selectedCity"
+      [dropdown]="true"
       [group]="true"
       [suggestions]="filteredGroups"
       (completeMethod)="filterGroupedCity($event)"
@@ -14,11 +16,11 @@
           <img
             src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
             [class]="'mr-2 flag flag-' + group.value"
-            style="width: 20px" />
+            style="width: 20px"/>
           <span>{{ group.label }}</span>
         </div>
       </ng-template>
     </p-autoComplete>
-  <p-button class="margin" label="{{ 'searchBar.findJob' | translate }}" />
-</div>
+    <p-button [outlined]="true" class="margin" label="{{ 'searchBar.findJob' | translate }}"/>
+  </div>
 </div>
