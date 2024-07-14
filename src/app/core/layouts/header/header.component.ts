@@ -1,15 +1,16 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { ESSENTIAL_ROUTES } from '../../constants/routes';
 import { AuthService } from '../../services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NotificationService } from '../../services/notification.service';
+import { ThemeService } from '../../services/theme.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   private readonly authService = inject(AuthService);
   private readonly notificationService = inject(NotificationService);
 
@@ -49,6 +50,19 @@ export class HeaderComponent {
       },
     ].filter((item) => item.visible !== false);
   });
+
+  checked: boolean = false;
+  selectedTheme: string = 'light';
+  themeService: ThemeService = inject(ThemeService);
+
+  ngOnInit(): void {
+    this.themeService.setTheme(this.selectedTheme);
+  }
+
+  onThemeChange(theme: string): void {
+    this.selectedTheme = theme;
+    this.themeService.setTheme(theme);
+  }
 
   handleLogout() {
     this.authService.logout();
