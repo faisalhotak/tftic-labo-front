@@ -1,0 +1,60 @@
+h1 {
+  color: #2c63b8;
+}
+
+main {
+  background-color: #FAFAFA;
+}
+
+.navbar {
+  background-color: #ffffff;
+
+  .navbar-left {
+    a {
+      color: #000000;
+    }
+  }
+
+  .navbar-right {
+    a {
+      color: #000000;
+    }
+
+    .p-menubar {
+      background: transparent;
+
+      .p-menuitem-link {
+        color: #000;
+        &:hover {
+          color: #3575e2;
+        }
+      }
+
+      .p-menuitem {
+        &.p-button-primary .p-menuitem-link {
+          background-color: #3575e2;
+          color: #fff;
+          &:hover {
+            background-color: #2c63b8;
+          }
+        }
+
+        &.p-button-secondary .p-menuitem-link {
+          background-color: #f9f9f9;
+          color: #000;
+          &:hover {
+            background-color: #ddd;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-container {
+  background-color: #ece9e9;
+}
+
+.footer-links a {
+  color: #000000;
+}
