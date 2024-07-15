@@ -1,0 +1,9 @@
+<p-tabMenu [model]="items" [activeItem]="activeItem">
+    <ng-template pTemplate="item" let-item>
+        <a pRipple class="flex align-items-center gap-2 p-menuitem-link">
+            <span class="font-bold">
+                {{ item.name }}
+            </span>
+        </a>
+    </ng-template>
+</p-tabMenu>
