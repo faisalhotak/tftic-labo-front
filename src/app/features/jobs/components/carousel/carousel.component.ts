@@ -1,8 +1,8 @@
 import { Component, inject, Input, OnInit } from '@angular/core';
-import { Job } from '../../../features/jobs/models/job';
+import { Job } from '../../models/job';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../core/services/auth.service';
+import { AuthService } from '../../../../core/services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({

@@ -14,7 +14,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from '../features/home/home.component';
 import { JobService } from '../features/jobs/service/job.service';
-import { CarouselComponent } from '../shared/components/carousel/carousel.component';
+import { CarouselComponent } from '../features/jobs/components/carousel/carousel.component';
 import { SearchBarComponent } from '../shared/components/search-bar/search-bar.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CarouselModule } from 'primeng/carousel';
