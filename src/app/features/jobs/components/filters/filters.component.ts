@@ -1,5 +1,5 @@
 import { Component, Input, WritableSignal } from '@angular/core';
-import { Pair } from '../../../../shared/models/pair';
+import { ZipCity } from '../../models/job';
 
 @Component({
   selector: 'app-filters',
@@ -10,9 +10,9 @@ export class FiltersComponent {
   @Input() filters!: WritableSignal<Map<string, string>>;
   @Input() page!: WritableSignal<number>;
 
-  addFilter(filter: Pair) {
+  addFilter(filter: ZipCity) {
     this.filters.update((filters) => {
-      return new Map([...filters, [filter.key, filter.value]]);
+      return new Map([...filters, ['city', filter.city], ['zip', filter.zip]]);
     });
 
     this.page.set(0);
