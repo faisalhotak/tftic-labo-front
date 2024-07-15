@@ -80,7 +80,9 @@
     "logIn": "Log in",
     "signUp": "Sign up",
     "logOut": "Log out",
-    "language": "Language"
+    "language": "Language",
+    "newJob": "New Job",
+    "advertiser": "Advertiser"
   },
   "searchBar": {
       "function": "Function",

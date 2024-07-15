@@ -11,6 +11,7 @@ import {
 } from '../../features/auth/forms/register.form';
 import { UserType } from '../../features/auth/pages/register/register.component';
 import { COMMON } from '../constants/common';
+import { ROLES } from '../constants/roles';
 
 @Injectable()
 export class AuthService {
@@ -33,6 +34,12 @@ export class AuthService {
 
   get isLoggedIn$(): Observable<boolean> {
     return this._currentUser$.pipe(map((auth) => !!auth));
+  }
+
+  get isAdvertiser$(): Observable<boolean> {
+    return this._currentUser$.pipe(
+      map((auth) => !!auth?.roles.includes(ROLES.ADVERTISER)),
+    );
   }
 
   get token(): string | null {
