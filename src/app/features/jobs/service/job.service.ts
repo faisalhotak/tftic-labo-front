@@ -2,7 +2,13 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { COMMON } from '../../../core/constants/common';
-import { ContractType, Job, JobFunction, PagedJobOffers } from '../models/job';
+import {
+  ContractType,
+  Job,
+  JobFunction,
+  PagedJobOffers,
+  ZipCity,
+} from '../models/job';
 import { JobForm } from '../forms/job.form';
 import { API_ENDPOINTS } from '../../../core/constants/api-endpoints';
 
@@ -52,8 +58,8 @@ export class JobService {
     );
   }
 
-  getAllLocations(): Observable<string[]> {
-    return this.http.get<string[]>(API_ENDPOINTS.jobs.location);
+  getAllLocations(): Observable<ZipCity[]> {
+    return this.http.get<ZipCity[]>(`/zip-city`);
   }
 
   getContractTypes(): Observable<ContractType[]> {
