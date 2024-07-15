@@ -6,6 +6,7 @@
             [dropdown]="true"
             [forceSelection]="true"
             [suggestions]="filteredLocation"
+            [optionLabel]="getLocationLabel"
             (completeMethod)="search($event)"
             [showClear]="true"
         />
