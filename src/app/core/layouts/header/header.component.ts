@@ -20,7 +20,6 @@ export class HeaderComponent implements OnInit {
 
   menuItems = computed(() => {
     const isLoggedIn = this.isLoggedIn();
-
     return [
       {
         label: 'navbar.jobs',
@@ -29,6 +28,7 @@ export class HeaderComponent implements OnInit {
       {
         label: 'navbar.logIn',
         routerLink: '/auth/login',
+        styleClass: 'p-button-secondary',
         visible: !isLoggedIn,
       },
       {
