@@ -7,7 +7,6 @@ import { FormFieldComponent } from './components/form-field/form-field.component
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-form.component';
-import { EditorModule } from 'primeng/editor';
 import { JobsModule } from '../features/jobs/jobs.module';
 import { Button } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -28,7 +27,6 @@ import { CheckboxModule } from 'primeng/checkbox';
     FloatLabelModule,
     TranslateModule,
     ReactiveFormsModule,
-    EditorModule,
     JobsModule,
     Button,
     CardModule,
