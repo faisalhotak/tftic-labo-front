@@ -80,7 +80,9 @@
     "logIn": "Inloggen",
     "signUp": "Aanmelden",
     "logOut": "Uitloggen",
-    "language": "Taal"
+    "language": "Taal",
+    "newJob": "Nieuwe baan",
+    "advertiser": "Adverteerder"
   },
   "searchBar": {
     "function": "Functie",

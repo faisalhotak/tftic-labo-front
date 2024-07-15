@@ -75,7 +75,9 @@
     "logIn": "Connexion",
     "signUp": "Inscription",
     "logOut": "Déconnexion",
-    "language": "Langue"
+    "language": "Langue",
+    "newJob": "Nouvel emploi",
+    "advertiser": "Recruteur"
   },
   "searchBar": {
     "function": "Fonction",
