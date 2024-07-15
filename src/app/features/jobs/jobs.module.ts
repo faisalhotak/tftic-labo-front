@@ -19,7 +19,21 @@ import { FormsModule } from '@angular/forms';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
-import { PaginatorModule } from 'primeng/paginator';
+import { PaginatorModule } from "primeng/paginator";
+import { JobFormComponent } from './components/job-form/job-form.component';
+import { NewJobComponent } from './pages/new-job/new-job.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CompanyAdvertiserService } from './service/company-advertiser.service';
+import { SharedModule } from '../../shared/shared.module';
+import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-form.component';
+import { CheckboxModule } from 'primeng/checkbox';
+
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +44,10 @@ import { PaginatorModule } from 'primeng/paginator';
     LocationPipe,
     FilterLocationComponent,
     FiltersComponent,
+    JobFormComponent,
+    NewJobComponent,
     JobDetailsComponent,
+    ApplyJobFormComponent,
   ],
   imports: [
     CommonModule,
@@ -43,8 +60,22 @@ import { PaginatorModule } from 'primeng/paginator';
     ProgressSpinnerModule,
     ButtonModule,
     PaginatorModule,
+    InputTextModule,
+    InputNumberModule,
+    InputTextareaModule,
+    DropdownModule,
+    ReactiveFormsModule,
+    SharedModule,
+    CheckboxModule,
   ],
-  exports: [PublishingPipe, LocationPipe],
-  providers: [JobService],
+  exports: [
+    PublishingPipe,
+    LocationPipe,
+    ApplyJobFormComponent,
+  ],
+  providers: [
+    JobService,
+    CompanyAdvertiserService,
+  ]
 })
 export class JobsModule {}

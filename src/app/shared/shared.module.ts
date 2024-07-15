@@ -7,7 +7,6 @@ import { FormFieldComponent } from './components/form-field/form-field.component
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { TranslateModule } from '@ngx-translate/core';
 import { ApplyJobFormComponent } from '../features/jobs/components/apply-job-form/apply-job-form.component';
-import { JobsModule } from '../features/jobs/jobs.module';
 import { Button } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputSwitchModule } from 'primeng/inputswitch';
@@ -17,7 +16,6 @@ import { CheckboxModule } from 'primeng/checkbox';
   declarations: [
     CountryDropdownComponent,
     FormFieldComponent,
-    ApplyJobFormComponent,
   ],
   imports: [
     CommonModule,
@@ -27,7 +25,6 @@ import { CheckboxModule } from 'primeng/checkbox';
     FloatLabelModule,
     TranslateModule,
     ReactiveFormsModule,
-    JobsModule,
     Button,
     CardModule,
     InputSwitchModule,
@@ -36,7 +33,6 @@ import { CheckboxModule } from 'primeng/checkbox';
   exports: [
     CountryDropdownComponent,
     FormFieldComponent,
-    ApplyJobFormComponent,
   ],
 })
 export class SharedModule {}
