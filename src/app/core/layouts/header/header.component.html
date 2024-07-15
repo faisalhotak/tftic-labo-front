@@ -3,24 +3,17 @@
     <div class="navbar-left">
       <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
     </div>
-    <div class="navbar-right">
-      <p-menubar [model]="menuItems()">
-        <ng-template pTemplate="item" let-item>
-          @if (!item.command) {
-            <ng-container>
-              <a class="p-menuitem-link" [routerLink]="item.routerLink">{{ item.label | translate }}</a>
-            </ng-container>
-          } @else {
-            <ng-container>
-              <a class="p-menuitem-link" (click)="item.command()">{{ item.label | translate }}</a>
-            </ng-container>
-          }
-        </ng-template>
-        <ng-template pTemplate="end">
-          <app-country-dropdown></app-country-dropdown>
-          <p-inputSwitch [(ngModel)]="checked" (click)="onThemeChange(checked ? 'dark' : 'light')"></p-inputSwitch>
-        </ng-template>
-      </p-menubar>
-    </div>
+    <p-menubar [model]="menuItems()">
+      <ng-template pTemplate="item" let-item>
+        <a class="p-menuitem-link"
+           [routerLink]="item.routerLink ? item.routerLink : null"
+           (click)="item.command ? item.command : null"
+        >
+          {{ item.label | translate }}
+        </a>
+      </ng-template>
+    </p-menubar>
+    <app-country-dropdown></app-country-dropdown>
+    <p-inputSwitch [(ngModel)]="checked" (click)="onThemeChange(checked ? 'dark' : 'light')"></p-inputSwitch>
   </div>
 </header>
