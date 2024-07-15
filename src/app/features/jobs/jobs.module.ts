@@ -69,10 +69,8 @@ import { CheckboxModule } from 'primeng/checkbox';
   exports: [
     PublishingPipe,
     ApplyJobFormComponent,
+    FilterLocationComponent,
   ],
-  providers: [
-    JobService,
-    CompanyAdvertiserService,
-  ]
+  providers: [JobService, CompanyAdvertiserService],
 })
 export class JobsModule {}

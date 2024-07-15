@@ -1,133 +1,69 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FilterService, SelectItemGroup } from 'primeng/api';
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { Job } from '../../../features/jobs/models/job';
+import { JobService } from '../../../features/jobs/service/job.service';
+import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
-interface AutoCompleteCompleteEvent {
-  originalEvent: Event;
-  query: string;
-}
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrl: './search-bar.component.scss',
 })
 export class SearchBarComponent implements OnInit {
-  selectedCity: any;
-  filteredGroups: any[] = [];
-  groupedCities: SelectItemGroup[] | undefined;
-
-  private readonly filterService: FilterService = inject(FilterService);
+  private readonly jobService: JobService = inject(JobService);
+  private readonly router = inject(Router);
+  @Input() jobList?: Observable<Job[]>;
+  searchJob = '';
+  searchCity = '';
+  displayJob: Job[] = [];
+  job: Job[] = [];
+  showResult = false;
 
   ngOnInit() {
-    this.groupedCities = [
-      {
-        label: 'Belgium',
-        value: 'be',
-        items: [
-          { label: 'Charleroi', value: 'Charleroi' },
-          { label: 'Namur', value: 'Namur' },
-          { label: 'Liège', value: 'Liège' },
-          { label: 'Mons', value: 'Mons' },
-          { label: 'Brussels', value: 'Brussels' },
-          { label: 'Antwerp', value: 'Antwerp' },
-          { label: 'Ghent', value: 'Ghent' },
-          { label: 'Bruges', value: 'Bruges' },
-          { label: 'Leuven', value: 'Leuven' },
-          { label: 'Mechelen', value: 'Mechelen' },
-          { label: 'Aalst', value: 'Aalst' },
-          { label: 'Kortrijk', value: 'Kortrijk' },
-          { label: 'Hasselt', value: 'Hasselt' },
-          { label: 'Ostend', value: 'Ostend' },
-          { label: 'Sint-Niklaas', value: 'Sint-Niklaas' },
-          { label: 'Tournai', value: 'Tournai' },
-          { label: 'Genk', value: 'Genk' },
-          { label: 'Seraing', value: 'Seraing' },
-          { label: 'Roeselare', value: 'Roeselare' },
-          { label: 'Verviers', value: 'Verviers' },
-          { label: 'Mouscron', value: 'Mouscron' },
-          { label: 'La Louvière', value: 'La Louvière' },
-          { label: 'Vilvoorde', value: 'Vilvoorde' },
-          { label: 'Louvain-la-Neuve', value: 'Louvain-la-Neuve' },
-          { label: 'Waregem', value: 'Waregem' },
-          { label: 'Herstal', value: 'Herstal' },
-          { label: 'Beringen', value: 'Beringen' },
-          { label: 'Turnhout', value: 'Turnhout' },
-          { label: 'Dilbeek', value: 'Dilbeek' },
-          { label: 'Heist-op-den-Berg', value: 'Heist-op-den-Berg' },
-          { label: 'Sint-Truiden', value: 'Sint-Truiden' },
-          { label: 'Lokeren', value: 'Lokeren' },
-          { label: "Braine-l'Alleud", value: "Braine-l'Alleud" },
-          { label: 'Geel', value: 'Geel' },
-          { label: 'Ninove', value: 'Ninove' },
-          { label: 'Grimbergen', value: 'Grimbergen' },
-          { label: 'Tongeren', value: 'Tongeren' },
-          { label: 'Zottegem', value: 'Zottegem' },
-          { label: 'Ieper', value: 'Ieper' },
-          { label: 'Halle', value: 'Halle' },
-          { label: 'Binche', value: 'Binche' },
-          { label: 'Lier', value: 'Lier' },
-          { label: 'Aarschot', value: 'Aarschot' },
-          { label: 'Morlanwelz', value: 'Morlanwelz' },
-          { label: 'Eupen', value: 'Eupen' },
-          { label: 'Huy', value: 'Huy' },
-          { label: 'Ath', value: 'Ath' },
-          { label: 'Neerpelt', value: 'Neerpelt' },
-          { label: 'Schoten', value: 'Schoten' },
-          { label: 'Menen', value: 'Menen' },
-          { label: 'Duffel', value: 'Duffel' },
-          { label: 'Dendermonde', value: 'Dendermonde' },
-          { label: 'Bastogne', value: 'Bastogne' },
-          { label: 'Malmedy', value: 'Malmedy' },
-          { label: 'Soignies', value: 'Soignies' },
-          { label: 'Knokke-Heist', value: 'Knokke-Heist' },
-          { label: 'Deinze', value: 'Deinze' },
-          { label: 'Wavre', value: 'Wavre' },
-          { label: 'Rixensart', value: 'Rixensart' },
-          { label: 'Oudenaarde', value: 'Oudenaarde' },
-          { label: 'Geraardsbergen', value: 'Geraardsbergen' },
-          { label: 'Hamme', value: 'Hamme' },
-          { label: 'Maaseik', value: 'Maaseik' },
-          { label: 'Châtelet', value: 'Châtelet' },
-          { label: 'Koksijde', value: 'Koksijde' },
-          { label: 'Tienen', value: 'Tienen' },
-          { label: 'Harelbeke', value: 'Harelbeke' },
-          { label: 'Bilzen', value: 'Bilzen' },
-          { label: 'Oupeye', value: 'Oupeye' },
-          { label: 'Jambes', value: 'Jambes' },
-          { label: 'Lommel', value: 'Lommel' },
-          { label: 'Westerlo', value: 'Westerlo' },
-          { label: 'Andenne', value: 'Andenne' },
-          { label: 'Flemalle', value: 'Flemalle' },
-          { label: 'Spa', value: 'Spa' },
-          { label: 'Lanaken', value: 'Lanaken' },
-        ],
-      },
-    ];
+    this.jobList?.subscribe((jobsList) => {
+      this.job = jobsList;
+      this.displayJob = jobsList;
+    });
   }
 
-  filterGroupedCity(event: AutoCompleteCompleteEvent) {
-    let query = event.query;
-    const filteredGroups = [];
-
-    if (!this.groupedCities) {
+  filterJobs() {
+    if (!this.searchCity && !this.searchJob) {
+      this.showResult = false;
       return;
     }
+    this.jobService.getAllJobs().subscribe((jobs) => {
+      this.displayJob = jobs.jobOffers.filter((job) => {
+        const matchesJob = this.searchJob
+          ? job.jobFunction.name
+              .toLowerCase()
+              .includes(this.searchJob.toLowerCase()) ||
+            job.agent.company.name
+              .toLowerCase()
+              .includes(this.searchJob.toLowerCase())
+          : true;
+        const matchesCity = this.searchCity
+          ? job.zipCity.city
+              .toLowerCase()
+              .includes(this.searchCity.toLowerCase()) ||
+            job.zipCity.zip.toString().includes(this.searchCity)
+          : true;
 
-    for (let optgroup of this.groupedCities) {
-      let filteredSubOptions = this.filterService.filter(
-        optgroup.items,
-        ['label'],
-        query,
-        'contains',
-      );
-      if (filteredSubOptions && filteredSubOptions.length) {
-        filteredGroups.push({
-          label: optgroup.label,
-          value: optgroup.value,
-          items: filteredSubOptions,
-        });
-      }
-    }
+        return matchesJob && matchesCity;
+      });
+    });
+  }
 
-    this.filteredGroups = filteredGroups;
+  onSearchJob() {
+    this.filterJobs();
+    console.log(this.displayJob);
+    this.showResult = true;
+  }
+
+  displayResult(): boolean {
+    return this.displayJob.length > 0;
+  }
+
+  displayDetails(jobId: number) {
+    this.router.navigate(['jobs', jobId]);
   }
 }
