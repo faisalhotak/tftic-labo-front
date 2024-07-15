@@ -1,0 +1,10 @@
+<p-card>
+
+  @for(item of data ; track $index){
+    <ng-container>
+      <p><span [class]="item.iconClass"></span>{{ item.label }}: {{ item.value }}</p>
+    </ng-container>
+  }
+
+
+</p-card>

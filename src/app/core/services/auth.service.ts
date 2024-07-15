@@ -27,6 +27,10 @@ export class AuthService {
     return this._currentUser$.asObservable();
   }
 
+  getCurrentUserRoles(): string[] {
+    return this.currentUser?.roles || [];
+  }
+
   get currentUser(): IAuth | null {
     return this._currentUser$.value;
   }

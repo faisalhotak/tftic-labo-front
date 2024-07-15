@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.menu-container {
+  margin-right: 1rem;
+}
+
+.avatar-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin : 0.6rem;
+}
+
+::ng-deep .p-card{
+  width: 100%;
+  min-width: 200px;
+}
+
+::ng-deep .p-card .p-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem 0;
+}
+
+
+
+::ng-deep .p-fieldset-legend{
+  margin: auto;
+  background-color: #6490d7;
+}
+
+
+.profile-info-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}

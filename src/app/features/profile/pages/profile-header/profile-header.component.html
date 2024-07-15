@@ -1,0 +1,11 @@
+<div class="avatar-container">
+  <p-avatar
+    label="{{ lastname.charAt(0) + firstname.charAt(0) | uppercase}}"
+    styleClass="mr-2"
+    size="xlarge"
+    shape="circle">
+  </p-avatar>
+  <div class="menu-container">
+    <p-menu [model]="menuItems"></p-menu>
+  </div>
+</div>
