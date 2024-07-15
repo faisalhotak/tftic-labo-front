@@ -5,13 +5,14 @@
 
   .navbar {
     display: flex;
+    justify-content: space-between;
+    gap: 10px;
     align-items: center;
     padding: 1rem;
 
     .navbar-left {
       display: flex;
       align-items: center;
-      width: 40%;
 
       a {
         text-decoration: none;
@@ -20,46 +21,109 @@
       }
     }
 
-    .navbar-right {
+    p-menubar {
       display: flex;
-      align-items: center;
-      width: 100%;
-
-      a {
-        text-decoration: none;
-      }
-
-      p-menubar {
-        width: 100%;
-      }
+      flex: 1;
 
       .p-menubar {
+        display: flex;
+        flex: 1;
+        background: transparent;
         border: none;
-        width: 100%;
 
-        ul {
+        p-menubarsub {
           display: flex;
-          gap: 0.5rem;
+          flex: 1;
+        }
+
+        .p-menubar-root-list {
+          display: flex;
+          flex: 1;
+          gap: 10px;
+          justify-content: flex-end;
+        }
+
+        .p-menubar-root-list > li:not(:nth-last-child(-n + 2)) {
+          display: flex;
+          flex: 1;
+          justify-content: center;
+        }
+
+        button.p-menuitem-link {
+          border: none;
+        }
+
+        li > .p-menuitem-content {
+          transition: all 0.3s;
         }
 
         .p-menuitem-link {
           font-size: 16px;
           text-decoration: none;
-          border-radius: 5px;
+          border-radius: 6px;
+          transition: all 0.3s;
         }
 
-        .p-menubar-end {
-          margin-left: auto;
-          display: flex;
-          align-items: center;
-          gap: 1rem;
+        .p-menuitem {
+          &.p-button-primary .p-menuitem-link {
+            transition: all 0.3s;
+          }
+
+          &.p-button-secondary .p-menuitem-link {
+            transition: all 0.3s;
+          }
         }
       }
+    }
+  }
 
-      p-inputSwitch {
-        width: auto;
-        height: auto;
-        margin-left: 0.5rem;
+  @media screen and (min-width: 600px) {
+    .navbar {
+      p-menubar {
+        .p-menubar {
+          flex-direction: row-reverse;
+
+          .p-menubar-button {
+            display: none;
+          }
+
+          .p-menubar-root-list {
+            position: relative;
+            padding: 0.5rem 0;
+            width: 100%;
+            box-shadow: none;
+          }
+
+          .p-menubar-root-list > li {
+            width: auto;
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .navbar {
+      p-menubar {
+        .p-menubar {
+          flex-direction: row-reverse;
+
+          .p-menubar-root-list {
+            border-radius: 6px;
+            padding: 5px;
+          }
+
+          .p-menubar-root-list > li:not(:nth-last-child(-n + 2)) {
+            display: list-item;
+          }
+        }
+
+        .p-menubar:not(.p-menubar-mobile-active) {
+          .p-menubar-root-list {
+            display: none;
+          }
+        }
       }
     }
   }
