@@ -9,7 +9,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import {CardModule} from "primeng/card";
 import { Button } from 'primeng/button';
-import { CardModule } from 'primeng/card';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { CheckboxModule } from 'primeng/checkbox';
 
