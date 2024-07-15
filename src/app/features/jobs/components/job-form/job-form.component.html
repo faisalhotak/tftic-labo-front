@@ -25,15 +25,17 @@
                 [style]="{'width':'100%'}" />
             </app-form-field>
         <app-form-field class="field" [control]="jobForm.controls['zipCity']" label="job.zipCity" fieldId="zipCity">
-            <input id="zipCity" type="text" pInputText formControlName="zipCity" />
-            <small>{{'job.zipCityEx' | translate}}</small>
+            <input id="zipCity" type="text" pInputText formControlName="zipCity" [style]="{'width':'100%'}"/>
+            <div class="small">
+                {{'job.zipCityEx' | translate}}
+            </div>
         </app-form-field>
-        <app-form-field class="field" [control]="jobForm.controls['activeDays']" label="job.activeDays" fieldId="activeDays">
-            <p-inputNumber id="activeDays" formControlName="activeDays" [min]="1" [max]="30" [style]="{'width':'100%'}" />
-            <small id="activeDays">{{'job.activeDaysSmall' | translate}}</small>
+        <app-form-field class="field" [control]="jobForm.controls['activeDays']" label="job.activeDays" fieldId="activeDays" >
+            <p-inputNumber id="activeDays" formControlName="activeDays" [min]="1" [max]="30" styleClass="w-full" class="w-full" />
+            <div class="small">{{'job.activeDaysSmall' | translate}}</div>
         </app-form-field>
         <app-form-field class="fullWitdh field" [control]="jobForm.controls['description']" label="job.description" fieldId="description">
-            <textarea id="description" pInputTextarea formControlName="description"></textarea>
+            <textarea id="description" pInputTextarea formControlName="description" [style]="{'width':'100%'}"></textarea>
         </app-form-field>
         <app-form-field class="fullWitdh field" [control]="jobForm.controls['contractTypeId']" label="job.contractType" fieldId="contractType">
             <p-dropdown 
@@ -46,10 +48,10 @@
             placeholder="Select a contract type" />
         </app-form-field>
         <app-form-field class="field" [control]="jobForm.controls['annualGrossSalaryMin']" label="job.minSal" fieldId="annualGrossSalaryMin">
-            <p-inputNumber id="annualGrossSalaryMin" formControlName="annualGrossSalaryMin" [min]="0" [style]="{'width':'100%'}" />
+            <p-inputNumber id="annualGrossSalaryMin" formControlName="annualGrossSalaryMin" [min]="0" styleClass="w-full" class="w-full"/>
         </app-form-field>
         <app-form-field class="field" [control]="jobForm.controls['annualGrossSalaryMax']" label="job.maxSal" fieldId="annualGrossSalaryMax">
-            <p-inputNumber id="annualGrossSalaryMax" formControlName="annualGrossSalaryMax" [min]="0" [style]="{'width':'100%'}" />
+            <p-inputNumber id="annualGrossSalaryMax" formControlName="annualGrossSalaryMax" [min]="0" styleClass="w-full" class="w-full"/>
         </app-form-field>
         <button pButton type="submit" [disabled]="!jobForm.valid">{{'job.save' | translate}}</button>
     </form>

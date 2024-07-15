@@ -6,6 +6,10 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 1rem;
+
+        .small {
+            font-size: 0.7rem;
+        }
     
         .field {
             display: flex;

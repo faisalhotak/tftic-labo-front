@@ -29,6 +29,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CompanyAdvertiserService } from './service/company-advertiser.service';
 import { SharedModule } from '../../shared/shared.module';
+import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-form.component';
+import { CheckboxModule } from 'primeng/checkbox';
 
 
 
@@ -45,6 +47,7 @@ import { SharedModule } from '../../shared/shared.module';
     JobFormComponent,
     NewJobComponent,
     JobDetailsComponent,
+    ApplyJobFormComponent,
   ],
   imports: [
     CommonModule,
@@ -62,11 +65,13 @@ import { SharedModule } from '../../shared/shared.module';
     InputTextareaModule,
     DropdownModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    CheckboxModule,
   ],
   exports: [
     PublishingPipe,
     LocationPipe,
+    ApplyJobFormComponent,
   ],
   providers: [
     JobService,

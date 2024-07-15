@@ -14,9 +14,9 @@ export interface JobForm {
 
 export const JOB_FORM = {
     description: ['', Validators.required],
-    annualGrossSalaryMin: ['', Validators.required],
-    annualGrossSalaryMax: ['', Validators.required],
-    activeDays: ['', Validators.required],
+    annualGrossSalaryMin: [0, Validators.required],
+    annualGrossSalaryMax: [0, Validators.required],
+    activeDays: [0, Validators.required],
     zipCity: ['', Validators.required],
     agentId: ['', Validators.required],
     jobFunctionId: ['', Validators.required],

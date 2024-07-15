@@ -16,7 +16,6 @@ import { CheckboxModule } from 'primeng/checkbox';
   declarations: [
     CountryDropdownComponent,
     FormFieldComponent,
-    ApplyJobFormComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +33,6 @@ import { CheckboxModule } from 'primeng/checkbox';
   exports: [
     CountryDropdownComponent,
     FormFieldComponent,
-    ApplyJobFormComponent,
   ],
 })
 export class SharedModule {}
