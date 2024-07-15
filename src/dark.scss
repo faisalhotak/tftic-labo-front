@@ -31,7 +31,7 @@ main {
         color: #ffffff;
 
         &:hover {
-          color: #90caf9;
+          background-color: #1a1a1a;
         }
       }
 
@@ -94,6 +94,59 @@ main {
 
   div {
     color: #ffffff;
+  }
+}
+
+app-search-bar {
+  .card {
+    background-color: #121212;
+  }
+
+  .p-inputtext {
+    border-color: #2a2a2a;
+    background-color: #2a2a2a;
+    color: #ffffff;
+  }
+
+  .p-button {
+    background-color: #4285f4;
+    border-color: #4285f4;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #3575e2;
+    }
+  }
+
+  .p-button-icon-only {
+    color: #ffffff;
+  }
+
+  .p-autocomplete-items {
+    background-color: #2a2a2a;
+
+    li {
+      background-color: #2a2a2a;
+      color: #ffffff;
+    }
+  }
+}
+
+.p-carousel {
+  background-color: #121212;
+
+  .p-carousel-item {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+
+  .p-button {
+    background-color: #424242;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #3575e2;
+    }
   }
 }
 
