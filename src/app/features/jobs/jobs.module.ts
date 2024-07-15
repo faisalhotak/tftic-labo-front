@@ -10,8 +10,8 @@ import { CardModule } from 'primeng/card';
 import { AccordionModule } from 'primeng/accordion';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 
-import { PublishingPipe} from "./pipes/publishing.pipe";
-import { LocationPipe} from "./pipes/location.pipe";
+import { PublishingPipe } from './pipes/publishing.pipe';
+import { LocationPipe } from './pipes/location.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { FilterLocationComponent } from './components/filter-location/filter-location.component';
 import { FiltersComponent } from './components/filters/filters.component';
@@ -69,4 +69,4 @@ import { SharedModule } from '../../shared/shared.module';
     CompanyAdvertiserService,
   ]
 })
-export class JobsModule { }
+export class JobsModule {}

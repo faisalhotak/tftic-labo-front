@@ -54,3 +54,9 @@ interface Agent {
   jobAdvertiser: JobAdvertiser;
   company: Company;
 }
+export interface JobApplication {
+  jobOfferId: number;
+}
+export interface JobApplicationResponse {
+  message: string;
+}

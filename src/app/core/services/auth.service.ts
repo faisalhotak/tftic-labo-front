@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
+import { CookieService } from './cookie.service';
 import { IAuth } from '../../features/auth/models/auth.model';
 import { ILoginForm } from '../../features/auth/forms/login.form';
 import { API_ENDPOINTS } from '../constants/api-endpoints';
-import { environment } from '../../../environments/environment';
 import {
   IRegisterForm,
   IRegisterSeekerForm,
 } from '../../features/auth/forms/register.form';
 import { UserType } from '../../features/auth/pages/register/register.component';
+import { COMMON } from '../constants/common';
 
 @Injectable()
 export class AuthService {
@@ -41,9 +41,12 @@ export class AuthService {
 
   set currentUser(auth: IAuth | null) {
     if (auth) {
-      this._cookieService.set('user', btoa(JSON.stringify(auth)));
+      this._cookieService.set(
+        COMMON.user.cookieName,
+        btoa(JSON.stringify(auth)),
+      );
     } else {
-      this._cookieService.delete('user');
+      this._cookieService.delete(COMMON.user.cookieName);
     }
 
     this._currentUser$.next(auth);
@@ -66,7 +69,7 @@ export class AuthService {
   }
 
   loadUser() {
-    const userCookie = this._cookieService.get('user');
+    const userCookie = this._cookieService.get(COMMON.user.cookieName);
 
     if (userCookie) {
       this.currentUser = JSON.parse(atob(userCookie));

@@ -93,7 +93,22 @@
     "findJob": "Vind een baan"
   },
   "carousel": {
-    "published": "Gepubliceerd"
+    "published": "Gepubliceerd",
+    "apply": "Solliciteren",
+    "view" : "Toepassen"
+  },
+  "apply": {
+    "confirm": "Bevestigt u dat u wilt solliciteren",
+    "salaryMax": "Maximaal salaris",
+    "salaryMin": "Minimaal salaris",
+    "success": {
+      "summary": "Succes",
+      "detail": "Aanmelding succesvol verzonden"
+    },
+    "error": {
+      "summary": "Fout",
+      "detail": "Aanmelding niet succesvol verzonden"
+    }
   },
   "job": {
     "jobFound": "{{jobsLength}} banen gevonden",

@@ -40,7 +40,7 @@ export class JobService {
       );
   }
 
-  getJobById(id: string): Observable<Job> {
+  getJobById(id: number): Observable<Job> {
     return this.http.get<Job>(`/job-offers/${id}`).pipe(
       map(
         (job) =>
