@@ -1,16 +1,16 @@
 export interface Job {
-    id: number;
-    description: string;
-    annualGrossSalaryMin: number;
-    annualGrossSalaryMax: number;
-    createdAt: Date;
-    activeDays: number;
-    expiringDate: Date;
-    zipCity: string;
-    isActive: boolean;
-    agent: Agent;
-    contractType: ContractType;
-    jobFunction: JobFunction;
+  id: number;
+  description: string;
+  annualGrossSalaryMin: number;
+  annualGrossSalaryMax: number;
+  createdAt: Date;
+  activeDays: number;
+  expiringDate: Date;
+  zipCity: ZipCity;
+  isActive: boolean;
+  agent: Agent;
+  contractType: ContractType;
+  jobFunction: JobFunction;
 }
 
 export interface PagedJobOffers {
@@ -54,9 +54,17 @@ interface Agent {
   jobAdvertiser: JobAdvertiser;
   company: Company;
 }
+
 export interface JobApplication {
   jobOfferId: number;
 }
+
 export interface JobApplicationResponse {
   message: string;
+}
+
+export interface ZipCity {
+  id: number;
+  zip: string;
+  city: string;
 }

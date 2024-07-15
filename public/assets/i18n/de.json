@@ -80,7 +80,9 @@
     "logIn": "Einloggen",
     "signUp": "Registrieren",
     "logOut": "Ausloggen",
-    "language": "Sprache"
+    "language": "Sprache",
+    "newJob": "Neuer Job",
+    "advertiser": "Stellenanbieter"
   },
   "searchBar": {
     "function": "Funktion",

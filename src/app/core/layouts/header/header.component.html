@@ -4,12 +4,12 @@
       <a [routerLink]="ESSENTIAL_ROUTES.home.url">{{ ESSENTIAL_ROUTES.home.label }}</a>
     </div>
     <p-menubar [model]="menuItems()">
-      <ng-template pTemplate="item" let-item>
+      <ng-template pTemplate="item" let-item let-root="root">
         <a class="p-menuitem-link"
-           [routerLink]="item.routerLink ? item.routerLink : null"
-           (click)="item.command ? item.command : null"
-        >
-          {{ item.label | translate }}
+          [routerLink]="item.routerLink ? item.routerLink : null"
+          (click)="item.command ? item.command : null">
+            {{ item.label | translate }}
+          <i *ngIf="item.items" [ngClass]="['pi', root ? 'pi-angle-down ml-2' : 'pi-angle-right ml-auto']"></i>
         </a>
       </ng-template>
     </p-menubar>

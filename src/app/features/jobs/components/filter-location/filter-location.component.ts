@@ -1,38 +1,45 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
 import { JobService } from '../../service/job.service';
-import { Pair } from '../../../../shared/models/pair';
+import { ZipCity } from '../../models/job';
 
 @Component({
   selector: 'app-filter-location',
   templateUrl: './filter-location.component.html',
-  styleUrl: './filter-location.component.scss'
+  styleUrl: './filter-location.component.scss',
 })
 export class FilterLocationComponent {
+  private readonly jobService = inject(JobService);
 
-  constructor(private readonly jobService: JobService) {
+  private locationList!: ZipCity[];
+  protected filteredLocation: ZipCity[] = [];
+  protected selectedLocation!: ZipCity;
 
-    this.jobService.getAllLocations().subscribe(locations => {
+  @Output() newLocationFilter = new EventEmitter<ZipCity>();
+
+  constructor() {
+    this.jobService.getAllLocations().subscribe((locations) => {
       this.locationList = locations;
     });
   }
 
-  selectedLocation!: string;
-  @Output() newLocationFilter = new EventEmitter<Pair>();
-
-  locationList: string[] = [];
-  filteredLocation: string[] = [];
-
-  onChangeLocation(newLocation: string) {
-    if (newLocation === null) {
-      newLocation = "";
+  onChangeLocation(newLocation: ZipCity) {
+    if (!newLocation) {
+      newLocation = { id: 0, zip: '', city: '' };
     }
-    
-    this.newLocationFilter.emit({key: "zipCity", value: newLocation});
+
+    this.newLocationFilter.emit(newLocation);
   }
 
   search(event: AutoCompleteCompleteEvent) {
-    this.filteredLocation = this.locationList.filter((location: string) => location.toLowerCase().includes(event.query.toLowerCase()))
-  };
+    this.filteredLocation = this.locationList.filter(
+      (zipCity) =>
+        zipCity.zip.toString().includes(event.query.toLowerCase()) ||
+        zipCity.city.toLowerCase().includes(event.query.toLowerCase()),
+    );
+  }
 
+  getLocationLabel(location: ZipCity): string {
+    return `${location.zip} - ${location.city}`;
+  }
 }
