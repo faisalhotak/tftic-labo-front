@@ -92,7 +92,8 @@
       "city": "City",
       "province": "Province",
       "zipCode": "Zip code",
-      "findJob": "Find Job"
+      "findJob": "Find Job",
+      "error": "No job offers available"
   },
   "carousel": {
       "published": "Published",

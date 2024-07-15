@@ -92,7 +92,8 @@
     "city": "Stad",
     "province": "Provincie",
     "zipCode": "Postcode",
-    "findJob": "Vind een baan"
+    "findJob": "Vind een baan",
+    "error": "Geen vacatures beschikbaar"
   },
   "carousel": {
     "published": "Gepubliceerd",

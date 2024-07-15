@@ -14,12 +14,12 @@
           <p>{{ offer.description }}</p>
           <p>{{ offer.agent.company.name }}</p>
           <p>{{ offer.zipCity.zip }} {{ offer.zipCity.city }}</p>
-          <p><strong>Posted Date:</strong> {{ offer.createdAt | date }}</p>
+          <p><strong>{{'carousel.published' | translate}} : </strong> {{ offer.createdAt | date }}</p>
           <p-button [outlined]="true" label="{{'carousel.view' | translate}}" severity="secondary" (onClick)="displayDetails(offer.id)"/>
         </div>
       </div>
       <ng-template #noResults>
-        <p>No job offers available.</p>
+        <p>{{'searchBar.error' | translate}}.</p>
       </ng-template>
     </div>
     </div>

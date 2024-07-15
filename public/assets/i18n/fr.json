@@ -87,7 +87,8 @@
     "city": "Ville",
     "province": "Province",
     "zipCode": "Code postal",
-    "findJob": "Trouver un emploi"
+    "findJob": "Trouver un emploi",
+    "error": "Aucune offre d'emploi disponible"
   },
   "carousel": {
     "published": "Publié",

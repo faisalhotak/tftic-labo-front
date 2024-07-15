@@ -92,7 +92,8 @@
     "city": "Stadt",
     "province": "Provinz",
     "zipCode": "Postleitzahl",
-    "findJob": "Job finden"
+    "findJob": "Job finden",
+    "error": "Keine Stellenangebote verfügbar"
   },
   "carousel": {
     "published": "Veröffentlicht",
