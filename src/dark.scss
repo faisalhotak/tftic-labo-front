@@ -19,39 +19,32 @@ main {
     }
   }
 
-  .navbar-right {
-    a {
+  p-menubar {
+    .p-menubar-root-list {
+      background: #1a1a1a;
+    }
+
+    .p-menuitem-link {
+      background-color: #1a1a1a;
       color: #ffffff;
     }
 
-    .p-menubar {
-      background: transparent;
-
-      .p-menuitem-link {
+    .p-menuitem {
+      &.p-button-primary .p-menuitem-link {
+        background-color: #4285f4;
         color: #ffffff;
 
         &:hover {
-          background-color: #1a1a1a;
+          background-color: #3575e2;
         }
       }
 
-      .p-menuitem {
-        &.p-button-primary .p-menuitem-link {
-          background-color: #4285f4;
-          color: #ffffff;
+      &.p-button-secondary .p-menuitem-link {
+        background-color: #424242;
+        color: #ffffff;
 
-          &:hover {
-            background-color: #3575e2;
-          }
-        }
-
-        &.p-button-secondary .p-menuitem-link {
-          background-color: #424242;
-          color: #ffffff;
-
-          &:hover {
-            background-color: #616161;
-          }
+        &:hover {
+          background-color: #616161;
         }
       }
     }
@@ -135,13 +128,49 @@ app-search-bar {
 .p-carousel {
   background-color: #121212;
 
+  .surface-border {
+    border-color: #374151 !important;
+  }
+
   .p-carousel-item {
     background-color: #1a1a1a;
     color: #ffffff;
   }
 
-  .p-button {
-    background-color: #424242;
+  .p-button-secondary {
+    background-color: #333333;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #424242;
+    }
+  }
+
+  .p-button-primary {
+    background-color: #4285f4;
+    color: #ffffff;
+
+    &:hover {
+      background-color: #3575e2;
+    }
+  }
+}
+
+.p-dialog-header {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.p-dialog-content {
+  background-color: #1e1e1e;
+
+  p {
+    color: #ffffff;
+  }
+
+  .p-button-primary {
+    border: none;
+    background-color: #4285f4;
     color: #ffffff;
 
     &:hover {
@@ -254,10 +283,15 @@ app-search-bar {
 
   .buttons {
     .p-button {
+      border: none;
       color: #ffffff;
+    }
+
+    .p-button-secondary {
+      background-color: #333333;
 
       &:hover {
-        background-color: #444444;
+        background-color: #424242;
       }
     }
   }
@@ -270,10 +304,15 @@ app-search-bar {
 
   .footer {
     .p-button {
+      border: none;
       color: #ffffff;
+    }
+
+    .p-button-secondary {
+      background-color: #333333;
 
       &:hover {
-        background-color: #444444;
+        background-color: #424242;
       }
     }
   }
