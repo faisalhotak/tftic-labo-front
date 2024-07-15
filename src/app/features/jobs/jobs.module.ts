@@ -64,6 +64,10 @@ import { SharedModule } from '../../shared/shared.module';
     ReactiveFormsModule,
     SharedModule
   ],
+  exports: [
+    PublishingPipe,
+    LocationPipe,
+  ],
   providers: [
     JobService,
     CompanyAdvertiserService,
