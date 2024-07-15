@@ -58,6 +58,20 @@ export class JobService {
     );
   }
 
+  getJobByAgentId(agentId: number): Observable<Job[]> {
+    return this.http.get<Job[]>(`/job-offers/agents/${agentId}`).pipe(
+      map((jobs) => {
+        return jobs.map(
+          (job) =>
+            ({
+              ...job,
+              createdAt: new Date(job.createdAt),
+            }) as Job,
+        );
+      }),
+    );
+  }
+
   getAllLocations(): Observable<ZipCity[]> {
     return this.http.get<ZipCity[]>(`/zip-city`);
   }

@@ -1,5 +1,7 @@
 @if ( jobOffers$ | async; as jobs ) {
-  <h1> {{ 'job.jobFound' | translate: {jobsLength: jobsCount} }}</h1>
+  @if (jobsCount !== undefined) {
+    <h1> {{ 'job.jobFound' | translate: {jobsLength: jobsCount} }}</h1>
+  }
     @for (job of jobs; track job.id) {
       <app-job-card [job]="job"></app-job-card>
     }
@@ -8,10 +10,12 @@
   <p-progressSpinner ariaLabel="loading" />
 }
 
-<p-paginator
-  [first]="page() * elementsPerPage"
-  (onPageChange)="onPageChange($event)"
-  [rows]="elementsPerPage"
-  [totalRecords]="jobsCount"
-  [style]="{ backgroundColor: '#FAFAFA'}"
-/>
+@if (elementsPerPage !== undefined && page !== undefined) {
+  <p-paginator
+    [first]="page() * elementsPerPage"
+    (onPageChange)="onPageChange($event)"
+    [rows]="elementsPerPage"
+    [totalRecords]="jobsCount"
+    [style]="{ backgroundColor: '#FAFAFA'}"
+  />
+}

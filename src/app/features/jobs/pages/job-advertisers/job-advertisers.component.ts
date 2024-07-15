@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { CompanyAdvertiserService } from '../../service/company-advertiser.service';
+import { AuthService } from '../../../../core/services/auth.service';
+import { map, Observable } from 'rxjs';
+import { Job } from '../../models/job';
+import { JobService } from '../../service/job.service';
 
 @Component({
   selector: 'app-job-advertisers',
@@ -7,13 +12,39 @@ import { MenuItem } from 'primeng/api';
   styleUrl: './job-advertisers.component.scss'
 })
 export class JobAdvertisersComponent implements OnInit {
-  items!: MenuItem[];
 
+  private readonly companyAdvertiserService = inject(CompanyAdvertiserService); 
+  private readonly authService = inject(AuthService);
+  private readonly jobService = inject(JobService);
+
+  items$!: Observable<MenuItem[]>;
   activeItem!: MenuItem;
 
-  ngOnInit() {
-    this.items = [{name: 'Company 1'}, {name: 'Company 2'}, {name: 'Company 3'}];
+  protected jobOffers$!: Observable<Job[]>;
+  protected jobsCount: number = 0;
+  protected elementsPerPage: number = 10;
 
-    this.activeItem = this.items[0];
+  protected filters = signal<Map<string, string>>(new Map());
+  protected page = signal<number>(0);
+
+  onActiveItemChange(event: MenuItem) {
+    this.jobOffers$ = this.jobService.getJobByAgentId(+event.id!);
   }
+
+  ngOnInit() {
+    this.items$ = this.companyAdvertiserService.getByJobAdvertiserId(this.authService.userId!).pipe(
+      map((advertisers) => {
+        const menuItems = advertisers.map((advertiser) => ({
+          name: advertiser.company.name,
+          id: advertiser.id.toString(),
+        } as MenuItem));
+
+        if (menuItems.length > 0) {
+          this.activeItem = menuItems[0];
+        }
+        return menuItems;
+      }),
+    );
+  }
+
 }

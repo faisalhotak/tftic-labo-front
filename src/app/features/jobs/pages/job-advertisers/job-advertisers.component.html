@@ -1,9 +1,12 @@
-<p-tabMenu [model]="items" [activeItem]="activeItem">
-    <ng-template pTemplate="item" let-item>
-        <a pRipple class="flex align-items-center gap-2 p-menuitem-link">
-            <span class="font-bold">
-                {{ item.name }}
-            </span>
-        </a>
-    </ng-template>
-</p-tabMenu>
+@if (items$ | async; as items) {
+    <p-tabMenu [model]="items" [activeItem]="activeItem" (activeItemChange)="onActiveItemChange($event)">
+        <ng-template pTemplate="item" let-item>
+            <a pRipple class="flex align-items-center gap-2 p-menuitem-link">
+                <span class="font-bold">
+                    {{ item.name }}
+                </span>
+            </a>
+        </ng-template>
+    </p-tabMenu>
+    <app-list-jobs class="job-list" [jobOffers$]="jobOffers$"/>
+}
