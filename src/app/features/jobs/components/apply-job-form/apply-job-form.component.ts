@@ -6,12 +6,12 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { Job } from '../../../features/jobs/models/job';
+import { Job } from '../../models/job';
 import { Observable } from 'rxjs';
-import { JobService } from '../../../features/jobs/service/job.service';
-import { ApplyService } from '../../../core/services/apply.service';
+import { JobService } from '../../service/job.service';
+import { ApplyService } from '../../../../core/services/apply.service';
 import { Router } from '@angular/router';
-import { NotificationService } from '../../../core/services/notification.service';
+import { NotificationService } from '../../../../core/services/notification.service';
 
 @Component({
   selector: 'app-apply-job-form',

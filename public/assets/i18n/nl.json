@@ -114,7 +114,21 @@
     "jobFound": "{{jobsLength}} banen gevonden",
     "today": "Vandaag",
     "yesterday": "Gisteren",
-    "daysAgo": "{{days}} dagen geleden"
+    "daysAgo": "{{days}} dagen geleden",
+    "published": "Gepubliceerd",
+    "apply": "Solliciteren",
+    "save": "Opslaan",
+    "newJob": "Nieuwe baan",
+    "company": "Bedrijf",
+    "jobFunction": "Functies",
+    "zipCity": "Postcode en stad",
+    "activeDays": "Actieve dagen",
+    "jobDescription": "Functieomschrijving",
+    "zipCityEx": "bijv. 1234 Amsterdam",
+    "activeDaysSmall": "dagen actief",
+    "jobDetails": "Functie details",
+    "minSalary": "Min. salaris",
+    "maxSalary": "Max. salaris"
   },
   "footer": {
     "company": "Bedrijf",

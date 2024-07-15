@@ -1,8 +1,10 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { Job, PagedJobOffers } from '../models/job';
 import { COMMON } from '../../../core/constants/common';
+import { ContractType, Job, JobFunction, PagedJobOffers } from '../models/job';
+import { JobForm } from '../forms/job.form';
+import { API_ENDPOINTS } from '../../../core/constants/api-endpoints';
 
 @Injectable()
 export class JobService {
@@ -31,7 +33,6 @@ export class JobService {
                 ({
                   ...job,
                   createdAt: new Date(job.createdAt),
-                  expirationDate: new Date(job.expiringDate),
                 }) as Job,
             ),
           };
@@ -46,13 +47,24 @@ export class JobService {
           ({
             ...job,
             createdAt: new Date(job.createdAt),
-            expirationDate: new Date(job.expiringDate),
           }) as Job,
       ),
     );
   }
 
   getAllLocations(): Observable<string[]> {
-    return this.http.get<string[]>(`/job-offers/locations`);
+    return this.http.get<string[]>(API_ENDPOINTS.jobs.location);
+  }
+
+  getContractTypes(): Observable<ContractType[]> {
+    return this.http.get<ContractType[]>(API_ENDPOINTS.jobs.contractTypes);
+  }
+
+  getJobFunctions(): Observable<JobFunction[]> {
+    return this.http.get<JobFunction[]>(API_ENDPOINTS.jobs.jobFunction);
+  }
+
+  postJob(newJob: JobForm): Observable<JobForm> {
+    return this.http.post<JobForm>(API_ENDPOINTS.jobs.jobOffers, newJob);
   }
 }
