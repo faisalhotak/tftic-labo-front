@@ -15,15 +15,15 @@ import { AuthService } from '../../../../core/services/auth.service';
 export class UpdateProfilComponent implements OnInit {
   updateForm: FormGroup;
   genderOptions = [
-    { label: 'male', value: 'M' },
-    { label: 'female', value: 'F' },
-    { label: 'other', value: 'X' },
+    { label: 'profile.male', value: 'M' },
+    { label: 'profile.female', value: 'F' },
+    { label: 'profile.other', value: 'X' },
   ];
 
   menuItems: MenuItem[] = [
     { label: 'Profile', icon: 'pi pi-user', routerLink: ['/profile'] },
     {
-      label: 'change password',
+      label: 'profile.changePassword',
       icon: 'pi pi-key',
       routerLink: ['/profile/change-password'],
     },
@@ -68,28 +68,17 @@ export class UpdateProfilComponent implements OnInit {
 
   onSubmit(): void {
     if (this.updateForm.valid) {
-      const updatedProfile = {
-        firstname: this.updateForm.value.firstname,
-        lastname: this.updateForm.value.lastname,
-        phoneNumber: this.updateForm.value.phoneNumber,
-        contactEmail: this.updateForm.value.contactEmail,
-        street: this.updateForm.value.street,
-        city: this.updateForm.value.city,
-        zip: this.updateForm.value.zip,
-        country: this.updateForm.value.country,
-        birthDate: this.updateForm.value.birthDate,
-        gender: this.updateForm.value.gender,
-      };
-
       if (this.authService.isSeeker) {
-        this.profileService.updateJobSeekerProfile(updatedProfile).subscribe({
-          next: this.handleUpdateSuccess,
-          error: this.handleUpdateError,
-        });
+        this.profileService
+          .updateJobSeekerProfile(this.updateForm.value)
+          .subscribe({
+            next: this.handleUpdateSuccess,
+            error: this.handleUpdateError,
+          });
       }
       if (this.authService.isAdvertiser) {
         this.profileService
-          .updateJobAdvertiserProfile(updatedProfile)
+          .updateJobAdvertiserProfile(this.updateForm.value)
           .subscribe({
             next: this.handleUpdateSuccess,
             error: this.handleUpdateError,
@@ -112,6 +101,6 @@ export class UpdateProfilComponent implements OnInit {
   };
 
   isSeeker(): boolean {
-    return this.authService.getCurrentUserRoles().includes('SEEKER');
+    return this.authService.isSeeker;
   }
 }

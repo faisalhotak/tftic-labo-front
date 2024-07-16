@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { ROLES } from '../../../../core/constants/roles';
 import { MenuItem } from 'primeng/api';
 import { CardData } from '../../../../shared/models/card-data';
 import { Profile } from '../../models/profile';
@@ -14,7 +13,7 @@ import { ProfileService } from '../../service/profile.service';
 })
 export class UserProfileComponent implements OnInit {
   profile$!: Observable<Profile>;
-  userRoles: string[] = [];
+  //userRoles: string[] = [];
   profileData: CardData[] = [];
 
   menuItems: MenuItem[] = [
@@ -31,14 +30,11 @@ export class UserProfileComponent implements OnInit {
     },
   ];
 
-  constructor(
-    private profileService: ProfileService,
-    private authService: AuthService,
-  ) {}
+  private readonly profileService = inject(ProfileService);
+  private readonly authService = inject(AuthService);
 
   ngOnInit(): void {
-    this.userRoles = this.authService.getCurrentUserRoles();
-    const isSeeker: boolean = this.userRoles.includes(ROLES.SEEKER);
+    const isSeeker: boolean = this.authService.isSeeker;
 
     this.profile$ = this.profileService.getProfile().pipe(
       map((profile) => {

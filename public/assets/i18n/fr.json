@@ -169,7 +169,10 @@
     "street" : "Rue",
     "city" : "Ville",
     "zip" : "Code postal",
-    "country" : "Pays"
+    "country" : "Pays",
+    "male" : "M",
+    "female" : "F",
+    "Other" : "A"
 
   }
 }

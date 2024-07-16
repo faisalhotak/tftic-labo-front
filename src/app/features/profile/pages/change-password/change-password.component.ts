@@ -26,9 +26,9 @@ export class ChangePasswordComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private profileService: ProfileService,
-    private notificationService: NotificationService,
-    private router: Router,
+    private readonly profileService: ProfileService,
+    private readonly notificationService: NotificationService,
+    private readonly router: Router,
   ) {
     this.passwordForm = this.formBuilder.group({
       oldPassword: ['', Validators.required],
@@ -38,6 +38,7 @@ export class ChangePasswordComponent implements OnInit {
   ngOnInit(): void {
     this.profile$ = this.profileService.getProfile();
   }
+
   onSubmit() {
     if (this.passwordForm.valid) {
       this.profileService
@@ -53,6 +54,7 @@ export class ChangePasswordComponent implements OnInit {
         });
     }
   }
+
   private handleUpdateSuccess = () => {
     this.notificationService.showSuccess(
       'SUCCESS',
