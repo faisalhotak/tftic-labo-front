@@ -78,7 +78,8 @@
     "language": "Langue",
     "newJob": "Nouvel emploi",
     "advertiser": "Recruteur",
-    "myJobs": "Mes offres d'emploi"
+    "myJobs": "Mes offres d'emploi",
+    "myCompanies": "Mes entreprises"
   },
   "searchBar": {
     "function": "Fonction",

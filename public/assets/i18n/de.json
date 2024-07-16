@@ -83,7 +83,8 @@
     "language": "Sprache",
     "newJob": "Neuer Job",
     "advertiser": "Stellenanbieter",
-    "myJobs": "Meine Jobs anbieten"
+    "myJobs": "Meine Jobs anbieten",
+    "myCompanies": "Meine Unternehmen"
   },
   "searchBar": {
     "function": "Funktion",

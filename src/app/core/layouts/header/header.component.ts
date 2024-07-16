@@ -43,7 +43,11 @@ export class HeaderComponent implements OnInit {
             label: this.translate.instant('navbar.myJobs'),
             routerLink: '/jobs/my-jobs',
           },
-        ],
+          {
+            label: this.translate.instant('navbar.myCompanies'),
+            routerLink: '/companies/my-companies',
+          }
+        ]
       },
       {
         label: 'navbar.logIn',
