@@ -37,7 +37,6 @@ export class ApplyJobFormComponent implements OnInit {
   }
 
   applyJob() {
-    console.log('apply job');
     this.applyService.applyForJob(this.jobId).subscribe({
       next: () => {
         this.route.navigate(['/']).then(() => {
