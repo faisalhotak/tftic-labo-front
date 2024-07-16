@@ -11,6 +11,12 @@ export const API_ENDPOINTS = {
     jobFunction: '/job-functions',
   },
   companyAdvertiser: '/company-advertiser',
+  profile: {
+    me: '/profile/me',
+    updateProfileSeeker: '/profile/update-job-seeker',
+    updateAdvisor: '/profile/update-job-advertiser',
+    changePassword: '/profile/change-password',
+  },
   applications: '/applications',
-  zipCity: '/zip-city',
+  zipCity: '/zip-city'
 };

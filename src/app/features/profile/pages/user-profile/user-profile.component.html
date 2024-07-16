@@ -1,0 +1,14 @@
+@if (profile$ | async; as profile) {
+  <div class="container">
+    <div class="avatar-container">
+      <app-profile-header
+        [firstname]="profile.firstname"
+        [lastname]="profile.lastname"
+        [menuItems]="menuItems">
+      </app-profile-header>
+    </div>
+    <div class="card-container">
+      <app-generic-card [data]="profileData"></app-generic-card>
+    </div>
+  </div>
+}

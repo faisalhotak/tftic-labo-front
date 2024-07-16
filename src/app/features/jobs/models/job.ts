@@ -1,3 +1,4 @@
+import { Company } from "../../../shared/models/company";
 import { ZipCity } from '../../../shared/models/zip-city';
 
 export interface Job {
@@ -31,17 +32,6 @@ export interface ContractType {
 export interface JobFunction {
   id: number;
   name: string;
-}
-
-export interface Company {
-  id: number;
-  name: string;
-  websiteUrl: string;
-  establishmentDate: Date;
-  contactName: string;
-  contactPhoneNumber: string;
-  contactDepartment: string;
-  isActive: boolean;
 }
 
 interface JobAdvertiser {

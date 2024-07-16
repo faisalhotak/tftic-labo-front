@@ -84,6 +84,7 @@
     "newJob": "Neuer Job",
     "advertiser": "Stellenanbieter",
     "myJobs": "Meine Jobs anbieten",
+    "myCompanies": "Meine Unternehmen",
     "myApplications": "Meine Bewerbungen"
   },
   "searchBar": {
@@ -94,7 +95,8 @@
     "city": "Stadt",
     "province": "Provinz",
     "zipCode": "Postleitzahl",
-    "findJob": "Job finden"
+    "findJob": "Job finden",
+    "error": "Keine Stellenangebote verfügbar"
   },
   "carousel": {
     "published": "Veröffentlicht",
@@ -149,5 +151,37 @@
     "privacyPolicy": "Datenschutz-Bestimmungen",
     "socialMedia": "Soziale Medien",
     "allRightsReserved": "Alle Rechte vorbehalten"
+  },
+  "myCompanies": {
+    "title": "Meine Unternehmen",
+    "since": "seit",
+    "yourRole": "Sie sind",
+    "establishment": "Niederlassung der Firma am ",
+    "contactDepartment": "Kontakt Abteilung",
+    "contactName": "Kontaktperson",
+    "contactPhoneNumber": "Telefonnummer der Kontaktperson",
+    "websiteUrl": "Website-URL"
+  },
+  "profile": {
+    "profile": "Profil",
+    "changePassword": "Passwort ändern",
+    "changePersonnalInfo": "Persönliche Informationen ändern",
+    "email": "E-Mail",
+    "lastname": "Nachname",
+    "firstname": "Vorname",
+    "address": "Adresse",
+    "birthdate": "Geburtsdatum",
+    "gender": "Geschlecht",
+    "oldPassword" : "Altes Passwort",
+    "newPassword" : "Neues Passwort",
+    "phoneNumber" : "Telefonnummer",
+    "contactEmail": "Kontakt email",
+    "street" : "Straße",
+    "city" : "Stadt",
+    "zip" : "Postleitzahl",
+    "country" : "Land",
+    "male" : "Mann",
+    "female" : "Frau",
+    "Other" : "anderes"
   }
 }

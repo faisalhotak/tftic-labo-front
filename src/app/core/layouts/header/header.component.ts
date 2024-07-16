@@ -43,7 +43,11 @@ export class HeaderComponent implements OnInit {
             label: 'navbar.myJobs',
             routerLink: '/jobs/my-jobs',
           },
-        ],
+          {
+            label: 'navbar.myCompanies',
+            routerLink: '/companies/my-companies',
+          }
+        ]
       },
       {
         label: 'navbar.myApplications',

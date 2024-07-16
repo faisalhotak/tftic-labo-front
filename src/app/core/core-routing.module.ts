@@ -19,6 +19,16 @@ const routes: Routes = [
           import('../features/jobs/jobs.module').then((m) => m.JobsModule),
       },
       {
+        path: 'companies',
+        loadChildren: () =>
+          import('../features/companies/companies.module').then((m) => m.CompaniesModule),
+      },
+      {
+        path : 'profile',
+        loadChildren: () =>
+          import('../features/profile/profile.module').then((m) => m.ProfileModule),
+      },
+      {
         path: 'applications',
         loadChildren: () =>
           import('../features/applications/applications.module').then(

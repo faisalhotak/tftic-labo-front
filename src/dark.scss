@@ -29,6 +29,22 @@ main {
       color: #ffffff;
     }
 
+    .p-menuitem-content {
+      background-color: #1a1a1a;
+    }
+
+    p-menubarsub {
+      ul {
+        background-color: transparent;
+      }
+
+      a {
+        &:hover {
+          background-color: #2a2a2a;
+        }
+      }
+    }
+
     .p-menuitem {
       &.p-button-primary .p-menuitem-link {
         background-color: #4285f4;
@@ -373,8 +389,33 @@ app-search-bar {
   }
 }
 
+app-job-form {
+  input {
+    background-color: #333333;
+  }
+
+  textarea {
+    background-color: #333333;
+  }
+}
+
 .footer-container {
   background-color: #1a1a1a;
+}
+
+app-job-advertisers {
+  p-tabmenu {
+    .p-tabmenu-nav {
+      background-color: #1e1e1e;
+
+      .p-tabmenuitem {
+        .p-menuitem-link {
+          background-color: #2a2a2a;
+          color: #ffffff;
+        }
+      }
+    }
+  }
 }
 
 .footer-section h3,

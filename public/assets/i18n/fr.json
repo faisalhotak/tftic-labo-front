@@ -79,6 +79,7 @@
     "newJob": "Nouvel emploi",
     "advertiser": "Recruteur",
     "myJobs": "Mes offres d'emploi",
+    "myCompanies": "Mes entreprises",
     "myApplications": "Mes candidatures"
   },
   "searchBar": {
@@ -89,7 +90,8 @@
     "city": "Ville",
     "province": "Province",
     "zipCode": "Code postal",
-    "findJob": "Trouver un emploi"
+    "findJob": "Trouver un emploi",
+    "error": "Aucune offre d'emploi disponible"
   },
   "carousel": {
     "published": "Publié",
@@ -144,5 +146,37 @@
     "privacyPolicy": "Politique de confidentialité",
     "socialMedia": "Réseaux sociaux",
     "allRightsReserved": "Tous droits réservés"
+  },
+  "myCompanies": {
+    "title": "Mes entreprises",
+    "since": "depuis",
+    "yourRole": "Vous êtes",
+    "establishment": "Établissement de la compagnie le ",
+    "contactDepartment": "Département de contact",
+    "contactName": "Personne de contact",
+    "contactPhoneNumber": "Numéro de téléphone du contact",
+    "websiteUrl": "URL du site web"
+  },
+  "profile": {
+    "profile": "Profil",
+    "changePassword": "Changer le mot de passe",
+    "changePersonnalInfo": "Modifier les informations personnelles",
+    "email": "E-mail",
+    "lastname": "Nom de famille",
+    "firstname": "Prénom",
+    "address": "Adresse",
+    "birthdate": "Date de naissance",
+    "gender": "Sexe",
+    "oldPassword" : "Nouveau mot de passe",
+    "newPassword" : "Ancien mot de passe",
+    "phoneNumber" : "numéro de téléphone",
+    "contactEmail": "Email de contact",
+    "street" : "Rue",
+    "city" : "Ville",
+    "zip" : "Code postal",
+    "country" : "Pays",
+    "male" : "homme",
+    "female" : "femme",
+    "Other" : "autre"
   }
 }

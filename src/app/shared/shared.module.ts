@@ -6,8 +6,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { TranslateModule } from '@ngx-translate/core';
-import { Button } from 'primeng/button';
+import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import { CardModule } from 'primeng/card';
+import { Button } from 'primeng/button';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { CheckboxModule } from 'primeng/checkbox';
 import { FiltersComponent } from './components/filters/filters.component';
@@ -19,8 +20,9 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
   declarations: [
     CountryDropdownComponent,
     FormFieldComponent,
+    GenericCardComponent,
     FiltersComponent,
-    FilterLocationComponent,
+    FilterLocationComponent
   ],
   imports: [
     CommonModule,
@@ -37,11 +39,7 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     AccordionModule,
     AutoCompleteModule,
   ],
-  exports: [
-    CountryDropdownComponent,
-    FormFieldComponent,
-    FiltersComponent,
-    FilterLocationComponent,
-  ],
+  exports: [CountryDropdownComponent, FormFieldComponent, GenericCardComponent, FiltersComponent,
+    FilterLocationComponent],
 })
 export class SharedModule {}

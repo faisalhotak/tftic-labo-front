@@ -1,0 +1,12 @@
+:host {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    .list-companies {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+        min-width: 360px;
+        gap: 1rem;
+    }
+}

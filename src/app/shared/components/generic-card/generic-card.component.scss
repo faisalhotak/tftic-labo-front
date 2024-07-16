@@ -1,0 +1,17 @@
+::ng-deep .p-card{
+  width: 100%;
+  min-width: 200px;
+
+}
+
+::ng-deep .p-card .p-card-content {
+  display: flex;
+  flex-direction: column;
+  padding: 0.4rem 0;
+}
+
+
+.pi {
+  margin-right: 0.5rem;
+  padding: 0.2rem;
+}

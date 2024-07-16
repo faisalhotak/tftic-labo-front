@@ -1,0 +1,7 @@
+<p-card>
+  @for (item of data ; track $index) {
+    <ng-container>
+      <p><span [class]="item.iconClass"></span>{{ item.label | translate }}: {{ item.value | translate }}</p>
+    </ng-container>
+  }
+</p-card>

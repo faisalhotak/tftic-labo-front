@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="content-wrapper">
+    <div class="avatar-container">
+      <app-profile-header
+        [firstname]="updateForm.get('firstname')?.value"
+        [lastname]="updateForm.get('lastname')?.value"
+        [menuItems]="menuItems">
+      </app-profile-header>
+    </div>
+    <div class="form-container">
+      <form [formGroup]="updateForm" (ngSubmit)="onSubmit()" class="update-form">
+        <app-form-field label="profile.firstname" fieldId="firstname" [control]="updateForm.controls['firstname']">
+          <input id="firstname" type="text" pInputText formControlName="firstname">
+        </app-form-field>
+
+        <app-form-field label="profile.lastname" fieldId="lastname" [control]="updateForm.controls['lastname']">
+          <input id="lastname" type="text" pInputText formControlName="lastname">
+        </app-form-field>
+
+        <app-form-field label="profile.phoneNumber" fieldId="phoneNumber" [control]="updateForm.controls['phoneNumber']">
+          <input id="phoneNumber" type="text" pInputText formControlName="phoneNumber">
+        </app-form-field>
+
+        <app-form-field label="profile.contactEmail" fieldId="contactEmail" [control]="updateForm.controls['contactEmail']">
+          <input id="contactEmail" type="email" pInputText formControlName="contactEmail">
+        </app-form-field>
+
+        <app-form-field label="profile.street" fieldId="street" [control]="updateForm.controls['street']">
+          <input id="street" type="text" pInputText formControlName="street">
+        </app-form-field>
+
+        <app-form-field label="profile.city" fieldId="city" [control]="updateForm.controls['city']">
+          <input id="city" type="text" pInputText formControlName="city">
+        </app-form-field>
+
+        <app-form-field label="profile.zip" fieldId="zip" [control]="updateForm.controls['zip']">
+          <input id="zip" type="text" pInputText formControlName="zip">
+        </app-form-field>
+
+        <app-form-field label="profile.country" fieldId="country" [control]="updateForm.controls['country']">
+          <input id="country" type="text" pInputText formControlName="country">
+        </app-form-field>
+
+        @if (isSeeker()) {
+          <ng-container>
+            <app-form-field label="profile.birthdate" fieldId="birthDate" [control]="updateForm.controls['birthDate']">
+              <p-calendar id="birthDate" formControlName="birthDate" dateFormat="dd/mm/yy"></p-calendar>
+            </app-form-field>
+
+            <app-form-field label="profile.gender" fieldId="gender" [control]="updateForm.controls['gender']">
+              <p-dropdown id="gender" [options]="genderOptions" formControlName="gender" optionLabel="label" optionValue="value"></p-dropdown>
+            </app-form-field>
+          </ng-container>
+        }
+        <div class="form-actions">
+          <button pButton type="submit" label="Update Profile" [disabled]="!updateForm.valid"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

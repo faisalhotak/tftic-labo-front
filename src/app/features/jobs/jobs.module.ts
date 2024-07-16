@@ -24,7 +24,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CompanyAdvertiserService } from './service/company-advertiser.service';
+import { CompanyAdvertiserService } from '../../shared/service/company-advertiser.service';
 import { SharedModule } from '../../shared/shared.module';
 import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-form.component';
 import { CheckboxModule } from 'primeng/checkbox';
