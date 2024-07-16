@@ -140,5 +140,15 @@
     "privacyPolicy": "Politique de confidentialité",
     "socialMedia": "Réseaux sociaux",
     "allRightsReserved": "Tous droits réservés"
+  },
+  "myCompanies": {
+    "title": "Mes entreprises",
+    "since": "depuis",
+    "yourRole": "Vous êtes",
+    "establishment": "Établissement de la compagnie le ",
+    "contactDepartment": "Département de contact",
+    "contactName": "Personne de contact",
+    "contactPhoneNumber": "Numéro de téléphone du contact",
+    "websiteUrl": "URL du site web"
   }
 }

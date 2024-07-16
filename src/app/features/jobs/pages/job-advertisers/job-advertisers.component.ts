@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { CompanyAdvertiserService } from '../../service/company-advertiser.service';
+import { CompanyAdvertiserService } from '../../../../shared/service/company-advertiser.service';
 import { AuthService } from '../../../../core/services/auth.service';
 import { map, Observable } from 'rxjs';
 import { Job } from '../../models/job';
@@ -13,7 +13,7 @@ import { JobService } from '../../service/job.service';
 })
 export class JobAdvertisersComponent implements OnInit {
 
-  private readonly companyAdvertiserService = inject(CompanyAdvertiserService); 
+  private readonly companyAdvertiserService = inject(CompanyAdvertiserService);
   private readonly authService = inject(AuthService);
   private readonly jobService = inject(JobService);
 

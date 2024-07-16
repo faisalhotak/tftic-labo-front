@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { ContractType, JobFunction } from '../../models/job';
 import { JobService } from '../../service/job.service';
 import { JOB_FORM } from '../../forms/job.form';
-import { CompanyAdvertiser } from '../../models/company-advertiser';
-import { CompanyAdvertiserService } from '../../service/company-advertiser.service';
+import { CompanyAdvertiser } from '../../../../shared/models/company-advertiser';
+import { CompanyAdvertiserService } from '../../../../shared/service/company-advertiser.service';
 import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({

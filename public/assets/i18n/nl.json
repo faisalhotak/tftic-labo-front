@@ -145,5 +145,15 @@
     "privacyPolicy": "Privacybeleid",
     "socialMedia": "Sociale media",
     "allRightsReserved": "Alle rechten voorbehouden"
+  },
+  "myCompanies": {
+    "title": "Mijn bedrijven",
+    "since": "sinds",
+    "yourRole": "Je bent",
+    "establishment": "Het bedrijf werd opgericht op ",
+    "contactDepartment": "Afdeling contact",
+    "contactName": "Contactpersoon",
+    "contactPhoneNumber": "Telefoonnummer contactpersoon",
+    "websiteUrl": "Website URL"
   }
 }
