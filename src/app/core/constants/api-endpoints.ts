@@ -9,12 +9,15 @@ export const API_ENDPOINTS = {
     location: '/job-offers/locations',
     contractTypes: '/contract-types',
     jobFunction: '/job-functions',
+    agents: '/job-offers/agents',
   },
   companyAdvertiser: '/company-advertiser',
   profile: {
     me: '/profile/me',
-    updateProfileSeeker: '/update-job-seeker',
-    updateAdvisor: '/update-job-advertiser',
-    changePassword: '/change-password',
+    updateProfileSeeker: '/profile/update-job-seeker',
+    updateAdvisor: '/profile/update-job-advertiser',
+    changePassword: '/profile/change-password',
   },
+  applications: '/applications',
+  zipCity: '/zip-city',
 };

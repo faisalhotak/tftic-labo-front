@@ -95,9 +95,9 @@ export class UpdateProfilComponent implements OnInit {
     this.router.navigate(['/profile']).then();
   };
 
-  private handleUpdateError = (error: any) => {
-    this.notificationService.showError('ERROR', 'Update error');
-    console.error('Error updating profile', error);
+  private handleUpdateError = (err: any) => {
+    this.notificationService.showError('ERROR', JSON.stringify(err.error));
+    console.error('Error updating profile', err);
   };
 
   isSeeker(): boolean {

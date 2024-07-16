@@ -37,7 +37,6 @@ export class ApplyJobFormComponent implements OnInit {
   }
 
   applyJob() {
-    console.log('apply job');
     this.applyService.applyForJob(this.jobId).subscribe({
       next: () => {
         this.route.navigate(['/']).then(() => {
@@ -48,12 +47,9 @@ export class ApplyJobFormComponent implements OnInit {
           this.closeDialog.emit();
         });
       },
-      error: (error) => {
-        console.error(error);
-        this.notificationService.showError(
-          'apply.error.summary',
-          'apply.error.detail',
-        );
+      error: (err) => {
+        console.error(err);
+        this.notificationService.showError('apply.error.summary', err.error);
         this.closeDialog.emit();
       },
     });

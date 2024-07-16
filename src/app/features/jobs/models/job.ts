@@ -1,4 +1,5 @@
 import { Company } from "../../../shared/models/company";
+import { ZipCity } from '../../../shared/models/zip-city';
 
 export interface Job {
   id: number;
@@ -46,16 +47,20 @@ interface Agent {
   company: Company;
 }
 
+export interface JobSeeker {
+  email: string;
+  firstname: string;
+  lastname: string;
+  phoneNumber: string;
+  contactEmail: string;
+  gender: string;
+  birthDate: Date;
+}
+
 export interface JobApplication {
   jobOfferId: number;
 }
 
 export interface JobApplicationResponse {
   message: string;
-}
-
-export interface ZipCity {
-  id: number;
-  zip: string;
-  city: string;
 }

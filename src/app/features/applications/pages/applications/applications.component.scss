@@ -1,0 +1,11 @@
+.applications-container {
+  display: flex;
+}
+
+app-filters {
+  flex: 0.3;
+}
+
+app-list {
+  flex: 0.7;
+}

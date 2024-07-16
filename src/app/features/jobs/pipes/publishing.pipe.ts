@@ -21,6 +21,8 @@ export class PublishingPipe implements PipeTransform {
       return this.translate.instant('job.yesterday');
     }
 
-    return `${Math.floor(diffInDays)} days ago`;
+    return this.translate.instant('job.daysAgo', {
+      days: Math.floor(diffInDays),
+    });
   }
 }
