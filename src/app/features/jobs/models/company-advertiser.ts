@@ -1,6 +1,7 @@
 import { Company } from "./job";
 
 export interface CompanyAdvertiser {
+    id: number;
     jobAdvertiser: JobAdvertiser;
     company: Company;
 }

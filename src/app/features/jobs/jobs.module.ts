@@ -26,8 +26,10 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CompanyAdvertiserService } from './service/company-advertiser.service';
 import { SharedModule } from '../../shared/shared.module';
-import { CheckboxModule } from 'primeng/checkbox';
 import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-form.component';
+import { CheckboxModule } from 'primeng/checkbox';
+import { JobAdvertisersComponent } from './pages/job-advertisers/job-advertisers.component';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-for
     NewJobComponent,
     JobDetailsComponent,
     ApplyJobFormComponent,
+    JobAdvertisersComponent,
   ],
   imports: [
     CommonModule,
@@ -58,6 +61,7 @@ import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-for
     ReactiveFormsModule,
     SharedModule,
     CheckboxModule,
+    TabMenuModule,
   ],
   exports: [PublishingPipe, ApplyJobFormComponent],
   providers: [JobService, CompanyAdvertiserService],

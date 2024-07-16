@@ -10,14 +10,14 @@ import { PaginatorState } from 'primeng/paginator';
 })
 export class ListJobsComponent {
   @Input() jobOffers$!: Observable<Job[]>;
-  @Input() jobsCount!: number;
-  @Input() elementsPerPage!: number;
-  @Input() page!: WritableSignal<number>;
+  @Input() jobsCount?: number;
+  @Input() elementsPerPage?: number;
+  @Input() page?: WritableSignal<number>;
 
   onPageChange(paginatorState: PaginatorState) {
     const page = paginatorState.page;
 
-    if (page !== undefined) {
+    if (page !== undefined && this.page) {
       this.page.set(page);
     }
   }
