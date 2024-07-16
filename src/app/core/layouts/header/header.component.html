@@ -12,10 +12,12 @@
           <i *ngIf="item.items" [ngClass]="['pi', root ? 'pi-angle-down ml-2' : 'pi-angle-right ml-auto']"></i>
         </a>
       </ng-template>
+      <ng-template pTemplate="end">
+        <div class="flex align-items-center gap-3">
+          <app-country-dropdown />
+          <app-light-dark-them-switch />
+        </div>
+      </ng-template>
     </p-menubar>
-    <div class="flex align-items-center gap-3">
-      <app-country-dropdown />
-      <app-light-dark-them-switch />
-    </div>
   </div>
 </header>
