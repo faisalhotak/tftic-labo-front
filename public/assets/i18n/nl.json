@@ -156,5 +156,27 @@
     "contactName": "Contactpersoon",
     "contactPhoneNumber": "Telefoonnummer contactpersoon",
     "websiteUrl": "Website URL"
+  },
+  "profile": {
+    "profile": "Profiel",
+    "changePassword": "Wachtwoord wijzigen",
+    "changePersonnalInfo": "Persoonlijke informatie wijzigen",
+    "email": "E-mail",
+    "lastname": "Achternaam",
+    "firstname": "Voornaam",
+    "address": "Adres",
+    "birthdate": "Geboortedatum",
+    "gender": "Geslacht",
+    "oldPassword" : "Nieuw wachtwoord",
+    "newPassword" : "Oud wachtwoord",
+    "phoneNumber" : "Telefoonnummer",
+    "contactEmail": "Contact email",
+    "street" : "straat",
+    "city" : "Stad",
+    "zip" : "Postcode",
+    "country" : "Land",
+    "male" : "man",
+    "female" : "vrouw",
+    "Other" : "anders"
   }
 }

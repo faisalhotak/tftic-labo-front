@@ -151,5 +151,28 @@
     "contactName": "Personne de contact",
     "contactPhoneNumber": "Numéro de téléphone du contact",
     "websiteUrl": "URL du site web"
+  },
+  "profile": {
+    "profile": "Profil",
+    "changePassword": "Changer le mot de passe",
+    "changePersonnalInfo": "Modifier les informations personnelles",
+    "email": "E-mail",
+    "lastname": "Nom de famille",
+    "firstname": "Prénom",
+    "address": "Adresse",
+    "birthdate": "Date de naissance",
+    "gender": "Sexe",
+    "oldPassword" : "Nouveau mot de passe",
+    "newPassword" : "Ancien mot de passe",
+    "phoneNumber" : "numéro de téléphone",
+    "contactEmail": "Email de contact",
+    "street" : "Rue",
+    "city" : "Ville",
+    "zip" : "Code postal",
+    "country" : "Pays",
+    "male" : "homme",
+    "female" : "femme",
+    "Other" : "autre"
+
   }
 }

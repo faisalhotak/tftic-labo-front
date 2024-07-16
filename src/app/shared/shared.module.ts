@@ -6,13 +6,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormFieldComponent } from './components/form-field/form-field.component';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { TranslateModule } from '@ngx-translate/core';
-import { Button } from 'primeng/button';
+import { GenericCardComponent } from './components/generic-card/generic-card.component';
 import { CardModule } from 'primeng/card';
+import { Button } from 'primeng/button';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
-  declarations: [CountryDropdownComponent, FormFieldComponent],
+  declarations: [
+    CountryDropdownComponent,
+    FormFieldComponent,
+    GenericCardComponent,
+  ],
   imports: [
     CommonModule,
     DropdownModule,
@@ -26,6 +31,6 @@ import { CheckboxModule } from 'primeng/checkbox';
     InputSwitchModule,
     CheckboxModule,
   ],
-  exports: [CountryDropdownComponent, FormFieldComponent],
+  exports: [CountryDropdownComponent, FormFieldComponent, GenericCardComponent],
 })
 export class SharedModule {}
