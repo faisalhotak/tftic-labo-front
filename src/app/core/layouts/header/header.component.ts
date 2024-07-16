@@ -5,6 +5,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { NotificationService } from '../../services/notification.service';
 import { ThemeService } from '../../services/theme.service';
 import { TranslateService } from '@ngx-translate/core';
+import { COMMON } from '../../constants/common';
 
 @Component({
   selector: 'app-header',
@@ -42,7 +43,7 @@ export class HeaderComponent implements OnInit {
             label: this.translate.instant('navbar.myJobs'),
             routerLink: '/jobs/my-jobs',
           },
-        ]
+        ],
       },
       {
         label: 'navbar.logIn',
@@ -71,7 +72,7 @@ export class HeaderComponent implements OnInit {
   });
 
   checked: boolean = false;
-  selectedTheme: string = 'light';
+  selectedTheme: string = COMMON.light;
   themeService: ThemeService = inject(ThemeService);
 
   ngOnInit(): void {
@@ -79,7 +80,7 @@ export class HeaderComponent implements OnInit {
   }
 
   onThemeChange(): void {
-    this.themeService.setTheme(this.checked ? 'dark' : 'light');
+    this.themeService.setTheme(this.checked ? COMMON.dark : COMMON.light);
   }
 
   handleLogout() {
