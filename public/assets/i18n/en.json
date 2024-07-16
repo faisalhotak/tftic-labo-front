@@ -175,8 +175,8 @@
     "city" : "City",
     "zip" : "Zip code",
     "country" : "Country",
-    "male" : "M",
-    "female" : "W",
-    "Other" : "X"
+    "male" : "male",
+    "female" : "female",
+    "Other" : "other"
   }
 }

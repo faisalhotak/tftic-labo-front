@@ -175,8 +175,8 @@
     "city" : "Stad",
     "zip" : "Postcode",
     "country" : "Land",
-    "male" : "M",
-    "female" : "M",
-    "Other" : "A"
+    "male" : "man",
+    "female" : "vrouw",
+    "Other" : "anders"
   }
 }

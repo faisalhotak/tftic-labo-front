@@ -175,8 +175,8 @@
     "city" : "Stadt",
     "zip" : "Postleitzahl",
     "country" : "Land",
-    "male" : "M",
-    "female" : "F",
-    "Other" : "A"
+    "male" : "Mann",
+    "female" : "Frau",
+    "Other" : "anderes"
   }
 }

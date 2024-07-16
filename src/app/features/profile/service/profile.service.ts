@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Profile } from '../models/profile';
@@ -7,10 +7,10 @@ import { API_ENDPOINTS } from '../../../core/constants/api-endpoints';
 
 @Injectable()
 export class ProfileService {
-  constructor(private http: HttpClient) {}
+  private readonly http = inject(HttpClient);
 
   getProfile(): Observable<Profile> {
-    return this.http.get<Profile>(API_ENDPOINTS.profile.profile);
+    return this.http.get<Profile>(API_ENDPOINTS.profile.me);
   }
 
   updateJobSeekerProfile(jobSeekerUpdateRequest: any): Observable<any> {

@@ -170,9 +170,9 @@
     "city" : "Ville",
     "zip" : "Code postal",
     "country" : "Pays",
-    "male" : "M",
-    "female" : "F",
-    "Other" : "A"
+    "male" : "homme",
+    "female" : "femme",
+    "Other" : "autre"
 
   }
 }

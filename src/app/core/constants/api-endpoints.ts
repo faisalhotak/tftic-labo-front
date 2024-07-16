@@ -12,7 +12,7 @@ export const API_ENDPOINTS = {
   },
   companyAdvertiser: '/company-advertiser',
   profile: {
-    profile: '/profile/me`',
+    me: '/profile/me',
     updateProfileSeeker: '/update-job-seeker',
     updateAdvisor: '/update-job-advertiser',
     changePassword: '/change-password',

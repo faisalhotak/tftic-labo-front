@@ -13,7 +13,6 @@ import { ProfileService } from '../../service/profile.service';
 })
 export class UserProfileComponent implements OnInit {
   profile$!: Observable<Profile>;
-  //userRoles: string[] = [];
   profileData: CardData[] = [];
 
   menuItems: MenuItem[] = [
