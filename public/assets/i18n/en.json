@@ -143,5 +143,24 @@
     "privacyPolicy": "Privacy Policy",
     "socialMedia": "Social Media",
     "allRightsReserved": "All rights reserved"
+  },
+  "profile": {
+    "profile": "Profile",
+    "changePassword": "Change Password",
+    "changePersonnalInfo": "Change Personal Information",
+    "email": "Email",
+    "lastname": "Last Name",
+    "firstname": "First Name",
+    "address": "Address",
+    "birthdate": "Birth Date",
+    "gender": "Gender",
+    "oldPassword" : "New password",
+    "newPassword" : "Old password",
+    "phoneNumber" : "Phone number",
+    "contactEmail": "Contact email",
+    "street" : "rue",
+    "city" : "City",
+    "zip" : "Zip code",
+    "country" : "Country"
   }
 }

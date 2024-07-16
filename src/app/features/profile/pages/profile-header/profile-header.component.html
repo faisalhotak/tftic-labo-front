@@ -1,11 +1,11 @@
-<div class="avatar-container">
+<div class="flex justify-content-center gap-2 flex-column align-items-center">
   <p-avatar
-    label="{{ lastname.charAt(0) + firstname.charAt(0) | uppercase}}"
+    label="{{getInitials()}}"
     styleClass="mr-2"
     size="xlarge"
     shape="circle">
   </p-avatar>
   <div class="menu-container">
-    <p-menu [model]="menuItems"></p-menu>
+    <p-menu [model]="menuItems | translateMenu"></p-menu>
   </div>
 </div>

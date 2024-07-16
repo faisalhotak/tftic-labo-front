@@ -143,5 +143,24 @@
     "privacyPolicy": "Datenschutz-Bestimmungen",
     "socialMedia": "Soziale Medien",
     "allRightsReserved": "Alle Rechte vorbehalten"
+  },
+  "profile": {
+    "profile": "Profil",
+    "changePassword": "Passwort ändern",
+    "changePersonnalInfo": "Persönliche Informationen ändern",
+    "email": "E-Mail",
+    "lastname": "Nachname",
+    "firstname": "Vorname",
+    "address": "Adresse",
+    "birthdate": "Geburtsdatum",
+    "gender": "Geschlecht",
+    "oldPassword" : "Altes Passwort",
+    "newPassword" : "Neues Passwort",
+    "phoneNumber" : "Telefonnummer",
+    "contactEmail": "Kontakt email",
+    "street" : "Straße",
+    "city" : "Stadt",
+    "zip" : "Postleitzahl",
+    "country" : "Land"
   }
 }

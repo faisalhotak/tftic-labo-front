@@ -32,6 +32,14 @@ export class AuthService {
     return this.currentUser?.roles || [];
   }
 
+  get isSeeker(): boolean {
+    return this.getCurrentUserRoles().includes(ROLES.SEEKER);
+  }
+
+  get isAdvertiser(): boolean {
+    return this.getCurrentUserRoles().includes(ROLES.ADVERTISER);
+  }
+
   get currentUser(): IAuth | null {
     return this._currentUser$.value;
   }

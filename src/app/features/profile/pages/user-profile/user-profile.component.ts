@@ -1,16 +1,16 @@
-import {Component, OnInit} from '@angular/core';
-import {map, Observable} from "rxjs";
-import {ROLES} from "../../../../core/constants/roles";
-import {MenuItem} from "primeng/api";
-import {CardData} from "../../../../shared/models/card-data";
-import {Profile} from "../../models/profile";
-import {AuthService} from "../../../../core/services/auth.service";
-import {ProfileService} from "../../service/profile.service";
+import { Component, OnInit } from '@angular/core';
+import { map, Observable } from 'rxjs';
+import { ROLES } from '../../../../core/constants/roles';
+import { MenuItem } from 'primeng/api';
+import { CardData } from '../../../../shared/models/card-data';
+import { Profile } from '../../models/profile';
+import { AuthService } from '../../../../core/services/auth.service';
+import { ProfileService } from '../../service/profile.service';
 
 @Component({
   selector: 'app-user-profile',
   templateUrl: './user-profile.component.html',
-  styleUrl: './user-profile.component.scss'
+  styleUrl: './user-profile.component.scss',
 })
 export class UserProfileComponent implements OnInit {
   profile$!: Observable<Profile>;
@@ -18,10 +18,14 @@ export class UserProfileComponent implements OnInit {
   profileData: CardData[] = [];
 
   menuItems: MenuItem[] = [
-    { label: 'Profil', icon: 'pi pi-user', routerLink: ['/profile'] },
-    { label: 'change password', icon: 'pi pi-key', routerLink: ['/profile/changepassword'] },
+    { label: 'profile.profile', icon: 'pi pi-user', routerLink: ['/profile'] },
     {
-      label: 'Change personal information',
+      label: 'profile.changePassword',
+      icon: 'pi pi-key',
+      routerLink: ['/profile/change-password'],
+    },
+    {
+      label: 'profile.changePersonnalInfo',
       icon: 'pi pi-key',
       routerLink: ['/profile/update'],
     },
@@ -44,22 +48,22 @@ export class UserProfileComponent implements OnInit {
 
         this.profileData = [
           {
-            label: 'Email',
+            label: 'email',
             value: data.email,
             iconClass: 'pi pi-envelope',
           },
           {
-            label: 'Last Name',
+            label: 'lastname',
             value: data.lastname,
             iconClass: 'pi pi-user',
           },
           {
-            label: 'First Name',
+            label: 'firstname',
             value: data.firstname,
             iconClass: 'pi pi-user',
           },
           {
-            label: 'Address',
+            label: 'address',
             value: `${data.address.street}, ${data.address.city}, ${data.address.zip}, ${data.address.country}`,
             iconClass: 'pi pi-home',
           },
@@ -68,12 +72,12 @@ export class UserProfileComponent implements OnInit {
         if (isSeeker && profile.birthDate && profile.gender) {
           data.birthDate = new Date(profile.birthDate);
           this.profileData.push({
-            label: 'Date of Birth',
+            label: 'profile.birthdate',
             value: data.birthDate.toLocaleDateString(),
             iconClass: 'pi pi-calendar',
           });
           this.profileData.push({
-            label: 'Gender',
+            label: 'profile.gender',
             value: profile.gender,
             iconClass: 'pi pi-user',
           });
@@ -82,7 +86,5 @@ export class UserProfileComponent implements OnInit {
         return data;
       }),
     );
-
   }
-
 }
