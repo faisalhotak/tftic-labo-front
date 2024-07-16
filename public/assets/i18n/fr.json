@@ -54,7 +54,12 @@
       }
     },
     "register": {
-      "message": "Inscrivez-vous pour trouver l'emploi qui vous convient.",
+      "seeker": {
+        "message": "Inscrivez-vous pour trouver l'emploi qui vous convient."
+      },
+      "advertiser": {
+        "message": "Inscrivez-vous pour publier des offres d'emploi."
+      },
       "button": {
         "submit": "S'inscrire"
       },
