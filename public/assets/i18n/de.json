@@ -83,7 +83,8 @@
     "language": "Sprache",
     "newJob": "Neuer Job",
     "advertiser": "Stellenanbieter",
-    "myJobs": "Meine Jobs anbieten"
+    "myJobs": "Meine Jobs anbieten",
+    "myCompanies": "Meine Unternehmen"
   },
   "searchBar": {
     "function": "Funktion",
@@ -145,5 +146,15 @@
     "privacyPolicy": "Datenschutz-Bestimmungen",
     "socialMedia": "Soziale Medien",
     "allRightsReserved": "Alle Rechte vorbehalten"
+  },
+  "myCompanies": {
+    "title": "Meine Unternehmen",
+    "since": "seit",
+    "yourRole": "Sie sind",
+    "establishment": "Niederlassung der Firma am ",
+    "contactDepartment": "Kontakt Abteilung",
+    "contactName": "Kontaktperson",
+    "contactPhoneNumber": "Telefonnummer der Kontaktperson",
+    "websiteUrl": "Website-URL"
   }
 }

@@ -36,14 +36,18 @@ export class HeaderComponent implements OnInit {
         visible: isAdvertiser,
         items: [
           {
-            label: this.translate.instant('navbar.newJob'),
-            routerLink: '/jobs/new',
+            label: 'navbar.newJob',
+            routerLink: '/jobs/new',    
           },
           {
-            label: this.translate.instant('navbar.myJobs'),
+            label: 'navbar.myJobs',
             routerLink: '/jobs/my-jobs',
           },
-        ],
+          {
+            label: 'navbar.myCompanies',
+            routerLink: '/companies/my-companies',
+          }
+        ]
       },
       {
         label: 'navbar.logIn',

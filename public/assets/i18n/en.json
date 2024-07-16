@@ -83,7 +83,8 @@
     "language": "Language",
     "newJob": "New Job",
     "advertiser": "Advertiser",
-    "myJobs": "My Jobs Offer"
+    "myJobs": "My Jobs Offer",
+    "myCompanies": "My Companies"
   },
   "searchBar": {
       "function": "Function",
@@ -145,5 +146,15 @@
     "privacyPolicy": "Privacy Policy",
     "socialMedia": "Social Media",
     "allRightsReserved": "All rights reserved"
+  },
+  "myCompanies": {
+    "title": "My Companies",
+    "since": "since",
+    "yourRole": "You are",
+    "establishment": "Company establishment on ",
+    "contactDepartment": "Contact department",
+    "contactName": "Contact person",
+    "contactPhoneNumber": "Contact phone number",
+    "websiteUrl": "Website URL"
   }
 }
