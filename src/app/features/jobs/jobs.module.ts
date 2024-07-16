@@ -73,10 +73,8 @@ import { TabMenuModule } from 'primeng/tabmenu';
   exports: [
     PublishingPipe,
     ApplyJobFormComponent,
+    FilterLocationComponent,
   ],
-  providers: [
-    JobService,
-    CompanyAdvertiserService,
-  ]
+  providers: [JobService, CompanyAdvertiserService],
 })
 export class JobsModule {}

@@ -55,6 +55,4 @@ export class CarouselComponent implements OnInit {
     this.selectedJob = undefined;
     this.displayApplyDialog = false;
   }
-
-  protected readonly String = String;
 }
