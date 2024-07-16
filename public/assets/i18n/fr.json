@@ -18,6 +18,11 @@
     "F": "Femme",
     "X": "Autre"
   },
+  "role": {
+    "owner": "Propriétaire",
+    "employee": "Employé",
+    "partner": "Partenaire"
+  },
   "birthDate": "Date de naissance",
   "form": {
     "errors": {
@@ -112,6 +117,13 @@
     }
   },
   "job": {
+    "success": {
+      "summary": "Création de l'offre d'emploi réussie",
+      "detail":  "Vous avez créé une offre d'emploi avec succès !"
+    },
+    "error": {
+      "summary": "Création de l'offre d'emploi échouée"
+    },
     "jobFound": "{{jobsLength}} emplois trouvés",
     "today": "Aujourd'hui",
     "yesterday": "Hier",
@@ -127,6 +139,7 @@
     "jobDescription": "Description de l'emploi",
     "zipCityEx": "ex. 1234 Paris",
     "activeDaysSmall": "Nombre de jours actifs sur la platform",
+    "description": "Description",
     "contractType": "Type de contrat",
     "minSal": "Salaire minimum",
     "maxSal": "Salaire maximum"
@@ -167,8 +180,8 @@
     "address": "Adresse",
     "birthdate": "Date de naissance",
     "gender": "Sexe",
-    "oldPassword" : "Nouveau mot de passe",
-    "newPassword" : "Ancien mot de passe",
+    "newPassword" : "Nouveau mot de passe",
+    "oldPassword" : "Ancien mot de passe",
     "phoneNumber" : "numéro de téléphone",
     "contactEmail": "Email de contact",
     "street" : "Rue",

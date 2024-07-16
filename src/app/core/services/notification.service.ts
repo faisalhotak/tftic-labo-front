@@ -11,7 +11,7 @@ export class NotificationService {
   private readonly messageService = inject(MessageService);
   private readonly translateService = inject(TranslateService);
 
-  show(
+  private show(
     summary: string,
     detail: string,
     severity: Severity,

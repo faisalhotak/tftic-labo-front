@@ -55,7 +55,7 @@ export class JobService {
   }
 
   getJobByAgentId(agentId: number): Observable<Job[]> {
-    return this.http.get<Job[]>(`/job-offers/agents/${agentId}`).pipe(
+    return this.http.get<Job[]>(`${API_ENDPOINTS.jobs.agents}/${agentId}`).pipe(
       map((jobs) => {
         return jobs.map(
           (job) =>

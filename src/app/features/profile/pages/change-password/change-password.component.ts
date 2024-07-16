@@ -63,7 +63,7 @@ export class ChangePasswordComponent implements OnInit {
     this.router.navigate(['/profile']).then();
   };
 
-  private handleUpdateError = (error: any) => {
-    this.notificationService.showError('ERROR', 'Update error');
+  private handleUpdateError = (err: any) => {
+    this.notificationService.showError('ERROR', JSON.stringify(err.error));
   };
 }

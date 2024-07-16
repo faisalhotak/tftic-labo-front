@@ -18,6 +18,11 @@
     "F": "Woman",
     "X": "Other"
   },
+  "role": {
+    "owner": "Owner",
+    "employee": "Employee",
+    "partner": "Partner"
+  },
   "birthDate": "Birth Date",
   "form": {
     "errors": {
@@ -117,6 +122,13 @@
     }
   },
   "job": {
+    "success": {
+      "summary": "Job successfully created",
+      "detail": "The job has been successfully created"
+    },
+    "error": {
+      "summary": "Job creation failed"
+    },
     "jobFound": "Found {{jobsLength}} jobs",
     "today": "Today",
     "yesterday": "Yesterday",
@@ -132,6 +144,7 @@
     "jobDescription": "Job Description",
     "zipCityEx": "ex: 1234 Amsterdam",
     "activeDaysSmall": "Number of days the job will be visible on the platform",
+    "description": "Description",
     "contractType": "Contract Type",
     "minSal": "Minimum Salary",
     "maxSal": "Maximum Salary"
@@ -172,8 +185,8 @@
     "address": "Address",
     "birthdate": "Birth Date",
     "gender": "Gender",
-    "oldPassword" : "New password",
-    "newPassword" : "Old password",
+    "newPassword" : "New password",
+    "oldPassword" : "Old password",
     "phoneNumber" : "Phone number",
     "contactEmail": "Contact email",
     "street" : "rue",

@@ -3,7 +3,7 @@
       {{ companyAdvertiser.company.name }}
     </ng-template>
     <ng-template pTemplate="subtitle" style="display: flex;">
-      {{ 'myCompanies.yourRole' | translate}} {{ companyAdvertiser.advertiserRole | lowercase}} {{ 'myCompanies.since' | translate}} {{ companyAdvertiser.createdAt | date: 'shortDate'}}
+      {{ 'myCompanies.yourRole' | translate}} {{ 'role.'.concat(companyAdvertiser.advertiserRole) | lowercase | translate }} {{ 'myCompanies.since' | translate}} {{ companyAdvertiser.createdAt | date: 'shortDate'}}
     </ng-template>
     <ng-template pTemplate="content">
         {{ 'myCompanies.contactDepartment' | translate}}: {{ companyAdvertiser.company.contactDepartment}}
@@ -18,4 +18,3 @@
       {{ 'myCompanies.establishment' | translate}} {{ companyAdvertiser.company.establishmentDate | date: 'shortDate'}}
     </ng-template >
   </p-card>
-  

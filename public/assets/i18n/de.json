@@ -18,6 +18,11 @@
     "F": "Frau",
     "X": "Andere"
   },
+  "role": {
+    "owner": "Besitzer",
+    "employee": "Mitarbeiter",
+    "partner": "Partner"
+  },
   "birthDate": "Geburtsdatum",
   "form": {
     "errors": {
@@ -117,6 +122,13 @@
     }
   },
   "job": {
+    "success": {
+      "summary": "Job erfolgreich erstellt",
+      "detail": "Sie haben erfolgreich einen Job erstellt!"
+    },
+    "error": {
+      "summary": "Job konnte nicht erstellt werden"
+    },
     "jobFound": "Gefunden {{jobsLength}} Jobs",
     "today": "Heute",
     "yesterday": "Gestern",
@@ -132,6 +144,7 @@
     "jobDescription": "Job Beschreibung",
     "zipCityEx": "z.B. 1234 Berlin",
     "activeDaysSmall": "Tage aktiv",
+    "description": "Beschreibung",
     "contractType": "Vertragsart",
     "minSal": "Mindestgehalt",
     "maxSal": "Höchstgehalt"
@@ -172,8 +185,8 @@
     "address": "Adresse",
     "birthdate": "Geburtsdatum",
     "gender": "Geschlecht",
-    "oldPassword" : "Altes Passwort",
-    "newPassword" : "Neues Passwort",
+    "newPassword" : "Altes Passwort",
+    "oldPassword" : "Neues Passwort",
     "phoneNumber" : "Telefonnummer",
     "contactEmail": "Kontakt email",
     "street" : "Straße",
