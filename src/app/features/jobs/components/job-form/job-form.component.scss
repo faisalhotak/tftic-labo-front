@@ -1,0 +1,20 @@
+:host {
+  .form {
+      max-width: 700px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+
+    > * {
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .small {
+      color: #a2a2a2;
+      font-size: 0.7rem;
+    }
+  }
+}

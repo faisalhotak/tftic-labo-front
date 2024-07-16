@@ -1,0 +1,9 @@
+@if ( companyAdvertiser$ | async; as companyAdvertisers ) {
+      @for (companyAdvertiser of companyAdvertisers; track companyAdvertiser.id) {
+        <app-company-card [companyAdvertiser]="companyAdvertiser" />
+      }
+  }
+  @else {
+    <p-progressSpinner ariaLabel="loading" />
+  }
+  

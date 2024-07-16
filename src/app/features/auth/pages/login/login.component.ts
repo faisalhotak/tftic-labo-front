@@ -32,7 +32,7 @@ export class LoginComponent {
       error: (err) => {
         this.notificationService.showError(
           'auth.login.error.summary',
-          err.error,
+          JSON.stringify(err.error),
         );
       },
     });

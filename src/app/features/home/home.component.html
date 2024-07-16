@@ -1,6 +1,6 @@
 
 <div class="bg-color">
   <img src="/assets/images/jobportalbanner.svg" alt="">
-    <app-search-bar></app-search-bar>
+    <app-search-bar [jobList$]="jobs$"></app-search-bar>
 </div>
 <app-carousel [jobs$]="jobs$"></app-carousel>

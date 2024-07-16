@@ -18,6 +18,11 @@
     "F": "Woman",
     "X": "Other"
   },
+  "role": {
+    "owner": "Owner",
+    "employee": "Employee",
+    "partner": "Partner"
+  },
   "birthDate": "Birth Date",
   "form": {
     "errors": {
@@ -80,26 +85,80 @@
     "logIn": "Log in",
     "signUp": "Sign up",
     "logOut": "Log out",
-    "language": "Language"
+    "language": "Language",
+    "newJob": "New Job",
+    "advertiser": "Advertiser",
+    "myJobs": "My Jobs Offer",
+    "myCompanies": "My Companies",
+    "myApplications": "My Applications"
   },
   "searchBar": {
-    "function": "Function",
-    "skill": "Skill",
-    "or": "or",
-    "company": "Company",
-    "city": "City",
-    "province": "Province",
-    "zipCode": "Zip code",
-    "findJob": "Find Job"
+      "function": "Function",
+      "skill": "Skill",
+      "or": "or",
+      "company": "Company",
+      "city": "City",
+      "province": "Province",
+      "zipCode": "Zip code",
+      "findJob": "Find Job",
+      "error": "No job offers available"
   },
   "carousel": {
-    "published": "Published"
+      "published": "Published",
+      "apply": "Apply",
+      "view" : "View"
+  },
+  "apply": {
+    "confirm": "Confirm that you want to apply",
+    "salaryMax": "Maximum salary",
+    "salaryMin" : "Minimum salary",
+    "success": {
+      "summary": "Success",
+      "detail": "Application sent successfully"
+    },
+    "error": {
+      "summary": "Error",
+      "detail": "Application not sent successfully"
+    }
   },
   "job": {
+    "success": {
+      "summary": "Job successfully created",
+      "detail": "The job has been successfully created"
+    },
+    "error": {
+      "summary": "Job creation failed"
+    },
     "jobFound": "Found {{jobsLength}} jobs",
     "today": "Today",
     "yesterday": "Yesterday",
-    "daysAgo": "{{days}} days ago"
+    "daysAgo": "{{days}} days ago",
+    "published": "Published",
+    "apply": "Apply",
+    "save": "Save",
+    "newJob": "New Job",
+    "company": "Company",
+    "jobFunction": "Job Function",
+    "zipCity": "Zip and City",
+    "activeDays": "Active days",
+    "jobDescription": "Job Description",
+    "zipCityEx": "ex: 1234 Amsterdam",
+    "activeDaysSmall": "Number of days the job will be visible on the platform",
+    "description": "Description",
+    "contractType": "Contract Type",
+    "minSal": "Minimum Salary",
+    "maxSal": "Maximum Salary"
+  },
+  "application": {
+    "found": "Found {{count}} applications",
+    "applied": "Applied",
+    "applicationStatus": {
+      "submitted": "Submitted",
+      "underReview": "Under review",
+      "accepted": "Accepted",
+      "cancelled": "Cancelled",
+      "rejected": "Rejected"
+    }
   },
   "footer": {
     "company": "Company",
@@ -112,5 +171,37 @@
     "privacyPolicy": "Privacy Policy",
     "socialMedia": "Social Media",
     "allRightsReserved": "All rights reserved"
+  },
+  "myCompanies": {
+    "title": "My Companies",
+    "since": "since",
+    "yourRole": "You are",
+    "establishment": "Company establishment on ",
+    "contactDepartment": "Contact department",
+    "contactName": "Contact person",
+    "contactPhoneNumber": "Contact phone number",
+    "websiteUrl": "Website URL"
+  },
+  "profile": {
+    "profile": "Profile",
+    "changePassword": "Change Password",
+    "changePersonnalInfo": "Change Personal Information",
+    "email": "Email",
+    "lastname": "Last Name",
+    "firstname": "First Name",
+    "address": "Address",
+    "birthdate": "Birth Date",
+    "gender": "Gender",
+    "newPassword" : "New password",
+    "oldPassword" : "Old password",
+    "phoneNumber" : "Phone number",
+    "contactEmail": "Contact email",
+    "street" : "rue",
+    "city" : "City",
+    "zip" : "Zip code",
+    "country" : "Country",
+    "male" : "male",
+    "female" : "female",
+    "Other" : "other"
   }
 }

@@ -1,0 +1,20 @@
+<p-card class="card">
+    <ng-template pTemplate="title">
+      {{ companyAdvertiser.company.name }}
+    </ng-template>
+    <ng-template pTemplate="subtitle" style="display: flex;">
+      {{ 'myCompanies.yourRole' | translate}} {{ 'role.'.concat(companyAdvertiser.advertiserRole) | lowercase | translate }} {{ 'myCompanies.since' | translate}} {{ companyAdvertiser.createdAt | date: 'shortDate'}}
+    </ng-template>
+    <ng-template pTemplate="content">
+        {{ 'myCompanies.contactDepartment' | translate}}: {{ companyAdvertiser.company.contactDepartment}}
+        <br>
+        {{ 'myCompanies.contactName' | translate}}: {{ companyAdvertiser.company.contactName}}
+        <br>
+        {{ 'myCompanies.contactPhoneNumber' | translate}}: {{ companyAdvertiser.company.contactPhoneNumber}}
+        <br>
+        {{ 'myCompanies.websiteUrl' | translate}}: {{ companyAdvertiser.company.websiteUrl}}
+    </ng-template>
+    <ng-template pTemplate="footer">
+      {{ 'myCompanies.establishment' | translate}} {{ companyAdvertiser.company.establishmentDate | date: 'shortDate'}}
+    </ng-template >
+  </p-card>

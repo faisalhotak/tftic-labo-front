@@ -7,29 +7,31 @@ import { ToastModule } from 'primeng/toast';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './layouts/header/header.component';
 import { ButtonModule } from 'primeng/button';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from '../features/home/home.component';
-import { JobService } from '../features/jobs/service/job.service';
-import { CarouselComponent } from '../shared/components/carousel/carousel.component';
+import { CarouselComponent } from '../features/jobs/components/carousel/carousel.component';
 import { SearchBarComponent } from '../shared/components/search-bar/search-bar.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
+import { DialogModule } from 'primeng/dialog';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { MenubarModule } from 'primeng/menubar';
-import { TranslateModule } from '@ngx-translate/core';
+import { JobsModule } from '../features/jobs/jobs.module';
 
 @NgModule({
   declarations: [
     CoreComponent,
     HeaderComponent,
-    FooterComponent,
     HomeComponent,
     CarouselComponent,
     SearchBarComponent,
+    FooterComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,7 @@ import { TranslateModule } from '@ngx-translate/core';
     ToastModule,
     FormsModule,
     ButtonModule,
+    InputSwitchModule,
     InputTextModule,
     InputIconModule,
     IconFieldModule,
@@ -45,8 +48,9 @@ import { TranslateModule } from '@ngx-translate/core';
     AutoCompleteModule,
     CarouselModule,
     CardModule,
+    DialogModule,
     MenubarModule,
+    JobsModule,
   ],
-  providers: [JobService],
 })
 export class CoreModule {}

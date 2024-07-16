@@ -18,6 +18,11 @@
     "F": "Frau",
     "X": "Andere"
   },
+  "role": {
+    "owner": "Besitzer",
+    "employee": "Mitarbeiter",
+    "partner": "Partner"
+  },
   "birthDate": "Geburtsdatum",
   "form": {
     "errors": {
@@ -80,7 +85,12 @@
     "logIn": "Einloggen",
     "signUp": "Registrieren",
     "logOut": "Ausloggen",
-    "language": "Sprache"
+    "language": "Sprache",
+    "newJob": "Neuer Job",
+    "advertiser": "Stellenanbieter",
+    "myJobs": "Meine Jobs anbieten",
+    "myCompanies": "Meine Unternehmen",
+    "myApplications": "Meine Bewerbungen"
   },
   "searchBar": {
     "function": "Funktion",
@@ -90,16 +100,65 @@
     "city": "Stadt",
     "province": "Provinz",
     "zipCode": "Postleitzahl",
-    "findJob": "Job finden"
+    "findJob": "Job finden",
+    "error": "Keine Stellenangebote verfügbar"
   },
   "carousel": {
-    "published": "Veröffentlicht"
+    "published": "Veröffentlicht",
+    "apply": "Bewerben",
+    "view" : "Anwenden"
+  },
+  "apply": {
+    "confirm": "Bestätigen Sie, dass Sie sich bewerben möchten",
+    "salaryMax": "Maximales Gehalt",
+    "salaryMin": "Minimales Gehalt",
+    "success": {
+      "summary": "Erfolg",
+      "detail": "Bewerbung erfolgreich gesendet"
+    },
+    "error": {
+      "summary": "Fehler",
+      "detail": "Bewerbung nicht erfolgreich gesendet"
+    }
   },
   "job": {
+    "success": {
+      "summary": "Job erfolgreich erstellt",
+      "detail": "Sie haben erfolgreich einen Job erstellt!"
+    },
+    "error": {
+      "summary": "Job konnte nicht erstellt werden"
+    },
     "jobFound": "Gefunden {{jobsLength}} Jobs",
     "today": "Heute",
     "yesterday": "Gestern",
-    "daysAgo": "Vor {{days}} Tagen"
+    "daysAgo": "Vor {{days}} Tagen",
+    "published": "Veröffentlicht",
+    "apply": "Bewerben",
+    "save": "Speichern",
+    "newJob": "Neuer Job",
+    "company": "Unternehmen",
+    "jobFunction": "Job Funktion",
+    "zipCity": "Postleitzahl und Stadt",
+    "activeDays": "Aktive Tage",
+    "jobDescription": "Job Beschreibung",
+    "zipCityEx": "z.B. 1234 Berlin",
+    "activeDaysSmall": "Tage aktiv",
+    "description": "Beschreibung",
+    "contractType": "Vertragsart",
+    "minSal": "Mindestgehalt",
+    "maxSal": "Höchstgehalt"
+  },
+  "application": {
+    "found": "Gefunden {{count}} Bewerbungen",
+    "applied": "Beworben",
+    "applicationStatus": {
+      "submitted": "Eingereicht",
+      "underReview": "In Bearbeitung",
+      "accepted": "Akzeptiert",
+      "cancelled": "Abgebrochen",
+      "rejected": "Abgelehnt"
+    }
   },
   "footer": {
     "company": "Unternehmen",
@@ -112,5 +171,37 @@
     "privacyPolicy": "Datenschutz-Bestimmungen",
     "socialMedia": "Soziale Medien",
     "allRightsReserved": "Alle Rechte vorbehalten"
+  },
+  "myCompanies": {
+    "title": "Meine Unternehmen",
+    "since": "seit",
+    "yourRole": "Sie sind",
+    "establishment": "Niederlassung der Firma am ",
+    "contactDepartment": "Kontakt Abteilung",
+    "contactName": "Kontaktperson",
+    "contactPhoneNumber": "Telefonnummer der Kontaktperson",
+    "websiteUrl": "Website-URL"
+  },
+  "profile": {
+    "profile": "Profil",
+    "changePassword": "Passwort ändern",
+    "changePersonnalInfo": "Persönliche Informationen ändern",
+    "email": "E-Mail",
+    "lastname": "Nachname",
+    "firstname": "Vorname",
+    "address": "Adresse",
+    "birthdate": "Geburtsdatum",
+    "gender": "Geschlecht",
+    "newPassword" : "Altes Passwort",
+    "oldPassword" : "Neues Passwort",
+    "phoneNumber" : "Telefonnummer",
+    "contactEmail": "Kontakt email",
+    "street" : "Straße",
+    "city" : "Stadt",
+    "zip" : "Postleitzahl",
+    "country" : "Land",
+    "male" : "Mann",
+    "female" : "Frau",
+    "Other" : "anderes"
   }
 }

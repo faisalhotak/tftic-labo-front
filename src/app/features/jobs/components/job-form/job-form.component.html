@@ -1,0 +1,74 @@
+<ng-container *ngIf="{
+    zipCities: zipCities$ | async,
+    contractTypes: contractTypes$ | async,
+    jobFunctions: jobFunctions$ | async,
+    companyAdvertiser: companyAdvertiser$ | async
+  } as data">
+  <ng-container *ngIf="data.zipCities && data.contractTypes && data.jobFunctions && data.companyAdvertiser">
+    <form [formGroup]="jobForm" (ngSubmit)="saveJob()" class="form container">
+        <h1>{{'job.newJob' | translate}}</h1>
+        <app-form-field [control]="jobForm.controls['agentId']" label="job.company" fieldId="company">
+            <p-dropdown
+            id="company"
+            formControlName="agentId"
+            [options]="data.companyAdvertiser"
+            optionLabel="company.name"
+            optionValue="id"
+            [style]="{'width':'100%'}" />
+        </app-form-field>
+        <app-form-field [control]="jobForm.controls['jobFunctionId']" label="job.jobFunction" fieldId="jobFunction">
+            <p-dropdown
+            id="jobFunction"
+            formControlName="jobFunctionId"
+            [options]="data.jobFunctions"
+            optionLabel="name"
+            optionValue="id"
+            [style]="{'width':'100%'}" />
+        </app-form-field>
+        <div class="flex justify-content-between gap-3">
+          <app-form-field class="flex-1" [control]="jobForm.controls['zipCity']" label="job.zipCity" fieldId="zipCity">
+<!--            <input id="zipCity" type="text" pInputText formControlName="zipCity" [style]="{'width':'100%'}"/>-->
+            <p-autoComplete
+              formControlName="zipCity"
+              (completeMethod)="search($event)"
+              [dropdown]="true"
+              [forceSelection]="true"
+              [suggestions]="filteredLocations"
+              [optionLabel]="getLocationLabel"
+              optionValue="id"
+              [showClear]="true"
+            />
+            <div class="small">
+              {{'job.zipCityEx' | translate}}
+            </div>
+          </app-form-field>
+          <app-form-field class="flex-1" [control]="jobForm.controls['activeDays']" label="job.activeDays" fieldId="activeDays" >
+            <p-inputNumber id="activeDays" formControlName="activeDays" [min]="1" [max]="30" styleClass="w-full" class="w-full" />
+            <div class="small">{{'job.activeDaysSmall' | translate}}</div>
+          </app-form-field>
+        </div>
+        <app-form-field [control]="jobForm.controls['description']" label="job.description" fieldId="description">
+            <textarea id="description" pInputTextarea formControlName="description" [style]="{'width':'100%'}"></textarea>
+        </app-form-field>
+        <app-form-field [control]="jobForm.controls['contractTypeId']" label="job.contractType" fieldId="contractType">
+            <p-dropdown
+            id="contractType"
+            formControlName="contractTypeId"
+            [options]="data.contractTypes"
+            optionLabel="name"
+            optionValue="id"
+            [style]="{'width':'100%'}"
+            placeholder="Select a contract type" />
+        </app-form-field>
+      <div class="flex justify-content-between gap-3">
+        <app-form-field class="flex-1" [control]="jobForm.controls['annualGrossSalaryMin']" label="job.minSal" fieldId="annualGrossSalaryMin">
+          <p-inputNumber id="annualGrossSalaryMin" formControlName="annualGrossSalaryMin" [min]="0" styleClass="w-full" class="w-full"/>
+        </app-form-field>
+        <app-form-field class="flex-1" [control]="jobForm.controls['annualGrossSalaryMax']" label="job.maxSal" fieldId="annualGrossSalaryMax">
+          <p-inputNumber id="annualGrossSalaryMax" formControlName="annualGrossSalaryMax" [min]="0" styleClass="w-full" class="w-full"/>
+        </app-form-field>
+      </div>
+        <button pButton type="submit" [disabled]="!jobForm.valid">{{'job.save' | translate}}</button>
+    </form>
+</ng-container>
+</ng-container>

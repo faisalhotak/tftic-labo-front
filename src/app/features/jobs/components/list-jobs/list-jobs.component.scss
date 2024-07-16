@@ -1,4 +1,9 @@
-p-paginator {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+:host {
+  width: auto;
+
+  p-paginator {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
+

@@ -1,3 +1,6 @@
+import { Company } from "../../../shared/models/company";
+import { ZipCity } from '../../../shared/models/zip-city';
+
 export interface Job {
   id: number;
   description: string;
@@ -6,7 +9,7 @@ export interface Job {
   createdAt: Date;
   activeDays: number;
   expiringDate: Date;
-  zipCity: string;
+  zipCity: ZipCity;
   isActive: boolean;
   agent: Agent;
   contractType: ContractType;
@@ -20,26 +23,15 @@ export interface PagedJobOffers {
   totalPages: number;
 }
 
-interface ContractType {
+export interface ContractType {
   id: number;
   name: string;
   description: string;
 }
 
-interface JobFunction {
+export interface JobFunction {
   id: number;
   name: string;
-}
-
-interface Company {
-  id: number;
-  name: string;
-  websiteUrl: string;
-  establishmentDate: Date;
-  contactName: string;
-  contactPhoneNumber: string;
-  contactDepartment: string;
-  isActive: boolean;
 }
 
 interface JobAdvertiser {
@@ -53,4 +45,22 @@ interface JobAdvertiser {
 interface Agent {
   jobAdvertiser: JobAdvertiser;
   company: Company;
+}
+
+export interface JobSeeker {
+  email: string;
+  firstname: string;
+  lastname: string;
+  phoneNumber: string;
+  contactEmail: string;
+  gender: string;
+  birthDate: Date;
+}
+
+export interface JobApplication {
+  jobOfferId: number;
+}
+
+export interface JobApplicationResponse {
+  message: string;
 }

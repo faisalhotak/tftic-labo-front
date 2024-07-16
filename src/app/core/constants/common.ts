@@ -5,6 +5,11 @@ export const COMMON = {
     path: './assets/i18n/',
     extension: '.json',
   },
+  theme: {
+    cookieName: 'theme',
+    light: 'light',
+    dark: 'dark',
+  },
   user: {
     cookieName: 'user',
   },

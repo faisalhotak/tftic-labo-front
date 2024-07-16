@@ -1,8 +1,12 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
-import { Job, PagedJobOffers } from '../models/job';
 import { COMMON } from '../../../core/constants/common';
+import { ContractType, Job, JobFunction, PagedJobOffers } from '../models/job';
+import { JobForm } from '../forms/job.form';
+import { API_ENDPOINTS } from '../../../core/constants/api-endpoints';
+import { ZipCity } from '../../../shared/models/zip-city';
+import { parseDate } from '../../../core/utils/date-utils';
 
 @Injectable()
 export class JobService {
@@ -19,7 +23,7 @@ export class JobService {
     }
 
     return this.http
-      .get<PagedJobOffers>(`/job-offers`, {
+      .get<PagedJobOffers>(`${API_ENDPOINTS.jobs.jobOffers}`, {
         params: httpParams,
       })
       .pipe(
@@ -30,8 +34,7 @@ export class JobService {
               (job) =>
                 ({
                   ...job,
-                  createdAt: new Date(job.createdAt),
-                  expirationDate: new Date(job.expiringDate),
+                  createdAt: parseDate(job.createdAt),
                 }) as Job,
             ),
           };
@@ -39,20 +42,45 @@ export class JobService {
       );
   }
 
-  getJobById(id: string): Observable<Job> {
-    return this.http.get<Job>(`/job-offers/${id}`).pipe(
+  getJobById(id: number): Observable<Job> {
+    return this.http.get<Job>(`${API_ENDPOINTS.jobs.jobOffers}/${id}`).pipe(
       map(
         (job) =>
           ({
             ...job,
-            createdAt: new Date(job.createdAt),
-            expirationDate: new Date(job.expiringDate),
+            createdAt: parseDate(job.createdAt),
           }) as Job,
       ),
     );
   }
 
-  getAllLocations(): Observable<string[]> {
-    return this.http.get<string[]>(`/job-offers/locations`);
+  getJobByAgentId(agentId: number): Observable<Job[]> {
+    return this.http.get<Job[]>(`${API_ENDPOINTS.jobs.agents}/${agentId}`).pipe(
+      map((jobs) => {
+        return jobs.map(
+          (job) =>
+            ({
+              ...job,
+              createdAt: parseDate(job.createdAt),
+            }) as Job,
+        );
+      }),
+    );
+  }
+
+  getAllLocations(): Observable<ZipCity[]> {
+    return this.http.get<ZipCity[]>(API_ENDPOINTS.zipCity);
+  }
+
+  getContractTypes(): Observable<ContractType[]> {
+    return this.http.get<ContractType[]>(API_ENDPOINTS.jobs.contractTypes);
+  }
+
+  getJobFunctions(): Observable<JobFunction[]> {
+    return this.http.get<JobFunction[]>(API_ENDPOINTS.jobs.jobFunction);
+  }
+
+  postJob(newJob: JobForm): Observable<JobForm> {
+    return this.http.post<JobForm>(API_ENDPOINTS.jobs.jobOffers, newJob);
   }
 }

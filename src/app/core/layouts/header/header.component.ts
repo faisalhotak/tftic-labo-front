@@ -16,9 +16,13 @@ export class HeaderComponent {
   protected readonly ESSENTIAL_ROUTES = ESSENTIAL_ROUTES;
 
   isLoggedIn = toSignal(this.authService.isLoggedIn$);
+  isAdvertiser = toSignal(this.authService.isAdvertiser$);
+  isSeeker = toSignal(this.authService.isSeeker$);
 
   menuItems = computed(() => {
     const isLoggedIn = this.isLoggedIn();
+    const isAdvertiser = this.isAdvertiser();
+    const isSeeker = this.isSeeker();
 
     return [
       {
@@ -26,8 +30,32 @@ export class HeaderComponent {
         routerLink: '/jobs',
       },
       {
+        label: 'navbar.advertiser',
+        visible: isAdvertiser,
+        items: [
+          {
+            label: 'navbar.newJob',
+            routerLink: '/jobs/new',
+          },
+          {
+            label: 'navbar.myJobs',
+            routerLink: '/jobs/my-jobs',
+          },
+          {
+            label: 'navbar.myCompanies',
+            routerLink: '/companies/my-companies',
+          },
+        ],
+      },
+      {
+        label: 'navbar.myApplications',
+        routerLink: '/applications',
+        visible: isSeeker,
+      },
+      {
         label: 'navbar.logIn',
         routerLink: '/auth/login',
+        styleClass: 'p-button-secondary',
         visible: !isLoggedIn,
       },
       {
