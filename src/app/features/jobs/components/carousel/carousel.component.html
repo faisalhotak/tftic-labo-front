@@ -23,7 +23,7 @@
             <p-button [outlined]="true" label="{{'carousel.view' | translate}}" severity="secondary" class="w-full"
                       styleClass="w-full" (onClick)="displayDetails(job.id)"/>
             @if (isLoggedIn()) {
-              <p-button [outlined]="true" label="{{'carousel.apply' | translate}}" class="w-full"
+              <p-button [outlined]="true" label="{{'carousel.apply' | translate}}" severity="primary" class="w-full"
                         styleClass="w-full" (onClick)="applyJob(job)"/>
             }
           </div>
