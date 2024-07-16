@@ -7,11 +7,7 @@ import { CompanyAdvertiser } from '../../../../shared/models/company-advertiser'
   templateUrl: './company-card.component.html',
   styleUrl: './company-card.component.scss'
 })
-export class CompanyCardComponent implements OnInit{
+export class CompanyCardComponent {
   @Input() companyAdvertiser!: CompanyAdvertiser;
-
-  ngOnInit(): void {
-    console.log(this.companyAdvertiser);
-  }
 
 }

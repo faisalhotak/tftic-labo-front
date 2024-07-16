@@ -1,11 +1,11 @@
 import { Company } from "./company";
-
+export type advertiserRoleType = 'OWNER' | 'EMPLOYEE' | 'PARTNER';
 
 export interface CompanyAdvertiser {
     id: number;
     jobAdvertiser: JobAdvertiser;
     company: Company;
-    advertiserRole: string;
+    advertiserRole: advertiserRoleType;
     createdAt: Date;
 }
 
