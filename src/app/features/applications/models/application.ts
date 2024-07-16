@@ -3,10 +3,10 @@ import { BaseEntity } from '../../../shared/models/base-entity';
 
 export type ApplicationStatus =
   | 'SUBMITTED'
-  | 'CANCELLED'
   | 'UNDER_REVIEW'
-  | 'REJECTED'
-  | 'ACCEPTED';
+  | 'ACCEPTED'
+  | 'CANCELLED'
+  | 'REJECTED';
 
 export interface Application extends BaseEntity {
   applyDate: Date;

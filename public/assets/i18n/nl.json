@@ -134,6 +134,10 @@
     "minSalary": "Min. salaris",
     "maxSalary": "Max. salaris"
   },
+  "application": {
+    "found": "{{count}} sollicitaties gevonden",
+    "applied": "Toegepast"
+  },
   "footer": {
     "company": "Bedrijf",
     "about": "Over",

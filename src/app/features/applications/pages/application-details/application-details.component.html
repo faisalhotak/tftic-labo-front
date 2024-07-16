@@ -1,1 +1,68 @@
-<p>application-details works!</p>
+@if (application$ | async; as application) {
+  <p-card>
+    <ng-template pTemplate="title">
+      {{ application.jobOffer.jobFunction.name | translate }}
+    </ng-template>
+    <ng-template pTemplate="subtitle">
+      <div class="subtitle">
+        <div>
+          <i class="pi pi-user"></i>
+          {{ application.jobOffer.jobFunction.name | translate }}
+        </div>
+        <div>
+          <i class="pi pi-briefcase"></i>
+          {{ application.jobOffer.agent.company.name | translate }}
+        </div>
+        <div>
+          <i class="pi pi-map-marker"></i>
+          {{ application.jobOffer.zipCity.city | translate }}
+        </div>
+        <div>
+          <i class="pi pi-calendar"></i>
+          {{ 'job.published' | translate }} : {{ application.jobOffer.createdAt | publishingPipe }}
+        </div>
+        <div>
+          <i class="pi pi-clipboard"></i>
+          {{ application.jobOffer.contractType.name | translate }}
+        </div>
+      </div>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <p>
+        {{ application.jobOffer.description | translate }}
+      </p>
+      <div class="salary">
+        <p>{{ application.jobOffer.annualGrossSalaryMin | currency: 'EUR' }} -
+          {{ application.jobOffer.annualGrossSalaryMax | currency: 'EUR' }}</p>
+      </div>
+      <p>
+        {{ 'application.applied' | translate }} : {{ application.applyDate | publishingPipe }}
+      </p>
+    </ng-template>
+    <ng-template pTemplate="footer">
+      <div class="footer">
+        <p-inplace closable="closable">
+          <ng-template pTemplate="display">
+            <p-chip styleClass="pl-0 pr-3">
+          <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
+            <i class="pi pi-check"></i>
+          </span>
+              <span class="ml-2 font-medium">
+            {{ application.applicationStatus | translate }}
+          </span>
+            </p-chip>
+          </ng-template>
+          <ng-template pTemplate="content">
+            <p-dropdown
+              [(ngModel)]="applicationStatus"
+              [options]="applicationStatusOptions"
+              optionLabel="label"
+              optionValue="value"
+            />
+          </ng-template>
+        </p-inplace>
+      </div>
+    </ng-template>
+  </p-card>
+}
+

@@ -6,6 +6,7 @@ import { ContractType, Job, JobFunction, PagedJobOffers } from '../models/job';
 import { JobForm } from '../forms/job.form';
 import { API_ENDPOINTS } from '../../../core/constants/api-endpoints';
 import { ZipCity } from '../../../shared/models/zip-city';
+import { parseDate } from '../../../core/utils/date-utils';
 
 @Injectable()
 export class JobService {
@@ -33,7 +34,7 @@ export class JobService {
               (job) =>
                 ({
                   ...job,
-                  createdAt: new Date(job.createdAt),
+                  createdAt: parseDate(job.createdAt),
                 }) as Job,
             ),
           };
@@ -47,7 +48,7 @@ export class JobService {
         (job) =>
           ({
             ...job,
-            createdAt: new Date(job.createdAt),
+            createdAt: parseDate(job.createdAt),
           }) as Job,
       ),
     );
@@ -60,7 +61,7 @@ export class JobService {
           (job) =>
             ({
               ...job,
-              createdAt: new Date(job.createdAt),
+              createdAt: parseDate(job.createdAt),
             }) as Job,
         );
       }),

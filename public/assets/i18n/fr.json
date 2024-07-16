@@ -129,6 +129,10 @@
     "minSal": "Salaire minimum",
     "maxSal": "Salaire maximum"
   },
+  "application": {
+    "found": "{{count}} candidatures trouvées",
+    "applied": "Postulé"
+  },
   "footer": {
     "company": "Entreprise",
     "about": "À propos",

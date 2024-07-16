@@ -4,7 +4,6 @@ import { AuthService } from '../../services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NotificationService } from '../../services/notification.service';
 import { ThemeService } from '../../services/theme.service';
-import { TranslateService } from '@ngx-translate/core';
 import { COMMON } from '../../constants/common';
 
 @Component({
@@ -15,7 +14,6 @@ import { COMMON } from '../../constants/common';
 export class HeaderComponent implements OnInit {
   private readonly authService = inject(AuthService);
   private readonly notificationService = inject(NotificationService);
-  private readonly translate = inject(TranslateService);
 
   protected readonly ESSENTIAL_ROUTES = ESSENTIAL_ROUTES;
 
@@ -38,11 +36,11 @@ export class HeaderComponent implements OnInit {
         visible: isAdvertiser,
         items: [
           {
-            label: this.translate.instant('navbar.newJob'),
+            label: 'navbar.newJob',
             routerLink: '/jobs/new',
           },
           {
-            label: this.translate.instant('navbar.myJobs'),
+            label: 'navbar.myJobs',
             routerLink: '/jobs/my-jobs',
           },
         ],

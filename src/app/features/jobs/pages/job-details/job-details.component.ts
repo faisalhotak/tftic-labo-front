@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { JobService } from '../../service/job.service';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Job } from '../../models/job';
 
 @Component({
@@ -11,15 +10,10 @@ import { Job } from '../../models/job';
 })
 export class JobDetailsComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
-  private readonly jobService = inject(JobService);
 
   job$!: Observable<Job>;
 
   ngOnInit() {
-    const jobId = +this.route.snapshot.paramMap.get('id')!;
-
-    if (jobId) {
-      this.job$ = this.jobService.getJobById(jobId);
-    }
+    this.job$ = this.route.data.pipe(map((resolveList) => resolveList[0]));
   }
 }

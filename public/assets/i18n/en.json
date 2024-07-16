@@ -83,7 +83,7 @@
     "language": "Language",
     "newJob": "New Job",
     "advertiser": "Advertiser",
-    "myJobs": "My Jobs Offer",
+    "myJobs": "My Job Offers",
     "myApplications": "My Applications"
   },
   "searchBar": {
@@ -134,8 +134,9 @@
     "minSal": "Minimum Salary",
     "maxSal": "Maximum Salary"
   },
-  "applications": {
-    "found": "Found {{count}} applications"
+  "application": {
+    "found": "Found {{count}} applications",
+    "applied": "Applied"
   },
   "footer": {
     "company": "Company",

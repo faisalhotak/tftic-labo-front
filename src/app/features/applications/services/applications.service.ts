@@ -4,6 +4,7 @@ import { Observable, map } from 'rxjs';
 import { COMMON } from '../../../core/constants/common';
 import { Application, PagedApplications } from '../models/application';
 import { API_ENDPOINTS } from '../../../core/constants/api-endpoints';
+import { parseDate } from '../../../core/utils/date-utils';
 
 @Injectable()
 export class ApplicationsService {
@@ -31,11 +32,30 @@ export class ApplicationsService {
               (application) =>
                 ({
                   ...application,
-                  createdAt: new Date(application.createdAt),
+                  applyDate: parseDate(application.applyDate),
+                  jobOffer: {
+                    ...application.jobOffer,
+                    createdAt: parseDate(application.jobOffer.createdAt),
+                  },
                 }) as Application,
             ),
           };
         }),
+      );
+  }
+
+  getApplicationById(id: string): Observable<Application> {
+    return this.httpClient
+      .get<Application>(`${API_ENDPOINTS.applications}/${id}`)
+      .pipe(
+        map((application) => ({
+          ...application,
+          applyDate: parseDate(application.applyDate),
+          jobOffer: {
+            ...application.jobOffer,
+            createdAt: parseDate(application.jobOffer.createdAt),
+          },
+        })),
       );
   }
 }

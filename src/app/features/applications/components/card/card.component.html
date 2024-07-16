@@ -1,23 +1,23 @@
-<p-card class="card" (click)="showDetails()">
+<p-card class="card" (click)="showDetails()" pBadge [value]="item.applicationStatus" [severity]="getSeverity()">
   <ng-template pTemplate="title">
-    {{ item.jobFunction.name }}
+    {{ item.jobOffer.jobFunction.name }}
   </ng-template>
   <ng-template pTemplate="subtitle" style="display: flex;">
     <div style="display: flex;">
       <div style="margin-right: 20px;">
         <i class="pi pi-briefcase"></i>
-        {{ item.agent.company.name }}
+        {{ item.jobOffer.agent.company.name }}
       </div>
       <div>
         <i class="pi pi-map-marker"></i>
-        {{ item.zipCity.city }}
+        {{ item.jobOffer.zipCity.city }}
       </div>
     </div>
   </ng-template>
   <ng-template pTemplate="content">
-    {{ item.description }}
+    {{ item.jobOffer.description }}
   </ng-template>
   <ng-template pTemplate="footer">
-    {{ item.createdAt  | publishingPipe }}
+    {{ item.applyDate  | publishingPipe }}
   </ng-template >
 </p-card>
