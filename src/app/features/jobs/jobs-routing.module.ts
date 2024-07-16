@@ -4,6 +4,7 @@ import { JobsComponent } from './pages/jobs/jobs.component';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
 import { AdvertiserGuard } from '../../core/guards/advertiser.guard';
 import { NewJobComponent } from './pages/new-job/new-job.component';
+import { JobAdvertisersComponent } from './pages/job-advertisers/job-advertisers.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,11 @@ const routes: Routes = [
   {
     path: 'new',
     component: NewJobComponent,
+    canActivate: [AdvertiserGuard],
+  },
+  {
+    path: 'my-jobs',
+    component: JobAdvertisersComponent,
     canActivate: [AdvertiserGuard],
   },
   {

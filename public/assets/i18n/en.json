@@ -82,7 +82,9 @@
     "logOut": "Log out",
     "language": "Language",
     "newJob": "New Job",
-    "advertiser": "Advertiser"
+    "advertiser": "Advertiser",
+    "myJobs": "My Jobs Offer",
+    "myCompanies": "My Companies"
   },
   "searchBar": {
       "function": "Function",
@@ -92,7 +94,8 @@
       "city": "City",
       "province": "Province",
       "zipCode": "Zip code",
-      "findJob": "Find Job"
+      "findJob": "Find Job",
+      "error": "No job offers available"
   },
   "carousel": {
       "published": "Published",
@@ -143,6 +146,16 @@
     "privacyPolicy": "Privacy Policy",
     "socialMedia": "Social Media",
     "allRightsReserved": "All rights reserved"
+  },
+  "myCompanies": {
+    "title": "My Companies",
+    "since": "since",
+    "yourRole": "You are",
+    "establishment": "Company establishment on ",
+    "contactDepartment": "Contact department",
+    "contactName": "Contact person",
+    "contactPhoneNumber": "Contact phone number",
+    "websiteUrl": "Website URL"
   },
   "profile": {
     "profile": "Profile",

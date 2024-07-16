@@ -82,7 +82,9 @@
     "logOut": "Uitloggen",
     "language": "Taal",
     "newJob": "Nieuwe baan",
-    "advertiser": "Adverteerder"
+    "advertiser": "Adverteerder",
+    "myJobs": "Mijn banen aanbieden",
+    "myCompanies": "Mijn bedrijven"
   },
   "searchBar": {
     "function": "Functie",
@@ -92,7 +94,8 @@
     "city": "Stad",
     "province": "Provincie",
     "zipCode": "Postcode",
-    "findJob": "Vind een baan"
+    "findJob": "Vind een baan",
+    "error": "Geen vacatures beschikbaar"
   },
   "carousel": {
     "published": "Gepubliceerd",
@@ -143,6 +146,16 @@
     "privacyPolicy": "Privacybeleid",
     "socialMedia": "Sociale media",
     "allRightsReserved": "Alle rechten voorbehouden"
+  },
+  "myCompanies": {
+    "title": "Mijn bedrijven",
+    "since": "sinds",
+    "yourRole": "Je bent",
+    "establishment": "Het bedrijf werd opgericht op ",
+    "contactDepartment": "Afdeling contact",
+    "contactName": "Contactpersoon",
+    "contactPhoneNumber": "Telefoonnummer contactpersoon",
+    "websiteUrl": "Website URL"
   },
   "profile": {
     "profile": "Profiel",

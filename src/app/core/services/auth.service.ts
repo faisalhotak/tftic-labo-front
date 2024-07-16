@@ -44,6 +44,10 @@ export class AuthService {
     return this._currentUser$.value;
   }
 
+  get userId(): number | null {
+    return this.currentUser?.user.id || null;
+  }
+
   get isLoggedIn$(): Observable<boolean> {
     return this._currentUser$.pipe(map((auth) => !!auth));
   }
