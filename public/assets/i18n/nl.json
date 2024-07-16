@@ -151,7 +151,14 @@
   },
   "application": {
     "found": "{{count}} sollicitaties gevonden",
-    "applied": "Toegepast"
+    "applied": "Toegepast",
+    "applicationStatus": {
+      "submitted": "Ingediend",
+      "underReview": "In behandeling",
+      "accepted": "Geaccepteerd",
+      "cancelled": "Geannuleerd",
+      "rejected": "Afgewezen"
+    }
   },
   "footer": {
     "company": "Bedrijf",

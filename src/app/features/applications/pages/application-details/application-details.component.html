@@ -44,12 +44,12 @@
         <p-inplace closable="closable">
           <ng-template pTemplate="display">
             <p-chip styleClass="pl-0 pr-3">
-          <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
-            <i class="pi pi-check"></i>
-          </span>
-              <span class="ml-2 font-medium">
-            {{ application.applicationStatus | translate }}
-          </span>
+              <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
+                <i class="pi pi-info"></i>
+              </span>
+                  <span class="ml-2 font-medium">
+                {{ 'application.applicationStatus.'.concat(application.applicationStatus | lowercase) | translate }}
+              </span>
             </p-chip>
           </ng-template>
           <ng-template pTemplate="content">

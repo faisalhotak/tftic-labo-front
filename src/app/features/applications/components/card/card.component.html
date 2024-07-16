@@ -1,4 +1,7 @@
-<p-card class="card" (click)="showDetails()" pBadge [value]="item.applicationStatus" [severity]="getSeverity()">
+<p-card class="card" (click)="showDetails()" pBadge
+        [value]="'application.applicationStatus.'.concat(item.applicationStatus | lowercase) | translate"
+        [severity]="getSeverity()"
+>
   <ng-template pTemplate="title">
     {{ item.jobOffer.jobFunction.name }}
   </ng-template>

@@ -151,7 +151,14 @@
   },
   "application": {
     "found": "Found {{count}} applications",
-    "applied": "Applied"
+    "applied": "Applied",
+    "applicationStatus": {
+      "submitted": "Submitted",
+      "underReview": "Under review",
+      "accepted": "Accepted",
+      "cancelled": "Cancelled",
+      "rejected": "Rejected"
+    }
   },
   "footer": {
     "company": "Company",

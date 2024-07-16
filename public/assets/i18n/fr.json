@@ -146,7 +146,14 @@
   },
   "application": {
     "found": "{{count}} candidatures trouvées",
-    "applied": "Postulé"
+    "applied": "Postulé",
+    "applicationStatus": {
+      "submitted": "Envoyé",
+      "underReview": "En cours de révision",
+      "accepted": "Accepté",
+      "cancelled": "Annulé",
+      "rejected": "Rejeté"
+    }
   },
   "footer": {
     "company": "Entreprise",
