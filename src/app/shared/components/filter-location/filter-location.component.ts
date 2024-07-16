@@ -1,7 +1,7 @@
 import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { AutoCompleteCompleteEvent } from 'primeng/autocomplete';
-import { JobService } from '../../service/job.service';
-import { ZipCity } from '../../models/job';
+import { ZipCity } from '../../models/zip-city';
+import { JobService } from '../../../features/jobs/service/job.service';
 
 @Component({
   selector: 'app-filter-location',

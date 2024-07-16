@@ -12,13 +12,11 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 
 import { PublishingPipe } from './pipes/publishing.pipe';
 import { TranslateModule } from '@ngx-translate/core';
-import { FilterLocationComponent } from './components/filter-location/filter-location.component';
-import { FiltersComponent } from './components/filters/filters.component';
 import { FormsModule } from '@angular/forms';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { ButtonModule } from 'primeng/button';
 import { JobDetailsComponent } from './pages/job-details/job-details.component';
-import { PaginatorModule } from "primeng/paginator";
+import { PaginatorModule } from 'primeng/paginator';
 import { JobFormComponent } from './components/job-form/job-form.component';
 import { NewJobComponent } from './pages/new-job/new-job.component';
 import { InputTextModule } from 'primeng/inputtext';
@@ -28,11 +26,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CompanyAdvertiserService } from './service/company-advertiser.service';
 import { SharedModule } from '../../shared/shared.module';
-import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-form.component';
 import { CheckboxModule } from 'primeng/checkbox';
-
-
-
+import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-form.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +35,6 @@ import { CheckboxModule } from 'primeng/checkbox';
     JobsComponent,
     JobCardComponent,
     PublishingPipe,
-    FilterLocationComponent,
-    FiltersComponent,
     JobFormComponent,
     NewJobComponent,
     JobDetailsComponent,
@@ -66,13 +59,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     SharedModule,
     CheckboxModule,
   ],
-  exports: [
-    PublishingPipe,
-    ApplyJobFormComponent,
-  ],
-  providers: [
-    JobService,
-    CompanyAdvertiserService,
-  ]
+  exports: [PublishingPipe, ApplyJobFormComponent],
+  providers: [JobService, CompanyAdvertiserService],
 })
 export class JobsModule {}

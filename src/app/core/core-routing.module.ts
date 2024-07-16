@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CoreComponent } from './core.component';
-import {HomeComponent} from "../features/home/home.component";
+import { HomeComponent } from '../features/home/home.component';
 
 const routes: Routes = [
   {
@@ -19,9 +19,16 @@ const routes: Routes = [
           import('../features/jobs/jobs.module').then((m) => m.JobsModule),
       },
       {
+        path: 'applications',
+        loadChildren: () =>
+          import('../features/applications/applications.module').then(
+            (m) => m.ApplicationsModule,
+          ),
+      },
+      {
         path: '',
         component: HomeComponent,
-      }
+      },
     ],
   },
 ];

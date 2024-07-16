@@ -19,10 +19,12 @@ export class HeaderComponent {
 
   isLoggedIn = toSignal(this.authService.isLoggedIn$);
   isAdvertiser = toSignal(this.authService.isAdvertiser$);
+  isSeeker = toSignal(this.authService.isSeeker$);
 
   menuItems = computed(() => {
     const isLoggedIn = this.isLoggedIn();
     const isAdvertiser = this.isAdvertiser();
+    const isSeeker = this.isSeeker();
 
     return [
       {
@@ -35,9 +37,14 @@ export class HeaderComponent {
         items: [
           {
             label: this.translate.instant('navbar.newJob'),
-            routerLink: '/jobs/new',    
-          }
-        ]
+            routerLink: '/jobs/new',
+          },
+        ],
+      },
+      {
+        label: 'navbar.myApplications',
+        routerLink: '/applications',
+        visible: isSeeker,
       },
       {
         label: 'navbar.logIn',

@@ -1,0 +1,17 @@
+@if ( list$ | async; as items ) {
+  <h1> {{ foundMessage | translate: { count: listCount } }}</h1>
+  @for (item of items; track item.id) {
+    <app-card [url]="url" [item]="item"></app-card>
+  }
+} @else {
+  <p-progressSpinner ariaLabel="loading" />
+}
+
+<p-paginator
+  [first]="page() * elementsPerPage"
+  (onPageChange)="onPageChange($event)"
+  [rows]="elementsPerPage"
+  [totalRecords]="listCount"
+  [style]="{ backgroundColor: '#FAFAFA'}"
+/>
+

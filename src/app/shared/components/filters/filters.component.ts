@@ -1,5 +1,5 @@
 import { Component, Input, WritableSignal } from '@angular/core';
-import { ZipCity } from '../../models/job';
+import { ZipCity } from '../../models/zip-city';
 
 @Component({
   selector: 'app-filters',

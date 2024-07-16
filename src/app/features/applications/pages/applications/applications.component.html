@@ -1,0 +1,4 @@
+<div class="applications-container">
+  <app-filters class="filters" [filters]="filters" [page]="page" />
+  <app-list class="list" [foundMessage]="'applications.found'" [url]="url" [list$]="jobOffers$" [page]="page" [elementsPerPage]="elementsPerPage" [listCount]="applicationsCount" />
+</div>

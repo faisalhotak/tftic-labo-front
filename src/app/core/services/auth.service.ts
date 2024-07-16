@@ -42,6 +42,12 @@ export class AuthService {
     );
   }
 
+  get isSeeker$(): Observable<boolean> {
+    return this._currentUser$.pipe(
+      map((auth) => !!auth?.roles.includes(ROLES.SEEKER)),
+    );
+  }
+
   get token(): string | null {
     return this.currentUser?.accessToken || null;
   }

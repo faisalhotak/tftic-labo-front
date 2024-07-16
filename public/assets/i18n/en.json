@@ -82,7 +82,8 @@
     "logOut": "Log out",
     "language": "Language",
     "newJob": "New Job",
-    "advertiser": "Advertiser"
+    "advertiser": "Advertiser",
+    "myApplications": "My Applications"
   },
   "searchBar": {
       "function": "Function",
@@ -131,6 +132,9 @@
     "contractType": "Contract Type",
     "minSal": "Minimum Salary",
     "maxSal": "Maximum Salary"
+  },
+  "applications": {
+    "found": "Found {{count}} applications"
   },
   "footer": {
     "company": "Company",

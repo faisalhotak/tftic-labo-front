@@ -2,15 +2,10 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { COMMON } from '../../../core/constants/common';
-import {
-  ContractType,
-  Job,
-  JobFunction,
-  PagedJobOffers,
-  ZipCity,
-} from '../models/job';
+import { ContractType, Job, JobFunction, PagedJobOffers } from '../models/job';
 import { JobForm } from '../forms/job.form';
 import { API_ENDPOINTS } from '../../../core/constants/api-endpoints';
+import { ZipCity } from '../../../shared/models/zip-city';
 
 @Injectable()
 export class JobService {
@@ -27,7 +22,7 @@ export class JobService {
     }
 
     return this.http
-      .get<PagedJobOffers>(`/job-offers`, {
+      .get<PagedJobOffers>(`${API_ENDPOINTS.jobs.jobOffers}`, {
         params: httpParams,
       })
       .pipe(
@@ -47,7 +42,7 @@ export class JobService {
   }
 
   getJobById(id: number): Observable<Job> {
-    return this.http.get<Job>(`/job-offers/${id}`).pipe(
+    return this.http.get<Job>(`${API_ENDPOINTS.jobs.jobOffers}/${id}`).pipe(
       map(
         (job) =>
           ({
@@ -59,7 +54,7 @@ export class JobService {
   }
 
   getAllLocations(): Observable<ZipCity[]> {
-    return this.http.get<ZipCity[]>(`/zip-city`);
+    return this.http.get<ZipCity[]>(API_ENDPOINTS.zipCity);
   }
 
   getContractTypes(): Observable<ContractType[]> {

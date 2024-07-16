@@ -10,9 +10,18 @@ import { Button } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { CheckboxModule } from 'primeng/checkbox';
+import { FiltersComponent } from './components/filters/filters.component';
+import { FilterLocationComponent } from './components/filter-location/filter-location.component';
+import { AccordionModule } from 'primeng/accordion';
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 @NgModule({
-  declarations: [CountryDropdownComponent, FormFieldComponent],
+  declarations: [
+    CountryDropdownComponent,
+    FormFieldComponent,
+    FiltersComponent,
+    FilterLocationComponent,
+  ],
   imports: [
     CommonModule,
     DropdownModule,
@@ -25,7 +34,14 @@ import { CheckboxModule } from 'primeng/checkbox';
     CardModule,
     InputSwitchModule,
     CheckboxModule,
+    AccordionModule,
+    AutoCompleteModule,
   ],
-  exports: [CountryDropdownComponent, FormFieldComponent],
+  exports: [
+    CountryDropdownComponent,
+    FormFieldComponent,
+    FiltersComponent,
+    FilterLocationComponent,
+  ],
 })
 export class SharedModule {}

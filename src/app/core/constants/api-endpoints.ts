@@ -11,4 +11,6 @@ export const API_ENDPOINTS = {
     jobFunction: '/job-functions',
   },
   companyAdvertiser: '/company-advertiser',
+  applications: '/applications',
+  zipCity: '/zip-city',
 };
