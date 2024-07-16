@@ -77,7 +77,8 @@
     "logOut": "Déconnexion",
     "language": "Langue",
     "newJob": "Nouvel emploi",
-    "advertiser": "Recruteur"
+    "advertiser": "Recruteur",
+    "myJobs": "Mes offres d'emploi"
   },
   "searchBar": {
     "function": "Fonction",
