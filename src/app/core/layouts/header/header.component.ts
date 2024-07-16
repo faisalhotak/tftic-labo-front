@@ -37,8 +37,8 @@ export class HeaderComponent implements OnInit {
           {
             label: this.translate.instant('navbar.newJob'),
             routerLink: '/jobs/new',
-          }
-        ]
+          },
+        ],
       },
       {
         label: 'navbar.logIn',
@@ -74,9 +74,8 @@ export class HeaderComponent implements OnInit {
     this.themeService.setTheme(this.selectedTheme);
   }
 
-  onThemeChange(theme: string): void {
-    this.selectedTheme = theme;
-    this.themeService.setTheme(theme);
+  onThemeChange(): void {
+    this.themeService.setTheme(this.checked ? 'dark' : 'light');
   }
 
   handleLogout() {
