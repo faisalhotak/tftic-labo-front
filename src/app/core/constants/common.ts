@@ -10,4 +10,6 @@ export const COMMON = {
   },
   page: 'page',
   rootPath: '/',
+  light: 'light',
+  dark: 'dark',
 };

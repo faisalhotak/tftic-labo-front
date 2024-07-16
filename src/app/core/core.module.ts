@@ -7,6 +7,7 @@ import { ToastModule } from 'primeng/toast';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './layouts/header/header.component';
 import { ButtonModule } from 'primeng/button';
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { InputTextModule } from 'primeng/inputtext';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
@@ -38,6 +39,7 @@ import { JobsModule } from '../features/jobs/jobs.module';
     ToastModule,
     FormsModule,
     ButtonModule,
+    InputSwitchModule,
     InputTextModule,
     InputIconModule,
     IconFieldModule,

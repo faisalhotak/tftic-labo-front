@@ -1,16 +1,18 @@
-import { Component, computed, inject } from '@angular/core';
+import { Component, computed, inject, OnInit } from '@angular/core';
 import { ESSENTIAL_ROUTES } from '../../constants/routes';
 import { AuthService } from '../../services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NotificationService } from '../../services/notification.service';
+import { ThemeService } from '../../services/theme.service';
 import { TranslateService } from '@ngx-translate/core';
+import { COMMON } from '../../constants/common';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   private readonly authService = inject(AuthService);
   private readonly notificationService = inject(NotificationService);
   private readonly translate = inject(TranslateService);
@@ -43,7 +45,7 @@ export class HeaderComponent {
             label: this.translate.instant('navbar.myJobs'),
             routerLink: '/jobs/my-jobs',
           },
-        ]
+        ],
       },
       {
         label: 'navbar.myApplications',
@@ -53,6 +55,7 @@ export class HeaderComponent {
       {
         label: 'navbar.logIn',
         routerLink: '/auth/login',
+        styleClass: 'p-button-secondary',
         visible: !isLoggedIn,
       },
       {
@@ -74,6 +77,18 @@ export class HeaderComponent {
       },
     ].filter((item) => item.visible !== false);
   });
+
+  checked: boolean = false;
+  selectedTheme: string = COMMON.light;
+  themeService: ThemeService = inject(ThemeService);
+
+  ngOnInit(): void {
+    this.themeService.setTheme(this.selectedTheme);
+  }
+
+  onThemeChange(): void {
+    this.themeService.setTheme(this.checked ? COMMON.dark : COMMON.light);
+  }
 
   handleLogout() {
     this.authService.logout();
