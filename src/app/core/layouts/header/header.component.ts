@@ -36,7 +36,11 @@ export class HeaderComponent {
           {
             label: this.translate.instant('navbar.newJob'),
             routerLink: '/jobs/new',    
-          }
+          },
+          {
+            label: this.translate.instant('navbar.myJobs'),
+            routerLink: '/jobs/my-jobs',
+          },
         ]
       },
       {

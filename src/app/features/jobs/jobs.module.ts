@@ -30,6 +30,8 @@ import { CompanyAdvertiserService } from './service/company-advertiser.service';
 import { SharedModule } from '../../shared/shared.module';
 import { ApplyJobFormComponent } from './components/apply-job-form/apply-job-form.component';
 import { CheckboxModule } from 'primeng/checkbox';
+import { JobAdvertisersComponent } from './pages/job-advertisers/job-advertisers.component';
+import { TabMenuModule } from 'primeng/tabmenu';
 
 
 
@@ -46,6 +48,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     NewJobComponent,
     JobDetailsComponent,
     ApplyJobFormComponent,
+    JobAdvertisersComponent,
   ],
   imports: [
     CommonModule,
@@ -65,6 +68,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     ReactiveFormsModule,
     SharedModule,
     CheckboxModule,
+    TabMenuModule,
   ],
   exports: [
     PublishingPipe,

@@ -82,7 +82,8 @@
     "logOut": "Log out",
     "language": "Language",
     "newJob": "New Job",
-    "advertiser": "Advertiser"
+    "advertiser": "Advertiser",
+    "myJobs": "My Jobs Offer"
   },
   "searchBar": {
       "function": "Function",
