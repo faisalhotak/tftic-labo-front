@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class SearchBarComponent implements OnInit {
   private readonly jobService: JobService = inject(JobService);
   private readonly router = inject(Router);
-  @Input() jobList?: Observable<Job[]>;
+  @Input() jobList$?: Observable<Job[]>;
   searchJob = '';
   searchCity = '';
   displayJob: Job[] = [];
@@ -20,7 +20,7 @@ export class SearchBarComponent implements OnInit {
   showResult = false;
 
   ngOnInit() {
-    this.jobList?.subscribe((jobsList) => {
+    this.jobList$!.subscribe((jobsList) => {
       this.job = jobsList;
       this.displayJob = jobsList;
     });
@@ -55,7 +55,6 @@ export class SearchBarComponent implements OnInit {
 
   onSearchJob() {
     this.filterJobs();
-    console.log(this.displayJob);
     this.showResult = true;
   }
 
