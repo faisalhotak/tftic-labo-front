@@ -15,6 +15,7 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { FilterLocationComponent } from './components/filter-location/filter-location.component';
 import { AccordionModule } from 'primeng/accordion';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { LightDarkThemSwitchComponent } from './components/light-dark-theme-switch/light-dark-them-switch.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     FormFieldComponent,
     GenericCardComponent,
     FiltersComponent,
-    FilterLocationComponent
+    FilterLocationComponent,
+    LightDarkThemSwitchComponent,
   ],
   imports: [
     CommonModule,
@@ -39,7 +41,13 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     AccordionModule,
     AutoCompleteModule,
   ],
-  exports: [CountryDropdownComponent, FormFieldComponent, GenericCardComponent, FiltersComponent,
-    FilterLocationComponent],
+  exports: [
+    CountryDropdownComponent,
+    FormFieldComponent,
+    GenericCardComponent,
+    FiltersComponent,
+    FilterLocationComponent,
+    LightDarkThemSwitchComponent,
+  ],
 })
 export class SharedModule {}

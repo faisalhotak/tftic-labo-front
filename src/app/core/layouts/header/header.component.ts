@@ -1,17 +1,15 @@
-import { Component, computed, inject, OnInit } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
 import { ESSENTIAL_ROUTES } from '../../constants/routes';
 import { AuthService } from '../../services/auth.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NotificationService } from '../../services/notification.service';
-import { ThemeService } from '../../services/theme.service';
-import { COMMON } from '../../constants/common';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   private readonly authService = inject(AuthService);
   private readonly notificationService = inject(NotificationService);
 
@@ -46,8 +44,8 @@ export class HeaderComponent implements OnInit {
           {
             label: 'navbar.myCompanies',
             routerLink: '/companies/my-companies',
-          }
-        ]
+          },
+        ],
       },
       {
         label: 'navbar.myApplications',
@@ -79,18 +77,6 @@ export class HeaderComponent implements OnInit {
       },
     ].filter((item) => item.visible !== false);
   });
-
-  checked: boolean = false;
-  selectedTheme: string = COMMON.light;
-  themeService: ThemeService = inject(ThemeService);
-
-  ngOnInit(): void {
-    this.themeService.setTheme(this.selectedTheme);
-  }
-
-  onThemeChange(): void {
-    this.themeService.setTheme(this.checked ? COMMON.dark : COMMON.light);
-  }
 
   handleLogout() {
     this.authService.logout();
