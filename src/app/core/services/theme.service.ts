@@ -1,18 +1,24 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { COMMON } from '../constants/common';
+import { CookieService } from './cookie.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ThemeService {
-  activeTheme: string = COMMON.light;
+  private readonly cookieService = inject(CookieService);
 
-  setTheme(theme: string) {
+  get() {
+    return this.cookieService.get(COMMON.theme.cookieName);
+  }
+
+  set(theme: string) {
     let themeLink = document.getElementById('app-theme') as HTMLLinkElement;
 
     if (themeLink) {
       themeLink.href = theme + '.css';
     }
-    this.activeTheme = theme;
+
+    this.cookieService.set(COMMON.theme.cookieName, theme);
   }
 }

@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  justify-content: center;
+
+  .subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      margin-right: 20px;
+    }
+  }
+  .salary {
+    display: flex;
+    p {
+      margin-right: 20px;
+    }
+  }
+  .footer {
+    > * {
+      margin-right: 20px;
+    }
+  }
+}

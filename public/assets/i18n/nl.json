@@ -18,6 +18,11 @@
     "F": "Vrouw",
     "X": "Overig"
   },
+  "role": {
+    "owner": "Eigenaar",
+    "employee": "Werknemer",
+    "partner": "Partner"
+  },
   "birthDate": "Geboortedatum",
   "form": {
     "errors": {
@@ -84,7 +89,8 @@
     "newJob": "Nieuwe baan",
     "advertiser": "Adverteerder",
     "myJobs": "Mijn banen aanbieden",
-    "myCompanies": "Mijn bedrijven"
+    "myCompanies": "Mijn bedrijven",
+    "myApplications": "Mijn sollicitaties"
   },
   "searchBar": {
     "function": "Functie",
@@ -116,6 +122,13 @@
     }
   },
   "job": {
+    "success": {
+      "summary": "Succesvolle registratie",
+      "detail": "Je hebt je succesvol geregistreerd!"
+    },
+    "error": {
+      "summary": "Registratie mislukt"
+    },
     "jobFound": "{{jobsLength}} banen gevonden",
     "today": "Vandaag",
     "yesterday": "Gisteren",
@@ -131,9 +144,21 @@
     "jobDescription": "Functieomschrijving",
     "zipCityEx": "bijv. 1234 Amsterdam",
     "activeDaysSmall": "dagen actief",
+    "description": "Beschrijving",
     "jobDetails": "Functie details",
     "minSalary": "Min. salaris",
     "maxSalary": "Max. salaris"
+  },
+  "application": {
+    "found": "{{count}} sollicitaties gevonden",
+    "applied": "Toegepast",
+    "applicationStatus": {
+      "submitted": "Ingediend",
+      "underReview": "In behandeling",
+      "accepted": "Geaccepteerd",
+      "cancelled": "Geannuleerd",
+      "rejected": "Afgewezen"
+    }
   },
   "footer": {
     "company": "Bedrijf",
@@ -167,8 +192,8 @@
     "address": "Adres",
     "birthdate": "Geboortedatum",
     "gender": "Geslacht",
-    "oldPassword" : "Nieuw wachtwoord",
-    "newPassword" : "Oud wachtwoord",
+    "newPassword" : "Nieuw wachtwoord",
+    "oldPassword" : "Oud wachtwoord",
     "phoneNumber" : "Telefoonnummer",
     "contactEmail": "Contact email",
     "street" : "straat",

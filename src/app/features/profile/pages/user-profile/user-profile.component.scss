@@ -1,14 +1,21 @@
-.container {
+:host {
   display: flex;
   justify-content: center;
-  align-items: center;
-
+  flex: 1;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
 .menu-container {
   margin-right: 1rem;
 }
 
-.avatar-container{
+.avatar-container {
   display: flex;
   justify-content: center;
   flex-direction: column;

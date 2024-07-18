@@ -18,6 +18,11 @@
     "F": "Femme",
     "X": "Autre"
   },
+  "role": {
+    "owner": "Propriétaire",
+    "employee": "Employé",
+    "partner": "Partenaire"
+  },
   "birthDate": "Date de naissance",
   "form": {
     "errors": {
@@ -49,7 +54,12 @@
       }
     },
     "register": {
-      "message": "Inscrivez-vous pour trouver l'emploi qui vous convient.",
+      "seeker": {
+        "message": "Inscrivez-vous pour trouver l'emploi qui vous convient."
+      },
+      "advertiser": {
+        "message": "Inscrivez-vous pour publier des offres d'emploi."
+      },
       "button": {
         "submit": "S'inscrire"
       },
@@ -79,7 +89,8 @@
     "newJob": "Nouvel emploi",
     "advertiser": "Recruteur",
     "myJobs": "Mes offres d'emploi",
-    "myCompanies": "Mes entreprises"
+    "myCompanies": "Mes entreprises",
+    "myApplications": "Mes candidatures"
   },
   "searchBar": {
     "function": "Fonction",
@@ -111,6 +122,13 @@
     }
   },
   "job": {
+    "success": {
+      "summary": "Création de l'offre d'emploi réussie",
+      "detail":  "Vous avez créé une offre d'emploi avec succès !"
+    },
+    "error": {
+      "summary": "Création de l'offre d'emploi échouée"
+    },
     "jobFound": "{{jobsLength}} emplois trouvés",
     "today": "Aujourd'hui",
     "yesterday": "Hier",
@@ -126,9 +144,21 @@
     "jobDescription": "Description de l'emploi",
     "zipCityEx": "ex. 1234 Paris",
     "activeDaysSmall": "Nombre de jours actifs sur la platform",
+    "description": "Description",
     "contractType": "Type de contrat",
     "minSal": "Salaire minimum",
     "maxSal": "Salaire maximum"
+  },
+  "application": {
+    "found": "{{count}} candidatures trouvées",
+    "applied": "Postulé",
+    "applicationStatus": {
+      "submitted": "Envoyé",
+      "underReview": "En cours de révision",
+      "accepted": "Accepté",
+      "cancelled": "Annulé",
+      "rejected": "Rejeté"
+    }
   },
   "footer": {
     "company": "Entreprise",
@@ -162,8 +192,8 @@
     "address": "Adresse",
     "birthdate": "Date de naissance",
     "gender": "Sexe",
-    "oldPassword" : "Nouveau mot de passe",
-    "newPassword" : "Ancien mot de passe",
+    "newPassword" : "Nouveau mot de passe",
+    "oldPassword" : "Ancien mot de passe",
     "phoneNumber" : "numéro de téléphone",
     "contactEmail": "Email de contact",
     "street" : "Rue",
@@ -173,6 +203,5 @@
     "male" : "homme",
     "female" : "femme",
     "Other" : "autre"
-
   }
 }

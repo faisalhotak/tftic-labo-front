@@ -14,7 +14,6 @@ import { InputIconModule } from 'primeng/inputicon';
 import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from '../features/home/home.component';
-import { JobService } from '../features/jobs/service/job.service';
 import { CarouselComponent } from '../features/jobs/components/carousel/carousel.component';
 import { SearchBarComponent } from '../shared/components/search-bar/search-bar.component';
 import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -53,6 +52,5 @@ import { JobsModule } from '../features/jobs/jobs.module';
     MenubarModule,
     JobsModule,
   ],
-  providers: [JobService],
 })
 export class CoreModule {}

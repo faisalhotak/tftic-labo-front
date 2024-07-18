@@ -1,24 +1,20 @@
 :host {
-    .form {
-        max-width: 700px;
-        margin: auto;
-        display: flex; 
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1rem;
+  .form {
+      max-width: 700px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
 
-        .small {
-            font-size: 0.7rem;
-        }
-    
-        .field {
-            display: flex;
-            flex-direction: column;
-            flex: 1 1 300px;
-        }
-
-        .fullWitdh {
-            flex: 1 1 700px;
-        }
+    > * {
+      flex-wrap: wrap;
+      width: 100%;
     }
+
+    .small {
+      color: #a2a2a2;
+      font-size: 0.7rem;
+    }
+  }
 }

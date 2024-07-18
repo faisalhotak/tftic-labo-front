@@ -5,12 +5,14 @@
 
   .navbar {
     display: flex;
-    justify-content: space-between;
     gap: 10px;
     align-items: center;
     padding: 1rem;
 
     .navbar-left {
+      display: flex;
+      flex: 0.4;
+
       a {
         text-decoration: none;
         font-size: 24px;
@@ -19,7 +21,12 @@
     }
 
     p-menubar {
+      display: flex;
+      flex: 0.6;
+
       .p-menubar {
+        flex: 1;
+        gap: 10px;
         background: transparent;
         border: none;
 
@@ -33,6 +40,7 @@
 
         li > .p-menuitem-content {
           transition: all 0.3s;
+          margin: auto 10px;
         }
 
         .p-menuitem-link {
@@ -49,6 +57,18 @@
 
           &.p-button-secondary .p-menuitem-link {
             transition: all 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 960px){
+    .navbar {
+      p-menubar {
+        .p-menubar {
+          li > .p-menuitem-content {
+            margin: 5px 10px;
           }
         }
       }
